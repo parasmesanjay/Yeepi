@@ -24,7 +24,7 @@
     self.view.backgroundColor = APP_COLOR_BLUE;
     
     
-////// --- Text Field Properties
+////// ---- Text Field Properties
     
     viewEmail.layer.cornerRadius = viewPassword.layer.cornerRadius = btnLogin.layer.cornerRadius = 22;
     viewEmail.layer.borderColor = WHITE_COLOR.CGColor;
