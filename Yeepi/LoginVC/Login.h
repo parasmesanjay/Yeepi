@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  Login.h
 //  Yeepi
 //
 //  Created by Apple on 06/03/17.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface Login : UIViewController
+{
+    IBOutlet UIButton *btnLoginWithEmail;
 
-
+    IBOutlet UIButton *btnTerms;
+}
 @end
-
