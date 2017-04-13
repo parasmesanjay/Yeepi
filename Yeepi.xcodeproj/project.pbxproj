@@ -188,6 +188,7 @@
 		18FCD66E1E6D3CF10029E167 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD6671E6D3CF10029E167 /* LoginVC.m */; };
 		18FCD66F1E6D3CF10029E167 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD66A1E6D3CF10029E167 /* RegisterVC.m */; };
 		18FCD6701E6D3CF10029E167 /* SplashScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD66D1E6D3CF10029E167 /* SplashScreenVC.m */; };
+		DB6F39BF1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */; };
 		DB9282101E94B5AE00D8FF00 /* PostBidVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB92820F1E94B5AE00D8FF00 /* PostBidVC.m */; };
 		DB92821A1E94E26700D8FF00 /* MySegment.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9282191E94E26700D8FF00 /* MySegment.m */; };
 		DB92821E1E94FC9E00D8FF00 /* DashboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB92821D1E94FC9E00D8FF00 /* DashboardVC.m */; };
@@ -435,6 +436,8 @@
 		18FCD66C1E6D3CF10029E167 /* SplashScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenVC.h; sourceTree = "<group>"; };
 		18FCD66D1E6D3CF10029E167 /* SplashScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenVC.m; sourceTree = "<group>"; };
 		18FCD68B1E6D3F0B0029E167 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Yeepi/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		DB6F39BD1E9FAF9D0091F0D5 /* PreviousTaskTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviousTaskTVCell.h; path = CellClasses/PreviousTaskTVCell.h; sourceTree = "<group>"; };
+		DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousTaskTVCell.m; path = CellClasses/PreviousTaskTVCell.m; sourceTree = "<group>"; };
 		DB92820E1E94B5AE00D8FF00 /* PostBidVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostBidVC.h; sourceTree = "<group>"; };
 		DB92820F1E94B5AE00D8FF00 /* PostBidVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostBidVC.m; sourceTree = "<group>"; };
 		DB9282181E94E26700D8FF00 /* MySegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MySegment.h; path = MySegment/MySegment.h; sourceTree = "<group>"; };
@@ -653,12 +656,12 @@
 				18F65A1C1E6FD1E30047F593 /* Header.xib */,
 				18F65A191E6FD1C50047F593 /* HeaderLogin.h */,
 				18F65A1A1E6FD1C50047F593 /* HeaderLogin.m */,
-				189FCFF11E7AC5ED0080FC09 /* Cell.xib */,
 				0119A2691E97C3BF00DEC457 /* ActiveTaskView.h */,
 				0119A26A1E97C3BF00DEC457 /* ActiveTaskView.m */,
 				0119A26C1E97C40000DEC457 /* PreviousTaskView.h */,
 				0119A26D1E97C40000DEC457 /* PreviousTaskView.m */,
 				0119A26F1E97C43B00DEC457 /* Active_PreviousTaskView.xib */,
+				DB6F39BC1E9FAF3F0091F0D5 /* Cell */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -919,6 +922,16 @@
 				18FCD66D1E6D3CF10029E167 /* SplashScreenVC.m */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		DB6F39BC1E9FAF3F0091F0D5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				189FCFF11E7AC5ED0080FC09 /* Cell.xib */,
+				DB6F39BD1E9FAF9D0091F0D5 /* PreviousTaskTVCell.h */,
+				DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		DB9282111E94D42B00D8FF00 /* Browse Related VC */ = {
@@ -1234,6 +1247,7 @@
 				184678DC1E794BAD006DE871 /* BrowseVC.m in Sources */,
 				1899A4C71E8278DF004E4375 /* TaxNumberVC.m in Sources */,
 				01A631C71E9BC05F00D83A05 /* TaskAlertVC.m in Sources */,
+				DB6F39BF1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m in Sources */,
 				18FCD6541E6D3A2C0029E167 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				DB92821A1E94E26700D8FF00 /* MySegment.m in Sources */,
 				18FCD64E1E6D3A2C0029E167 /* Reachability.m in Sources */,
