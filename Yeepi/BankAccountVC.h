@@ -17,6 +17,8 @@
     IBOutlet UITextField *txtTransit;
     IBOutlet UITextField *txtAcNo;
     
+    IBOutlet UIImageView *imgRadio;
+
     IBOutlet UIButton *btnDone;
 }
 @end

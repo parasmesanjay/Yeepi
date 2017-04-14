@@ -1065,7 +1065,7 @@
                         <color key="backgroundColor" red="0.074509803920000006" green="0.1215686275" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <outlet property="btn_Bank_Card" destination="fFU-MW-eAE" id="viK-0e-KEk"/>
+                        <outlet property="btn_Bank_Card" destination="x2A-6C-NC3" id="wN8-s0-FzJ"/>
                         <outlet property="img_Bank_Card" destination="1Oj-17-jQB" id="xia-K4-Dyr"/>
                         <outlet property="lblTitle" destination="iBJ-NG-n0q" id="BP3-sP-5t6"/>
                         <outlet property="mySegment" destination="GxQ-vL-fqi" id="71F-2X-afh"/>
@@ -1100,7 +1100,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" misplaced="YES" id="30O-7E-wXP">
-                                                <rect key="frame" x="70" y="0.0" width="260" height="80"/>
+                                                <rect key="frame" x="57" y="0.0" width="260" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="image_credit_card.png" id="WTg-QZ-rls">
@@ -1220,6 +1220,7 @@
                     </view>
                     <connections>
                         <outlet property="btnDone" destination="gIU-YV-p67" id="wG8-W8-fiM"/>
+                        <outlet property="imgRadio" destination="mI5-cB-LCb" id="fUt-Dk-koX"/>
                         <outlet property="tpScrlView" destination="fOm-XF-uxE" id="bRV-Gm-FiE"/>
                         <outlet property="txtCCV" destination="seB-il-V6N" id="7kg-WL-XlA"/>
                         <outlet property="txtCardNo" destination="Pan-YU-jYd" id="pMC-n1-xOs"/>
@@ -1256,8 +1257,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" id="2kx-pN-ElD">
-                                                <rect key="frame" x="70" y="0.0" width="260" height="80"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" id="2kx-pN-ElD">
+                                                <rect key="frame" x="58" y="0.0" width="260" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image_bank_account.png" id="J6U-es-Oga">
@@ -1376,6 +1377,7 @@
                     </view>
                     <connections>
                         <outlet property="btnDone" destination="T1l-Sz-NJv" id="cef-nq-yjh"/>
+                        <outlet property="imgRadio" destination="Qp4-KP-QKf" id="GNt-ZC-xTc"/>
                         <outlet property="tpScrlView" destination="jYC-EO-wB9" id="ZME-Jh-f9G"/>
                         <outlet property="txtAcHolder" destination="pgV-yg-aqh" id="ILM-lz-sIx"/>
                         <outlet property="txtAcNo" destination="cOU-BO-6MQ" id="aii-AF-Gpz"/>
@@ -1454,8 +1456,8 @@
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CARD NUMBER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="23V-3u-o4b">
-                                        <rect key="frame" x="10" y="240" width="205" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CONFIRM THE EMAIL ADDRESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="23V-3u-o4b">
+                                        <rect key="frame" x="10" y="240" width="275" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1516,9 +1518,10 @@
                     <navigationItem key="navigationItem" id="O4d-jc-eRS"/>
                     <connections>
                         <outlet property="btnDone" destination="3XM-Yu-amC" id="027-u2-L6M"/>
+                        <outlet property="imgRadio" destination="1gu-79-JJr" id="mK2-O6-sbL"/>
                         <outlet property="tpScrlView" destination="f7v-g1-5fD" id="XlX-hT-Q3F"/>
-                        <outlet property="txtCardNo" destination="Cb6-yP-HnV" id="vMj-DU-YG1"/>
                         <outlet property="txtEmail" destination="DYc-qR-Zac" id="Dix-OT-fs7"/>
+                        <outlet property="txtEmail2" destination="Cb6-yP-HnV" id="c32-wz-cuq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoi-O5-hQh" userLabel="First Responder" sceneMemberID="firstResponder"/>

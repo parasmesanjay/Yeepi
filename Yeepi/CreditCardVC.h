@@ -18,6 +18,8 @@
     IBOutlet UITextField *txtExpireYear;
     IBOutlet UITextField *txtCCV;
     
+    IBOutlet UIImageView *imgRadio;
+
     IBOutlet UIButton *btnDone;
 }
 

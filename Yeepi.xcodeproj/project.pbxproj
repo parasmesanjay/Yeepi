@@ -13,6 +13,7 @@
 		0119A26B1E97C3BF00DEC457 /* ActiveTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119A26A1E97C3BF00DEC457 /* ActiveTaskView.m */; };
 		0119A26E1E97C40000DEC457 /* PreviousTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119A26D1E97C40000DEC457 /* PreviousTaskView.m */; };
 		0119A2701E97C43B00DEC457 /* Active_PreviousTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0119A26F1E97C43B00DEC457 /* Active_PreviousTaskView.xib */; };
+		01322E3A1EA0AD6C00C97045 /* radio_unckeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 01322E391EA0AD6C00C97045 /* radio_unckeck.png */; };
 		018E97B91E9618AC00F9E852 /* accept.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E97591E9618AC00F9E852 /* accept.png */; };
 		018E97BA1E9618AC00F9E852 /* add_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E975A1E9618AC00F9E852 /* add_image.png */; };
 		018E97BB1E9618AC00F9E852 /* app_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E975B1E9618AC00F9E852 /* app_logo_white.png */; };
@@ -204,6 +205,7 @@
 		0119A26C1E97C40000DEC457 /* PreviousTaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviousTaskView.h; path = CustomView/PreviousTaskView.h; sourceTree = "<group>"; };
 		0119A26D1E97C40000DEC457 /* PreviousTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousTaskView.m; path = CustomView/PreviousTaskView.m; sourceTree = "<group>"; };
 		0119A26F1E97C43B00DEC457 /* Active_PreviousTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Active_PreviousTaskView.xib; path = CustomView/Active_PreviousTaskView.xib; sourceTree = "<group>"; };
+		01322E391EA0AD6C00C97045 /* radio_unckeck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_unckeck.png; sourceTree = "<group>"; };
 		018E97591E9618AC00F9E852 /* accept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accept.png; sourceTree = "<group>"; };
 		018E975A1E9618AC00F9E852 /* add_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_image.png; sourceTree = "<group>"; };
 		018E975B1E9618AC00F9E852 /* app_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo_white.png; sourceTree = "<group>"; };
@@ -543,6 +545,7 @@
 				018E97A71E9618AC00F9E852 /* post_task.png */,
 				018E97A81E9618AC00F9E852 /* postm.png */,
 				018E97A91E9618AC00F9E852 /* raa.png */,
+				01322E391EA0AD6C00C97045 /* radio_unckeck.png */,
 				0119A2601E97A05D00DEC457 /* radio.png */,
 				018E97AA1E9618AC00F9E852 /* remove.png */,
 				018E97AB1E9618AC00F9E852 /* screen_one.png */,
@@ -1101,6 +1104,7 @@
 				018E97E81E9618AC00F9E852 /* image_bank_account.png in Resources */,
 				018E97D01E9618AC00F9E852 /* error.png in Resources */,
 				018E97FB1E9618AC00F9E852 /* minus_white.png in Resources */,
+				01322E3A1EA0AD6C00C97045 /* radio_unckeck.png in Resources */,
 				018E97C91E9618AC00F9E852 /* decoration.png in Resources */,
 				18FCD6511E6D3A2C0029E167 /* SVProgressHUD.bundle in Resources */,
 				018E97F21E9618AC00F9E852 /* lock.png in Resources */,

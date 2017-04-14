@@ -13,7 +13,9 @@
     IBOutlet TPKeyboardAvoidingScrollView *tpScrlView;
 
     IBOutlet UITextField *txtEmail;
-    IBOutlet UITextField *txtCardNo;
+    IBOutlet UITextField *txtEmail2;
+    
+    IBOutlet UIImageView *imgRadio;
     
     IBOutlet UIButton *btnDone;
 }

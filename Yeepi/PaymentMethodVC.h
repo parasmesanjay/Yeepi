@@ -15,7 +15,8 @@
     
     IBOutlet UIImageView *img_Bank_Card;
     IBOutlet UILabel *lblTitle;
-    IBOutlet UIView *btn_Bank_Card;
+    IBOutlet UIButton *btn_Bank_Card;
+
 }
 
 @end

@@ -56,6 +56,9 @@
     txtAcHolder.leftViewMode = txtInstitution.leftViewMode = txtTransit.leftViewMode =txtAcNo.leftViewMode = UITextFieldViewModeAlways;
     
     [tpScrlView setContentSize:CGSizeMake(WIDTH, btnDone.frame.origin.y+44+30)];
+    
+    [imgRadio setTintColor:WHITE_COLOR];
+    imgRadio.image =  [imgRadio.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 - (void)didReceiveMemoryWarning {
