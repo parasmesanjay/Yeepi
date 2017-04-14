@@ -189,6 +189,8 @@
 		18FCD66E1E6D3CF10029E167 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD6671E6D3CF10029E167 /* LoginVC.m */; };
 		18FCD66F1E6D3CF10029E167 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD66A1E6D3CF10029E167 /* RegisterVC.m */; };
 		18FCD6701E6D3CF10029E167 /* SplashScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD66D1E6D3CF10029E167 /* SplashScreenVC.m */; };
+		DB52778F1EA0C35A0097E2DD /* BrowseTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */; };
+		DB5277921EA0C3650097E2DD /* ActiveTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5277911EA0C3650097E2DD /* ActiveTaskTVCell.m */; };
 		DB6F39BF1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */; };
 		DB9282101E94B5AE00D8FF00 /* PostBidVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB92820F1E94B5AE00D8FF00 /* PostBidVC.m */; };
 		DB92821A1E94E26700D8FF00 /* MySegment.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9282191E94E26700D8FF00 /* MySegment.m */; };
@@ -438,6 +440,10 @@
 		18FCD66C1E6D3CF10029E167 /* SplashScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenVC.h; sourceTree = "<group>"; };
 		18FCD66D1E6D3CF10029E167 /* SplashScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenVC.m; sourceTree = "<group>"; };
 		18FCD68B1E6D3F0B0029E167 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Yeepi/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		DB52778D1EA0C35A0097E2DD /* BrowseTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowseTVCell.h; path = CellClasses/BrowseTVCell.h; sourceTree = "<group>"; };
+		DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowseTVCell.m; path = CellClasses/BrowseTVCell.m; sourceTree = "<group>"; };
+		DB5277901EA0C3650097E2DD /* ActiveTaskTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveTaskTVCell.h; path = CellClasses/ActiveTaskTVCell.h; sourceTree = "<group>"; };
+		DB5277911EA0C3650097E2DD /* ActiveTaskTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActiveTaskTVCell.m; path = CellClasses/ActiveTaskTVCell.m; sourceTree = "<group>"; };
 		DB6F39BD1E9FAF9D0091F0D5 /* PreviousTaskTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviousTaskTVCell.h; path = CellClasses/PreviousTaskTVCell.h; sourceTree = "<group>"; };
 		DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousTaskTVCell.m; path = CellClasses/PreviousTaskTVCell.m; sourceTree = "<group>"; };
 		DB92820E1E94B5AE00D8FF00 /* PostBidVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostBidVC.h; sourceTree = "<group>"; };
@@ -931,6 +937,10 @@
 			isa = PBXGroup;
 			children = (
 				189FCFF11E7AC5ED0080FC09 /* Cell.xib */,
+				DB5277901EA0C3650097E2DD /* ActiveTaskTVCell.h */,
+				DB5277911EA0C3650097E2DD /* ActiveTaskTVCell.m */,
+				DB52778D1EA0C35A0097E2DD /* BrowseTVCell.h */,
+				DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */,
 				DB6F39BD1E9FAF9D0091F0D5 /* PreviousTaskTVCell.h */,
 				DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */,
 			);
@@ -1221,6 +1231,7 @@
 				1899A4CA1E827F53004E4375 /* NotificationVC.m in Sources */,
 				0119A26E1E97C40000DEC457 /* PreviousTaskView.m in Sources */,
 				184678E51E794C03006DE871 /* MoreVC.m in Sources */,
+				DB52778F1EA0C35A0097E2DD /* BrowseTVCell.m in Sources */,
 				18FCD6421E6D3A2C0029E167 /* AFHTTPRequestOperationManager.m in Sources */,
 				0119A2681E97B6BA00DEC457 /* TaskPostedVC.m in Sources */,
 				18FCD6441E6D3A2C0029E167 /* AFNetworkReachabilityManager.m in Sources */,
@@ -1234,6 +1245,7 @@
 				18C885EA1E7BAEB000A87CD6 /* SelfTasksVC.m in Sources */,
 				184678DF1E794BCF006DE871 /* PostsTaskVC.m in Sources */,
 				18FCD6521E6D3A2C0029E167 /* SVProgressHUD.m in Sources */,
+				DB5277921EA0C3650097E2DD /* ActiveTaskTVCell.m in Sources */,
 				18FCD64A1E6D3A2C0029E167 /* APPhotoLibrary.m in Sources */,
 				18C885F01E7BD97B00A87CD6 /* CreateTaskVC.m in Sources */,
 				184678E21E794BE9006DE871 /* MessagesVC.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "BrowseVC.h"
+#import "BrowseTVCell.h"
 
 @interface BrowseVC ()
 
@@ -42,9 +43,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *itemCell = [[[NSBundle mainBundle]loadNibNamed:@"Cell" owner:self options:nil ]objectAtIndex:3];
+    BrowseTVCell *itemCell = [[[NSBundle mainBundle]loadNibNamed:@"Cell" owner:self options:nil ]objectAtIndex:3];
     UIView *view = [itemCell viewWithTag:1];
     view.layer.cornerRadius = 10;
+    
+    [itemCell.btnMakeOffer addTarget:self action:@selector(tapMakeOffer:) forControlEvents:UIControlEventTouchUpInside];
+    itemCell.tag = indexPath.row;
     
     itemCell.backgroundColor = CLEAR_COLOR;
     return itemCell;
@@ -54,6 +58,12 @@
 {
     
 }
+
+-(void)tapMakeOffer:(UIButton *)sender
+{
+    [self performSegueWithIdentifier:@"goMakeOffer" sender:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
