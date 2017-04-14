@@ -191,6 +191,7 @@
 		18FCD6701E6D3CF10029E167 /* SplashScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD66D1E6D3CF10029E167 /* SplashScreenVC.m */; };
 		DB52778F1EA0C35A0097E2DD /* BrowseTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */; };
 		DB5277921EA0C3650097E2DD /* ActiveTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5277911EA0C3650097E2DD /* ActiveTaskTVCell.m */; };
+		DB5277A31EA0D1A60097E2DD /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5277A21EA0D1A60097E2DD /* Empty.xib */; };
 		DB6F39BF1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */; };
 		DB9282101E94B5AE00D8FF00 /* PostBidVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB92820F1E94B5AE00D8FF00 /* PostBidVC.m */; };
 		DB92821A1E94E26700D8FF00 /* MySegment.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9282191E94E26700D8FF00 /* MySegment.m */; };
@@ -444,6 +445,7 @@
 		DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowseTVCell.m; path = CellClasses/BrowseTVCell.m; sourceTree = "<group>"; };
 		DB5277901EA0C3650097E2DD /* ActiveTaskTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveTaskTVCell.h; path = CellClasses/ActiveTaskTVCell.h; sourceTree = "<group>"; };
 		DB5277911EA0C3650097E2DD /* ActiveTaskTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActiveTaskTVCell.m; path = CellClasses/ActiveTaskTVCell.m; sourceTree = "<group>"; };
+		DB5277A21EA0D1A60097E2DD /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		DB6F39BD1E9FAF9D0091F0D5 /* PreviousTaskTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviousTaskTVCell.h; path = CellClasses/PreviousTaskTVCell.h; sourceTree = "<group>"; };
 		DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousTaskTVCell.m; path = CellClasses/PreviousTaskTVCell.m; sourceTree = "<group>"; };
 		DB92820E1E94B5AE00D8FF00 /* PostBidVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostBidVC.h; sourceTree = "<group>"; };
@@ -662,6 +664,7 @@
 		18F65A161E6FD1140047F593 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				DB5277A21EA0D1A60097E2DD /* Empty.xib */,
 				18F65A1C1E6FD1E30047F593 /* Header.xib */,
 				18F65A191E6FD1C50047F593 /* HeaderLogin.h */,
 				18F65A1A1E6FD1C50047F593 /* HeaderLogin.m */,
@@ -1098,6 +1101,7 @@
 				18FCD5F31E6D33040029E167 /* Montserrat-ExtraBold.otf in Resources */,
 				018E97D91E9618AC00F9E852 /* green_remove.png in Resources */,
 				018E97D61E9618AC00F9E852 /* green_house.png in Resources */,
+				DB5277A31EA0D1A60097E2DD /* Empty.xib in Resources */,
 				018E97EA1E9618AC00F9E852 /* image_doller.png in Resources */,
 				018E98071E9618AC00F9E852 /* post_task.png in Resources */,
 				018E97FC1E9618AC00F9E852 /* more.png in Resources */,
