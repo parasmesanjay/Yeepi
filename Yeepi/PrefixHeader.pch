@@ -23,6 +23,7 @@
 #import "HeaderLogin.h"
 #import "MySegment.h"
 #import "TPKeyboardAvoidingScrollView.h"
+#import "BEMCheckBox.h"
 
 #import "ActiveTaskView.h"
 #import "PreviousTaskView.h"
