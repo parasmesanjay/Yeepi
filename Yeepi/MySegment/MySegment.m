@@ -12,6 +12,8 @@
 {
     float vHeight,vWidth;
     
+    UILabel *backLayer;
+    
 }
 @synthesize segmentSecond,tintColor,borderColor;
 
@@ -34,6 +36,14 @@
     self.backgroundColor = CLEAR_COLOR;
     self.layer.cornerRadius = vHeight/2;
     
+    
+//    backLayer = [[UILabel alloc]initWithFrame:CGRectMake(0, 0,btnWd,btnHt)];
+//    backLayer.backgroundColor = tintColor;
+//    [self addSubview:backLayer];
+//    backLayer.layer.cornerRadius = btnHt/2;
+//    backLayer.clipsToBounds = YES;
+
+    
     _segmentFirst = [[UIButton alloc]initWithFrame:CGRectMake(0, 0,btnWd,btnHt)];
     _segmentFirst.layer.cornerRadius = btnHt/2;
     [self addSubview:_segmentFirst];
@@ -54,6 +64,7 @@
     [self addSubview:segmentSecond];
 
     [self addSubview:_segmentFirst];
+    
 
 }
 
@@ -63,12 +74,20 @@
     {
         segmentSecond.backgroundColor = CLEAR_COLOR;
         _segmentFirst.backgroundColor = tintColor;
+        
+//        [UIView animateWithDuration:0.2 animations:^{
+//            backLayer.frame = _segmentFirst.frame;
+//        }];
         [self addSubview:_segmentFirst];
     }
     else
     {
         segmentSecond.backgroundColor = tintColor;
         _segmentFirst.backgroundColor = CLEAR_COLOR;
+//        [UIView animateWithDuration:0.2 animations:^{
+//            backLayer.frame = segmentSecond.frame;
+//        }];
+        
         [self addSubview:segmentSecond];
 
     }

@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyProfileVC : UIViewController
+@interface MyProfileVC : UIViewController<segementDelegate>
+{
+    IBOutlet UIScrollView *mainScroll;
+    
+    IBOutlet MySegment *mySegment;
 
+    IBOutlet UIButton *btnProceedFill;
+    IBOutlet UIButton *btnAddSkill;
+    IBOutlet UIButton *btnAddTranp;
+    
+    
+}
 @end
