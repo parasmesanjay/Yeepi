@@ -52,6 +52,7 @@
     
     txtLocation.clearButtonMode = UITextFieldViewModeWhileEditing;
     
+    // today
 }
 
 - (void)didReceiveMemoryWarning {
