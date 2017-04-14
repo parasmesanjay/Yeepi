@@ -48,8 +48,28 @@
     vw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 44)];
     txtExpireMonth.leftView = vw;
     
+    UIView *arrow = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 25, 44)];
+    
+    UIImageView *imgArrow = [[UIImageView alloc] initWithFrame:CGRectMake(0, 14, 20, 16)];
+    imgArrow.image = [UIImage imageNamed:@"down_arrow.png"];
+    
+    [arrow addSubview:imgArrow];
+    
+    txtExpireMonth.rightView = arrow;
+    
     vw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 44)];
     txtExpireYear.leftView = vw;
+    
+    arrow = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 25, 44)];
+    
+    imgArrow = [[UIImageView alloc] initWithFrame:CGRectMake(0, 14, 20, 16)];
+    imgArrow.image = [UIImage imageNamed:@"down_arrow.png"];
+    
+    [arrow addSubview:imgArrow];
+    
+    txtExpireYear.rightView = arrow;
+    
+    txtExpireMonth.rightViewMode = txtExpireYear.rightViewMode = UITextFieldViewModeAlways;
     
     txtHolderName.leftViewMode =txtCardNo.leftViewMode = txtExpireMonth.leftViewMode =txtExpireYear.leftViewMode = UITextFieldViewModeAlways;
     
