@@ -417,7 +417,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-zM-MQe">
-                        <rect key="frame" x="5" y="10" width="365" height="306"/>
+                        <rect key="frame" x="5" y="10" width="365" height="307"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="green_house.png" translatesAutoresizingMaskIntoConstraints="NO" id="p7m-Te-4se">
