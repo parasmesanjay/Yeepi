@@ -50,6 +50,8 @@
     [itemCell.btnMakeOffer addTarget:self action:@selector(tapMakeOffer:) forControlEvents:UIControlEventTouchUpInside];
     itemCell.tag = indexPath.row;
     
+    itemCell.btnMakeOffer.layer.cornerRadius = itemCell.btnMakeOffer.frame.size.height/2;
+    
     itemCell.backgroundColor = CLEAR_COLOR;
     return itemCell;
 }

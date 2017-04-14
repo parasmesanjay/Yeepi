@@ -54,6 +54,11 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)tapMakeOffer:(id)sender
+{
+    
+}
+
 #pragma text view Delegate
 
 - (void)textViewDidEndEditing:(UITextView *)theTextView

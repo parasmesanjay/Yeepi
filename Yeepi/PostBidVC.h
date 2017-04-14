@@ -18,5 +18,6 @@
     IBOutlet UITextView *textComment;
     IBOutlet UIView *viewComment;
     
+    IBOutlet UIView *viewThankYou;
 }
 @end

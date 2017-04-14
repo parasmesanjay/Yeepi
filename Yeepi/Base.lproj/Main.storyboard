@@ -1742,6 +1742,9 @@
                                         <state key="normal" title="Make Your Offer">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapMakeOffer:" destination="M1m-iq-eGe" eventType="touchUpInside" id="zbH-eC-UI0"/>
+                                        </connections>
                                     </button>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="delete_white.png" id="nVs-LO-5Og">
                                         <rect key="frame" x="89" y="475" width="17" height="22"/>
@@ -1813,11 +1816,12 @@
                         <outlet property="textAmt" destination="lQL-Bc-IVx" id="zbG-5B-o1s"/>
                         <outlet property="textComment" destination="WU4-GA-OXk" id="GK5-fT-Yj9"/>
                         <outlet property="viewComment" destination="FJ5-kN-LMp" id="30U-z6-AJ1"/>
+                        <outlet property="viewThankYou" destination="xiR-HX-ZQB" id="69C-Cu-btS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0na-t7-X6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3035.5" y="-1493.5"/>
+            <point key="canvasLocation" x="3036" y="-1495"/>
         </scene>
         <!--Browse-->
         <scene sceneID="JFG-wd-TMS">
@@ -1846,7 +1850,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2j1-cz-gnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3035.5" y="-728.5"/>
+            <point key="canvasLocation" x="3036" y="-730"/>
         </scene>
         <!--Post Task-->
         <scene sceneID="CJF-Te-lBy">
@@ -2327,7 +2331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SiQ-gV-WQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2430.625" y="-728.14166666666665"/>
+            <point key="canvasLocation" x="2431" y="-729"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lxE-Rg-m4g">
