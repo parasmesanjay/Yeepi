@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface PaypalAccountVC : UIViewController
+{
+    IBOutlet TPKeyboardAvoidingScrollView *tpScrlView;
+
+    IBOutlet UITextField *txtEmail;
+    IBOutlet UITextField *txtCardNo;
+    
+    IBOutlet UIButton *btnDone;
+}
 
 @end
