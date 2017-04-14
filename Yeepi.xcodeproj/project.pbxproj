@@ -14,6 +14,11 @@
 		0119A26E1E97C40000DEC457 /* PreviousTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119A26D1E97C40000DEC457 /* PreviousTaskView.m */; };
 		0119A2701E97C43B00DEC457 /* Active_PreviousTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0119A26F1E97C43B00DEC457 /* Active_PreviousTaskView.xib */; };
 		01322E3A1EA0AD6C00C97045 /* radio_unckeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 01322E391EA0AD6C00C97045 /* radio_unckeck.png */; };
+		01322E451EA0D99A00C97045 /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01322E3E1EA0D99A00C97045 /* BEMAnimationManager.m */; };
+		01322E461EA0D99A00C97045 /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 01322E401EA0D99A00C97045 /* BEMCheckBox.m */; };
+		01322E471EA0D99A00C97045 /* BEMPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01322E421EA0D99A00C97045 /* BEMPathManager.m */; };
+		01322E481EA0D99A00C97045 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 01322E431EA0D99A00C97045 /* LICENSE */; };
+		01322E491EA0D99A00C97045 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 01322E441EA0D99A00C97045 /* README.md */; };
 		018E97B91E9618AC00F9E852 /* accept.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E97591E9618AC00F9E852 /* accept.png */; };
 		018E97BA1E9618AC00F9E852 /* add_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E975A1E9618AC00F9E852 /* add_image.png */; };
 		018E97BB1E9618AC00F9E852 /* app_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E975B1E9618AC00F9E852 /* app_logo_white.png */; };
@@ -209,6 +214,14 @@
 		0119A26D1E97C40000DEC457 /* PreviousTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousTaskView.m; path = CustomView/PreviousTaskView.m; sourceTree = "<group>"; };
 		0119A26F1E97C43B00DEC457 /* Active_PreviousTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Active_PreviousTaskView.xib; path = CustomView/Active_PreviousTaskView.xib; sourceTree = "<group>"; };
 		01322E391EA0AD6C00C97045 /* radio_unckeck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_unckeck.png; sourceTree = "<group>"; };
+		01322E3D1EA0D99A00C97045 /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimationManager.h; sourceTree = "<group>"; };
+		01322E3E1EA0D99A00C97045 /* BEMAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMAnimationManager.m; sourceTree = "<group>"; };
+		01322E3F1EA0D99A00C97045 /* BEMCheckBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMCheckBox.h; sourceTree = "<group>"; };
+		01322E401EA0D99A00C97045 /* BEMCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMCheckBox.m; sourceTree = "<group>"; };
+		01322E411EA0D99A00C97045 /* BEMPathManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMPathManager.h; sourceTree = "<group>"; };
+		01322E421EA0D99A00C97045 /* BEMPathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPathManager.m; sourceTree = "<group>"; };
+		01322E431EA0D99A00C97045 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		01322E441EA0D99A00C97045 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		018E97591E9618AC00F9E852 /* accept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accept.png; sourceTree = "<group>"; };
 		018E975A1E9618AC00F9E852 /* add_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_image.png; sourceTree = "<group>"; };
 		018E975B1E9618AC00F9E852 /* app_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo_white.png; sourceTree = "<group>"; };
@@ -468,6 +481,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01322E3B1EA0D99A00C97045 /* BEMCheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				01322E3C1EA0D99A00C97045 /* Classes */,
+				01322E431EA0D99A00C97045 /* LICENSE */,
+				01322E441EA0D99A00C97045 /* README.md */,
+			);
+			path = BEMCheckBox;
+			sourceTree = "<group>";
+		};
+		01322E3C1EA0D99A00C97045 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				01322E3D1EA0D99A00C97045 /* BEMAnimationManager.h */,
+				01322E3E1EA0D99A00C97045 /* BEMAnimationManager.m */,
+				01322E3F1EA0D99A00C97045 /* BEMCheckBox.h */,
+				01322E401EA0D99A00C97045 /* BEMCheckBox.m */,
+				01322E411EA0D99A00C97045 /* BEMPathManager.h */,
+				01322E421EA0D99A00C97045 /* BEMPathManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		018E97581E9618AC00F9E852 /* icon_img */ = {
 			isa = PBXGroup;
 			children = (
@@ -770,6 +806,7 @@
 				18FCD68B1E6D3F0B0029E167 /* PrefixHeader.pch */,
 				18FCD6061E6D3A2C0029E167 /* AFNetworking */,
 				18FCD61A1E6D3A2C0029E167 /* AppPhoto */,
+				01322E3B1EA0D99A00C97045 /* BEMCheckBox */,
 				18FCD61E1E6D3A2C0029E167 /* MBProgressHUD */,
 				18FCD6231E6D3A2C0029E167 /* Reachability.h */,
 				18FCD6241E6D3A2C0029E167 /* Reachability.m */,
@@ -1118,6 +1155,7 @@
 				018E97E81E9618AC00F9E852 /* image_bank_account.png in Resources */,
 				018E97D01E9618AC00F9E852 /* error.png in Resources */,
 				018E97FB1E9618AC00F9E852 /* minus_white.png in Resources */,
+				01322E481EA0D99A00C97045 /* LICENSE in Resources */,
 				01322E3A1EA0AD6C00C97045 /* radio_unckeck.png in Resources */,
 				018E97C91E9618AC00F9E852 /* decoration.png in Resources */,
 				18FCD6511E6D3A2C0029E167 /* SVProgressHUD.bundle in Resources */,
@@ -1237,6 +1275,7 @@
 				184678E51E794C03006DE871 /* MoreVC.m in Sources */,
 				DB52778F1EA0C35A0097E2DD /* BrowseTVCell.m in Sources */,
 				18FCD6421E6D3A2C0029E167 /* AFHTTPRequestOperationManager.m in Sources */,
+				01322E471EA0D99A00C97045 /* BEMPathManager.m in Sources */,
 				0119A2681E97B6BA00DEC457 /* TaskPostedVC.m in Sources */,
 				18FCD6441E6D3A2C0029E167 /* AFNetworkReachabilityManager.m in Sources */,
 				187C39EE1E6D73890044FE2B /* Login.m in Sources */,
@@ -1246,6 +1285,7 @@
 				18FCD6461E6D3A2C0029E167 /* AFURLConnectionOperation.m in Sources */,
 				18FCD6451E6D3A2C0029E167 /* AFSecurityPolicy.m in Sources */,
 				18F65A151E6FCF090047F593 /* Register.m in Sources */,
+				01322E491EA0D99A00C97045 /* README.md in Sources */,
 				18C885EA1E7BAEB000A87CD6 /* SelfTasksVC.m in Sources */,
 				184678DF1E794BCF006DE871 /* PostsTaskVC.m in Sources */,
 				18FCD6521E6D3A2C0029E167 /* SVProgressHUD.m in Sources */,
@@ -1273,6 +1313,7 @@
 				18FCD64E1E6D3A2C0029E167 /* Reachability.m in Sources */,
 				18FCD6471E6D3A2C0029E167 /* AFURLRequestSerialization.m in Sources */,
 				18FCD6591E6D3A2C0029E167 /* WebServiceCalls.m in Sources */,
+				01322E451EA0D99A00C97045 /* BEMAnimationManager.m in Sources */,
 				01A631BF1E9BB08500D83A05 /* PaymentHistoryVC.m in Sources */,
 				18C885ED1E7BBE2400A87CD6 /* ChatVC.m in Sources */,
 				0119A26B1E97C3BF00DEC457 /* ActiveTaskView.m in Sources */,
@@ -1286,6 +1327,7 @@
 				18FCD64C1E6D3A2C0029E167 /* MBProgressHUD.m in Sources */,
 				18FCD6531E6D3A2C0029E167 /* SVRadialGradientLayer.m in Sources */,
 				18F65A1B1E6FD1C50047F593 /* HeaderLogin.m in Sources */,
+				01322E461EA0D99A00C97045 /* BEMCheckBox.m in Sources */,
 				DB9282101E94B5AE00D8FF00 /* PostBidVC.m in Sources */,
 				18FCD6561E6D3A2C0029E167 /* TPKeyboardAvoidingTableView.m in Sources */,
 				01A631B31E9BA2EA00D83A05 /* CreditCardVC.m in Sources */,
