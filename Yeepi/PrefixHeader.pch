@@ -46,4 +46,6 @@
 #include "MyProfileVC.h"
 #include "TaskAlertVC.h"
 
+#include "LoginVC.h"
+
 #endif

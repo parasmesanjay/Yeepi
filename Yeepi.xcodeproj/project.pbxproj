@@ -13,6 +13,9 @@
 		0119A26B1E97C3BF00DEC457 /* ActiveTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119A26A1E97C3BF00DEC457 /* ActiveTaskView.m */; };
 		0119A26E1E97C40000DEC457 /* PreviousTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0119A26D1E97C40000DEC457 /* PreviousTaskView.m */; };
 		0119A2701E97C43B00DEC457 /* Active_PreviousTaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0119A26F1E97C43B00DEC457 /* Active_PreviousTaskView.xib */; };
+		011E97371EA4D85300F3F55E /* ForgotPassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E97361EA4D85200F3F55E /* ForgotPassVC.m */; };
+		011E973B1EA4ECDE00F3F55E /* OTPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E973A1EA4ECDE00F3F55E /* OTPVC.m */; };
+		011E973E1EA4ED0900F3F55E /* ResetPassVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 011E973D1EA4ED0900F3F55E /* ResetPassVC.m */; };
 		01322E3A1EA0AD6C00C97045 /* radio_unckeck.png in Resources */ = {isa = PBXBuildFile; fileRef = 01322E391EA0AD6C00C97045 /* radio_unckeck.png */; };
 		01322E451EA0D99A00C97045 /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01322E3E1EA0D99A00C97045 /* BEMAnimationManager.m */; };
 		01322E461EA0D99A00C97045 /* BEMCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 01322E401EA0D99A00C97045 /* BEMCheckBox.m */; };
@@ -213,6 +216,12 @@
 		0119A26C1E97C40000DEC457 /* PreviousTaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviousTaskView.h; path = CustomView/PreviousTaskView.h; sourceTree = "<group>"; };
 		0119A26D1E97C40000DEC457 /* PreviousTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousTaskView.m; path = CustomView/PreviousTaskView.m; sourceTree = "<group>"; };
 		0119A26F1E97C43B00DEC457 /* Active_PreviousTaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Active_PreviousTaskView.xib; path = CustomView/Active_PreviousTaskView.xib; sourceTree = "<group>"; };
+		011E97351EA4D85200F3F55E /* ForgotPassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ForgotPassVC.h; path = LoginVC/ForgotPassVC.h; sourceTree = "<group>"; };
+		011E97361EA4D85200F3F55E /* ForgotPassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ForgotPassVC.m; path = LoginVC/ForgotPassVC.m; sourceTree = "<group>"; };
+		011E97391EA4ECDE00F3F55E /* OTPVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPVC.h; sourceTree = "<group>"; };
+		011E973A1EA4ECDE00F3F55E /* OTPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPVC.m; sourceTree = "<group>"; };
+		011E973C1EA4ED0900F3F55E /* ResetPassVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPassVC.h; sourceTree = "<group>"; };
+		011E973D1EA4ED0900F3F55E /* ResetPassVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPassVC.m; sourceTree = "<group>"; };
 		01322E391EA0AD6C00C97045 /* radio_unckeck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_unckeck.png; sourceTree = "<group>"; };
 		01322E3D1EA0D99A00C97045 /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimationManager.h; sourceTree = "<group>"; };
 		01322E3E1EA0D99A00C97045 /* BEMAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMAnimationManager.m; sourceTree = "<group>"; };
@@ -481,6 +490,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011E97381EA4ECB300F3F55E /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				011E97351EA4D85200F3F55E /* ForgotPassVC.h */,
+				011E97361EA4D85200F3F55E /* ForgotPassVC.m */,
+				011E97391EA4ECDE00F3F55E /* OTPVC.h */,
+				011E973A1EA4ECDE00F3F55E /* OTPVC.m */,
+				011E973C1EA4ED0900F3F55E /* ResetPassVC.h */,
+				011E973D1EA4ED0900F3F55E /* ResetPassVC.m */,
+			);
+			name = "Forgot Password";
+			sourceTree = "<group>";
+		};
 		01322E3B1EA0D99A00C97045 /* BEMCheckBox */ = {
 			isa = PBXGroup;
 			children = (
@@ -929,6 +951,7 @@
 			children = (
 				18FCD66B1E6D3CF10029E167 /* Splash */,
 				18FCD6651E6D3CF10029E167 /* LoginVC */,
+				011E97381EA4ECB300F3F55E /* Forgot Password */,
 				18FCD6681E6D3CF10029E167 /* RegisterVC */,
 				184678D61E7947F0006DE871 /* TabBarController */,
 				DB9282171E94D47200D8FF00 /* MyTask Related VC */,
@@ -1295,6 +1318,7 @@
 				184678E21E794BE9006DE871 /* MessagesVC.m in Sources */,
 				18FCD6431E6D3A2C0029E167 /* AFHTTPSessionManager.m in Sources */,
 				18FCD64F1E6D3A2C0029E167 /* StarRatingControl.m in Sources */,
+				011E973B1EA4ECDE00F3F55E /* OTPVC.m in Sources */,
 				18FCD64D1E6D3A2C0029E167 /* README.mdown in Sources */,
 				18FCD6571E6D3A2C0029E167 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				01CBB47B1E99184000C20F41 /* PaymentMethodVC.m in Sources */,
@@ -1306,10 +1330,12 @@
 				18FCD66F1E6D3CF10029E167 /* RegisterVC.m in Sources */,
 				184678DC1E794BAD006DE871 /* BrowseVC.m in Sources */,
 				1899A4C71E8278DF004E4375 /* TaxNumberVC.m in Sources */,
+				011E973E1EA4ED0900F3F55E /* ResetPassVC.m in Sources */,
 				01A631C71E9BC05F00D83A05 /* TaskAlertVC.m in Sources */,
 				DB6F39BF1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m in Sources */,
 				18FCD6541E6D3A2C0029E167 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				DB92821A1E94E26700D8FF00 /* MySegment.m in Sources */,
+				011E97371EA4D85300F3F55E /* ForgotPassVC.m in Sources */,
 				18FCD64E1E6D3A2C0029E167 /* Reachability.m in Sources */,
 				18FCD6471E6D3A2C0029E167 /* AFURLRequestSerialization.m in Sources */,
 				18FCD6591E6D3A2C0029E167 /* WebServiceCalls.m in Sources */,

@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface TaxNumberVC : UIViewController
-
+{
+    IBOutlet UITextField *txtGSTTax;
+    IBOutlet UITextField *txtPSTTax;
+    
+    IBOutlet UIButton *btnDone;
+}
 @end

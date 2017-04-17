@@ -1,46 +1,44 @@
 //
-//  ChangePasswordVC.m
+//  ResetPassVC.m
 //  Yeepi
 //
-//  Created by Apple on 22/03/17.
+//  Created by Ashish Kumar Sharma on 17/04/17.
 //  Copyright © 2017 Apple. All rights reserved.
 //
 
-#import "ChangePasswordVC.h"
+#import "ResetPassVC.h"
 
-@interface ChangePasswordVC ()
+@interface ResetPassVC ()
 
 @end
 
-@implementation ChangePasswordVC
+@implementation ResetPassVC
 {
     NSArray *txtArray;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // Do any additional setup after loading the view.
     
     GET_HEADER_VIEW
     header.lblTitle.text = @"CHANGE PASSWORD";
     STATUS_BAR
     self.view.backgroundColor = APP_COLOR_BLUE;
     
-    viewOldPass.layer.borderWidth = viewNewPass1.layer.borderWidth = viewNewPass2.layer.borderWidth = 2;
+    viewPass1.layer.borderWidth = viewPass2.layer.borderWidth = 2;
     
-    viewOldPass.layer.borderColor = viewNewPass1.layer.borderColor = viewNewPass2.layer.borderColor = [WHITE_COLOR CGColor]; //[[UIColor colorWithRed:53/255.0 green:62/255.0 blue:91/255.0 alpha:1.0] CGColor];
+    viewPass1.layer.borderColor = viewPass2.layer.borderColor = [WHITE_COLOR CGColor]; //[[UIColor colorWithRed:53/255.0 green:62/255.0 blue:91/255.0 alpha:1.0] CGColor];
     
-    viewOldPass.layer.cornerRadius = viewNewPass1.layer.cornerRadius = viewNewPass2.layer.cornerRadius = 25;
+    viewPass1.layer.cornerRadius = viewPass2.layer.cornerRadius = 25;
     btnDone.layer.cornerRadius = 22;
     
-    viewOldPass.layer.masksToBounds = viewNewPass1.layer.masksToBounds = viewNewPass2.layer.masksToBounds = btnDone.layer.masksToBounds = YES;
+    viewPass1.layer.masksToBounds = viewPass2.layer.masksToBounds = btnDone.layer.masksToBounds = YES;
     
-    txtOldPass.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter old Password" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:135/255.0 green:145/255.0 blue:155/255.0 alpha:1.0]}];
+    [txtPass1 setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+    [txtPass2 setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
     
-    txtNewPass1.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter new Password" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:135/255.0 green:145/255.0 blue:155/255.0 alpha:1.0]}];
-    
-    txtNewPass2.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm new Password" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:135/255.0 green:145/255.0 blue:155/255.0 alpha:1.0]}];
-    
-    txtArray = @[txtOldPass, txtNewPass1, txtNewPass2];
+    txtArray = @[txtPass1, txtPass2];
     
     int i =0;
     for (UITextField *txt in txtArray)
@@ -93,7 +91,9 @@
 
 - (IBAction)btnDoneClk:(id)sender
 {
-    
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginVC *obj = [storybord instantiateViewControllerWithIdentifier:@"LoginVC"];
+    [self.navigationController pushViewController:obj animated:YES];
 }
 
 @end

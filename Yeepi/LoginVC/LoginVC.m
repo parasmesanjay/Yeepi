@@ -49,5 +49,7 @@
 {
     [super didReceiveMemoryWarning];
 }
+
 HIDE_KEY_ON_TOUCH
+
 @end
