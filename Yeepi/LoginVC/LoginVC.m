@@ -50,6 +50,45 @@
     [super didReceiveMemoryWarning];
 }
 
+/*
+ *   Method : POST
+ *   Method : user login
+ *   Required Params : email , password , device_token , device_type
+ *   Optional Params : null
+ *   Response : Status , msg, user
+ *   URL : http://appone.biz/yeepi/api/users/login.json
+ */
+
+- (IBAction)btnLoginClk:(id)sender
+{
+    SVHUD_START
+    [self performSelector:@selector(LoginChk) withObject:nil afterDelay:0];
+}
+
+-(void) LoginChk
+{
+    @try
+    {
+        [WebServiceCalls POST:@"users/login.json" parameter:nil completionBlock:^(id JSON, WebServiceResult result)
+        {
+            SVHUD_STOP
+            @try
+            {
+            }
+            @catch (NSException *exception) {
+                
+            } @finally {
+                
+            }
+        }];
+    }
+    @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
+}
+
 HIDE_KEY_ON_TOUCH
 
 @end

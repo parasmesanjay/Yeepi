@@ -37,17 +37,9 @@ static NSString *getuserphone;
             if ([WebServiceCalls isNetwork]==YES)
             {
                 NSString *urlString = [NSString stringWithFormat:@"%@%@",BASE_URL,url];
-                NSString *str = @"{\"Email\":\"townhouse123@gmail.com\",\"Password\":\"12345\"}";
 
                 [manager POST:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
                  {
-                     NSData *objectData = [@"{\"Email\":\"townhouse123@gmail.com\",\"Password\":\"12345\"}" dataUsingEncoding:NSUTF8StringEncoding];
-
-                      // NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:parameter];
-                      [formData appendPartWithFormData:objectData name:@"JSON"];
-                     
-                     
-                     
                  }
                  success:^(AFHTTPRequestOperation *operation, id responseObject)
                  {
