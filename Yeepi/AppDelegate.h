@@ -12,6 +12,11 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (strong, nonatomic) UINavigationController *navigationController;
+
++(AppDelegate *)AppDelegate;
+
+@property(nonatomic, readwrite) BOOL isFull;
 
 @end
 

@@ -15,8 +15,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
- 
-    
+
     temp = 0;
     [self performSelector:@selector(rotate) withObject:nil afterDelay:0];
     
@@ -80,8 +79,10 @@
 
 }
 
-- (IBAction)tapSkip:(id)sender{
-    
+- (IBAction)tapSkip:(id)sender
+{
+    [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"AppFlag"];
+
     [self performSegueWithIdentifier:@"toLogin" sender:nil];// toLogin
 
 }
@@ -95,6 +96,8 @@
     }
     else
     {
+        [[NSUserDefaults standardUserDefaults]setObject:@"1" forKey:@"AppFlag"];
+
         [self performSegueWithIdentifier:@"toLogin" sender:nil];// toLogin
     }
 }

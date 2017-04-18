@@ -14,9 +14,47 @@
 
 @implementation AppDelegate
 
++(AppDelegate *)AppDelegate
+{
+    return [UIApplication sharedApplication].delegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     // Override point for customization after application launch.
+    
+    [SVProgressHUD  setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD  setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
+    [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AppFlag"] == NULL)
+    {
+        return YES;
+    }
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userID"] != NULL)
+    {
+        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarController"];
+        [AppDelegate AppDelegate].navigationController=[[UINavigationController alloc] initWithRootViewController:obj];
+        self.window.rootViewController = [AppDelegate AppDelegate].navigationController;
+        [self.window makeKeyAndVisible];
+        return YES;
+    }
+    else
+    {
+        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        Login *obj = [storybord instantiateViewControllerWithIdentifier:@"Login"];
+        
+        [AppDelegate AppDelegate].navigationController=[[UINavigationController alloc] initWithRootViewController:obj];
+        self.window.rootViewController = [AppDelegate AppDelegate].navigationController;
+        [self.window makeKeyAndVisible];
+        return YES;
+    }
+    
     return YES;
 }
 

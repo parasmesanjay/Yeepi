@@ -47,5 +47,6 @@
 #include "TaskAlertVC.h"
 
 #include "LoginVC.h"
+#include "TabBarController.h"
 
 #endif

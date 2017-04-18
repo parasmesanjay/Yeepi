@@ -41,41 +41,83 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
 
 }
+
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
     return YES;
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
 
-/*
- *   Method : POST
- *   Method : user login
- *   Required Params : email , password , device_token , device_type
- *   Optional Params : null
- *   Response : Status , msg, user
- *   URL : http://appone.biz/yeepi/api/users/login.json
- */
-
 - (IBAction)btnLoginClk:(id)sender
 {
-    SVHUD_START
-    [self performSelector:@selector(LoginChk) withObject:nil afterDelay:0];
+    if (textEmail.text.length < 1)
+    {
+        [WebServiceCalls alert:@"Enter Email First."];
+    }
+    else if ([WebServiceCalls isValidEmail:textEmail.text] == NO)
+    {
+        [WebServiceCalls alert:@"Enter valid Email."];
+    }
+    else if (textPassword.text.length < 1)
+    {
+        [WebServiceCalls alert:@"Enter Password First."];
+    }
+    else
+    {
+        SVHUD_START
+        [self performSelector:@selector(LoginChk) withObject:nil afterDelay:0];
+    }
 }
 
 -(void) LoginChk
 {
     @try
     {
-        [WebServiceCalls POST:@"users/login.json" parameter:nil completionBlock:^(id JSON, WebServiceResult result)
+        // URL : http://appone.biz/yeepi/api/users/login.json
+        NSDictionary *dic = @{@"email":textEmail.text,
+                               @"password":textPassword.text,
+                               @"device_token":@"12345",
+                               @"device_type":@"ios"};
+        
+        [WebServiceCalls POST:@"users/login.json" parameter:dic completionBlock:^(id JSON, WebServiceResult result)
         {
             SVHUD_STOP
+            NSLog(@"%@", JSON);
+            NSDictionary *dict = JSON[@"response"];
             @try
             {
+                if ([dict[@"status"] integerValue] == 1)
+                {
+                    NSString *userID = [NSString stringWithFormat:@"%@", dict[@"data"][@"id"]];
+                    
+                    [[NSUserDefaults standardUserDefaults]setObject:userID forKey:@"userID"];
+                    
+                    NSString *fname = [NSString stringWithFormat:@"%@", dict[@"data"][@"first_name"]];
+                    [[NSUserDefaults standardUserDefaults]setObject:fname forKey:@"fname"];
+                    
+                    NSString *lname = [NSString stringWithFormat:@"%@", dict[@"data"][@"last_name"]];
+                    [[NSUserDefaults standardUserDefaults]setObject:lname forKey:@"lname"];
+                    
+                    NSDictionary *dic = [[NSDictionary alloc] initWithDictionary:dict[@"data"]];
+                    NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:dic];
+                    
+                    [[NSUserDefaults standardUserDefaults] setObject:myData forKey:@"userDetails"];
+                    
+                    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarControllers"];
+                    [self.navigationController pushViewController:obj animated:YES];
+                }
+                else
+                {
+                    [WebServiceCalls alert:[NSString stringWithFormat:@"%@", JSON[@"msg"]]];
+                }
             }
-            @catch (NSException *exception) {
+            @catch (NSException *exception)
+            {
                 
             } @finally {
                 
@@ -87,6 +129,10 @@
     } @finally {
         
     }
+}
+
+- (IBAction)btnDontHaveAcClk:(id)sender
+{
 }
 
 HIDE_KEY_ON_TOUCH

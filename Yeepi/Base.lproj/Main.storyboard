@@ -440,12 +440,12 @@
                                         <rect key="frame" x="15" y="14" width="33" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" id="SEg-N3-8Sm">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="12" id="SEg-N3-8Sm">
                                         <rect key="frame" x="57" y="1" width="248" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                 <color key="value" red="0.13366849922839505" green="0.90311535493827155" blue="0.29031635802469136" alpha="1" colorSpace="calibratedRGB"/>
@@ -463,12 +463,12 @@
                                         <rect key="frame" x="15" y="11" width="33" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" id="8rZ-AA-1yJ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" textAlignment="natural" minimumFontSize="12" id="8rZ-AA-1yJ">
                                         <rect key="frame" x="56" y="1" width="249" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -504,7 +504,7 @@
                                     <color key="titleColor" red="0.015686274510000001" green="0.59215686270000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="1cH-dv-MFE" kind="push" id="v4e-jS-8nE"/>
+                                    <action selector="btnDontHaveAcClk:" destination="bho-hV-drn" eventType="touchUpInside" id="xCN-TP-haf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -564,6 +564,9 @@
                                         <state key="normal" title="Already a member? Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnAlreadyMemberClk:" destination="1cH-dv-MFE" eventType="touchUpInside" id="zvx-vg-1wm"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.074509803920000006" green="0.1215686275" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -2830,7 +2833,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="lxE-Rg-m4g">
             <objects>
-                <tabBarController id="K2F-Y6-aUT" customClass="TabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="K2F-Y6-aUT" customClass="TabBarController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Vbs-Bu-py2"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="GyC-ws-N8b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -3543,7 +3546,6 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="v4e-jS-8nE"/>
         <segue reference="qS8-OP-x8M"/>
     </inferredMetricsTieBreakers>
 </document>

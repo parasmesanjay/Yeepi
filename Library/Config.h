@@ -16,11 +16,11 @@
 #define kClientID @"431281662590-2sm5ihqbmrvkv9ohg9rf80d880ucv6r8.apps.googleusercontent.com";
 #define BASE_URL_SOURCE @"http://appone.biz/eBuddha/"
 
-#define User_Id [[NSUserDefaults standardUserDefaults]objectForKey:@"userid"]
+#define User_Id [[NSUserDefaults standardUserDefaults]objectForKey:@"userID"]
 
-#define User_name [[NSUserDefaults standardUserDefaults]objectForKey:@"name"]
+#define User_Fname [[NSUserDefaults standardUserDefaults]objectForKey:@"fname"]
 
-#define User_UserName [[NSUserDefaults standardUserDefaults]objectForKey:@"username"]
+#define User_Lname [[NSUserDefaults standardUserDefaults]objectForKey:@"lname"]
 
 #define is_Poster [[NSUserDefaults standardUserDefaults]boolForKey:@"worker"] == NO
 #define is_Worker [[NSUserDefaults standardUserDefaults]boolForKey:@"worker"] == YES
