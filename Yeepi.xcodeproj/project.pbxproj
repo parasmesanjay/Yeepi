@@ -145,7 +145,6 @@
 		18F65A1B1E6FD1C50047F593 /* HeaderLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F65A1A1E6FD1C50047F593 /* HeaderLogin.m */; };
 		18F65A1D1E6FD1E30047F593 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18F65A1C1E6FD1E30047F593 /* Header.xib */; };
 		18F65A241E7017B10047F593 /* ResgisterDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F65A231E7017B10047F593 /* ResgisterDetail.m */; };
-		18F65A281E703A1E0047F593 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F65A271E703A1E0047F593 /* MapKit.framework */; };
 		18FCD5C61E6D28710029E167 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD5C51E6D28710029E167 /* main.m */; };
 		18FCD5C91E6D28710029E167 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD5C81E6D28710029E167 /* AppDelegate.m */; };
 		18FCD5CF1E6D28710029E167 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18FCD5CD1E6D28710029E167 /* Main.storyboard */; };
@@ -204,6 +203,8 @@
 		DB9282101E94B5AE00D8FF00 /* PostBidVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB92820F1E94B5AE00D8FF00 /* PostBidVC.m */; };
 		DB92821A1E94E26700D8FF00 /* MySegment.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9282191E94E26700D8FF00 /* MySegment.m */; };
 		DB92821E1E94FC9E00D8FF00 /* DashboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB92821D1E94FC9E00D8FF00 /* DashboardVC.m */; };
+		DBFE5A4D1EA75C54001AFCCC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFE5A4C1EA75C54001AFCCC /* CoreLocation.framework */; };
+		DBFE5A4F1EA76135001AFCCC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFE5A4E1EA76135001AFCCC /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -378,7 +379,6 @@
 		18F65A1C1E6FD1E30047F593 /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Header.xib; path = CustomView/Header.xib; sourceTree = "<group>"; };
 		18F65A221E7017B10047F593 /* ResgisterDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResgisterDetail.h; sourceTree = "<group>"; };
 		18F65A231E7017B10047F593 /* ResgisterDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResgisterDetail.m; sourceTree = "<group>"; };
-		18F65A271E703A1E0047F593 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		18FCD5C11E6D28710029E167 /* Yeepi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Yeepi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18FCD5C51E6D28710029E167 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18FCD5C71E6D28710029E167 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -476,6 +476,8 @@
 		DB9282191E94E26700D8FF00 /* MySegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySegment.m; path = MySegment/MySegment.m; sourceTree = "<group>"; };
 		DB92821C1E94FC9E00D8FF00 /* DashboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardVC.h; sourceTree = "<group>"; };
 		DB92821D1E94FC9E00D8FF00 /* DashboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardVC.m; sourceTree = "<group>"; };
+		DBFE5A4C1EA75C54001AFCCC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DBFE5A4E1EA76135001AFCCC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,7 +485,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F65A281E703A1E0047F593 /* MapKit.framework in Frameworks */,
+				DBFE5A4F1EA76135001AFCCC /* MapKit.framework in Frameworks */,
+				DBFE5A4D1EA75C54001AFCCC /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,7 +742,8 @@
 		18F65A261E703A1E0047F593 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18F65A271E703A1E0047F593 /* MapKit.framework */,
+				DBFE5A4E1EA76135001AFCCC /* MapKit.framework */,
+				DBFE5A4C1EA75C54001AFCCC /* CoreLocation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1127,6 +1131,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 5PAZYS3D4S;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

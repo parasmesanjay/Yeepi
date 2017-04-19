@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-@interface ResgisterDetail : UIViewController<MKMapViewDelegate>
+#import <CoreLocation/CoreLocation.h>
+
+@interface ResgisterDetail : UIViewController<MKMapViewDelegate,CLLocationManagerDelegate>
 {
     IBOutlet TPKeyboardAvoidingScrollView *tpScroll;
     
@@ -33,6 +35,8 @@
 
     IBOutlet UISearchBar *search;
     
-    
+    BOOL locTag;
+    CLLocationManager *lmanager;
+
 }
 @end

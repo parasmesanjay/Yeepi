@@ -40,13 +40,33 @@
         textField.textColor = WHITE_COLOR;
     }
     
+    locTag = false;
     btnCreate.layer.cornerRadius = 22;
+    
+    lmanager = [[CLLocationManager alloc]init];
+    [lmanager requestWhenInUseAuthorization];
+    //[lmanager startUpdatingLocation];
+    
+    [mapLoc showsUserLocation];
+    
+    //lmanager.delegate = self;
 }
+
+//-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+//{
+//
+//    //NSLog(@"lat --   %f",locations.lastObject.coordinate.latitude);
+//    
+//}
+
 
 - (IBAction)tapUseCurrentLocation:(id)sender
 {
+    locTag =YES;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (mapLoc.userLocation.coordinate, 50000, 50000);
     [mapLoc setRegion:region animated:NO];
+    // [lmanager stopUpdatingLocation];
+
 }
 
 
@@ -60,6 +80,9 @@
 {
     @try
     {
+        if (locTag == YES) {
+            
+        
         CLLocationCoordinate2D locationResion;
         locationResion.latitude = map.region.center.latitude;
         locationResion.longitude = map.region.center.longitude;
@@ -87,7 +110,7 @@
                      @try
                      {
                          lblAddress.text = [NSString stringWithFormat:@"%@",[[[json objectForKey:@"results"] objectAtIndex:0] objectForKey:@"formatted_address"]];
-                         //textAddress.text = lblAddress.text;
+                         textAddress.text = lblAddress.text;
                          
                          //  city =  [[[[[json objectForKey:@"results"] objectAtIndex:0] objectForKey:@"address_components"] objectAtIndex:2] objectForKey:@"long_name"];
                          //                         state =  [[[[[json objectForKey:@"results"] objectAtIndex:0] objectForKey:@"address_components"] objectAtIndex:3] objectForKey:@"long_name"];
@@ -112,18 +135,23 @@
          {
          
          }];
+        }
     }
     @catch (NSException *exception)
     {}
 }
 - (IBAction)tapSelectLocation:(id)sender {
     
+    locTag = YES;
+
     [UIView animateWithDuration:0.2 animations:^{
         viewMap.frame = CGRectMake(0,0, WIDTH, self.view.frame.size.height);
     }];
     
 }
 - (IBAction)tapDoneLoc:(id)sender {
+    locTag = NO;
+
     [UIView animateWithDuration:0.2 animations:^{
         viewMap.frame = CGRectMake(0,HEIGHT, WIDTH, HEIGHT);
     }];
