@@ -621,12 +621,12 @@
                                         <rect key="frame" x="15" y="14" width="33" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" id="Urh-to-tHw">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="12" id="Urh-to-tHw">
                                         <rect key="frame" x="57" y="1" width="248" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                 <color key="value" red="0.13366849920000001" green="0.90311535489999994" blue="0.290316358" alpha="1" colorSpace="calibratedRGB"/>
@@ -644,12 +644,12 @@
                                         <rect key="frame" x="15" y="11" width="33" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" textAlignment="natural" minimumFontSize="17" id="hPe-72-NBf">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter password" textAlignment="natural" minimumFontSize="12" id="hPe-72-NBf">
                                         <rect key="frame" x="56" y="1" width="249" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -663,7 +663,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="c8z-Wl-i80" kind="push" id="SeJ-hF-jlz"/>
+                                    <action selector="btnSignUpClk:" destination="a1d-IF-b8y" eventType="touchUpInside" id="VM8-Lp-aHN"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -676,7 +676,7 @@
                         <outlet property="textPassword" destination="hPe-72-NBf" id="KXf-ZE-5nI"/>
                         <outlet property="viewEmail" destination="Gks-GD-h4P" id="V21-Ti-lEz"/>
                         <outlet property="viewPassword" destination="jbY-um-OOB" id="2b9-Vs-h1r"/>
-                        <segue destination="c8z-Wl-i80" kind="push" id="qS8-OP-x8M"/>
+                        <segue destination="c8z-Wl-i80" kind="push" identifier="SignupToDetails" id="qS8-OP-x8M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RS5-Mk-eVa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -686,7 +686,7 @@
         <!--Resgister Detail-->
         <scene sceneID="cC5-gD-c3x">
             <objects>
-                <viewController id="c8z-Wl-i80" customClass="ResgisterDetail" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResgisterDetail" id="c8z-Wl-i80" customClass="ResgisterDetail" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Psy-yb-O94">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -860,7 +860,6 @@
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                                                 <connections>
-                                                    <action selector="tapSelectLocation:" destination="c8z-Wl-i80" eventType="touchUpInside" id="PjO-Rp-qIC"/>
                                                     <action selector="tapUseCurrentLocation:" destination="c8z-Wl-i80" eventType="touchUpInside" id="Tp2-2O-7b2"/>
                                                 </connections>
                                             </button>
@@ -877,14 +876,13 @@
                                         </state>
                                         <connections>
                                             <action selector="tapCreate:" destination="c8z-Wl-i80" eventType="touchUpInside" id="2Cr-4q-Hss"/>
-                                            <segue destination="K2F-Y6-aUT" kind="push" id="ni1-DB-41V"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" id="Ewe-XF-Pkt">
-                                <rect key="frame" x="0.0" y="667" width="375" height="603"/>
+                            <view contentMode="scaleToFill" misplaced="YES" id="Ewe-XF-Pkt">
+                                <rect key="frame" x="0.0" y="667" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" id="x2B-X7-CfE">
@@ -895,19 +893,19 @@
                                             <outlet property="delegate" destination="c8z-Wl-i80" id="QJT-aa-7QH"/>
                                         </connections>
                                     </searchBar>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Bnj-0l-kYi">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="513"/>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="Bnj-0l-kYi">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="577"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="c8z-Wl-i80" id="IXs-I9-f8z"/>
                                         </connections>
                                     </mapView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Map-Marker.png" id="EW1-hx-HrC">
-                                        <rect key="frame" x="160" y="236" width="56" height="128"/>
+                                        <rect key="frame" x="160" y="268" width="56" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" id="say-mC-ZUS">
-                                        <rect key="frame" x="0.0" y="558" width="375" height="45"/>
+                                        <rect key="frame" x="0.0" y="622" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=" " textAlignment="natural" id="Tib-MU-cm2">
@@ -951,16 +949,18 @@
                         <outlet property="textFirstName" destination="nW0-mn-lt1" id="g2v-O4-Hq3"/>
                         <outlet property="textLastName" destination="h6F-IP-52g" id="xTz-MI-Gck"/>
                         <outlet property="textMobile" destination="NGv-ly-s05" id="n0H-TZ-A6F"/>
+                        <outlet property="tpScroll" destination="cSe-mq-MVg" id="oaL-Lo-ghn"/>
                         <outlet property="viewEmail" destination="70S-hB-liO" id="aWC-Bh-QpW"/>
                         <outlet property="viewFistName" destination="a3F-qj-abS" id="BvR-XD-UyN"/>
                         <outlet property="viewLastName" destination="Tol-Te-e9d" id="nhW-Oz-Oee"/>
                         <outlet property="viewMap" destination="Ewe-XF-Pkt" id="GoK-YZ-j3x"/>
                         <outlet property="viewMobile" destination="r2V-WL-Hmg" id="ePh-aW-pJD"/>
+                        <segue destination="K2F-Y6-aUT" kind="push" identifier="DetailsToTab" id="YYd-o0-BQa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvU-c5-kLK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1870.625" y="812.62833333333322"/>
+            <point key="canvasLocation" x="1887" y="813"/>
         </scene>
         <!--More-->
         <scene sceneID="SJ6-fY-AEA">
@@ -3545,7 +3545,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="qS8-OP-x8M"/>
-    </inferredMetricsTieBreakers>
 </document>

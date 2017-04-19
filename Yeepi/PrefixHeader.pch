@@ -35,6 +35,8 @@
 #include "PaypalAccountVC.h"
 
 #include "Login.h"
+#include "Register.h"
+#include "ResgisterDetail.h"
 
 #include "DashboardVC.h"
 #include "PaymentHistoryVC.h"

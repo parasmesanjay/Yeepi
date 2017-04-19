@@ -37,6 +37,7 @@
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
         TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarController"];
+        [obj setSelectedIndex:2];
         [AppDelegate AppDelegate].navigationController=[[UINavigationController alloc] initWithRootViewController:obj];
         self.window.rootViewController = [AppDelegate AppDelegate].navigationController;
         [self.window makeKeyAndVisible];

@@ -109,18 +109,20 @@
                     
                     UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                     TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarControllers"];
+                    [obj setSelectedIndex:2];
                     [self.navigationController pushViewController:obj animated:YES];
                 }
                 else
                 {
-                    [WebServiceCalls alert:[NSString stringWithFormat:@"%@", JSON[@"msg"]]];
+                    [WebServiceCalls alert:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
                 }
             }
             @catch (NSException *exception)
             {
-                
-            } @finally {
-                
+                [WebServiceCalls alert:@"Some problem in SignIn.\nPlease try again."];
+            }
+            @finally
+            {
             }
         }];
     }
@@ -133,6 +135,9 @@
 
 - (IBAction)btnDontHaveAcClk:(id)sender
 {
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    Register *obj = [storybord instantiateViewControllerWithIdentifier:@"Register"];
+    [self.navigationController pushViewController:obj animated:YES];
 }
 
 HIDE_KEY_ON_TOUCH

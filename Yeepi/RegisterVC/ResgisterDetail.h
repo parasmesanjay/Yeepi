@@ -10,6 +10,8 @@
 #import <MapKit/MapKit.h>
 @interface ResgisterDetail : UIViewController<MKMapViewDelegate>
 {
+    IBOutlet TPKeyboardAvoidingScrollView *tpScroll;
+    
     IBOutlet UIView *viewFistName;
     IBOutlet UIView *viewLastName;
     IBOutlet UIView *viewEmail;

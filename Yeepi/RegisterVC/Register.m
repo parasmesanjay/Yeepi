@@ -31,6 +31,7 @@
 
 - (IBAction)btnAlreadyMemberClk:(id)sender
 {
+    POP_BACK
 }
 
 HIDE_KEY_ON_TOUCH

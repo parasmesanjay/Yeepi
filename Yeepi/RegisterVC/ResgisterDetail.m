@@ -22,6 +22,7 @@
     STATUS_BAR
     self.view.backgroundColor = APP_COLOR_BLUE;
     
+    [tpScroll setContentSize:CGSizeMake(WIDTH, btnCreate.frame.origin.y+80)];
     
     NSArray *arrViews = @[viewFistName,viewLastName,viewEmail,viewEmail,viewMobile,btnUserCurrentLoc];
     for (UIView *view in arrViews)
@@ -42,7 +43,10 @@
     btnCreate.layer.cornerRadius = 22;
 }
 
-- (IBAction)tapUseCurrentLocation:(id)sender {
+- (IBAction)tapUseCurrentLocation:(id)sender
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (mapLoc.userLocation.coordinate, 50000, 50000);
+    [mapLoc setRegion:region animated:NO];
 }
 
 
@@ -83,7 +87,7 @@
                      @try
                      {
                          lblAddress.text = [NSString stringWithFormat:@"%@",[[[json objectForKey:@"results"] objectAtIndex:0] objectForKey:@"formatted_address"]];
-                         textAddress.text = lblAddress.text;
+                         //textAddress.text = lblAddress.text;
                          
                          //  city =  [[[[[json objectForKey:@"results"] objectAtIndex:0] objectForKey:@"address_components"] objectAtIndex:2] objectForKey:@"long_name"];
                          //                         state =  [[[[[json objectForKey:@"results"] objectAtIndex:0] objectForKey:@"address_components"] objectAtIndex:3] objectForKey:@"long_name"];
@@ -115,13 +119,13 @@
 - (IBAction)tapSelectLocation:(id)sender {
     
     [UIView animateWithDuration:0.2 animations:^{
-        viewMap.frame = CGRectMake(0,64, WIDTH, HEIGHT-64);
+        viewMap.frame = CGRectMake(0,0, WIDTH, self.view.frame.size.height);
     }];
     
 }
 - (IBAction)tapDoneLoc:(id)sender {
     [UIView animateWithDuration:0.2 animations:^{
-        viewMap.frame = CGRectMake(0,HEIGHT, WIDTH, HEIGHT-64);
+        viewMap.frame = CGRectMake(0,HEIGHT, WIDTH, HEIGHT);
     }];
 }
 HIDE_KEY_ON_TOUCH
