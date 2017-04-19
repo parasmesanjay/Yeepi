@@ -10,9 +10,14 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface ResgisterDetail : UIViewController<MKMapViewDelegate,CLLocationManagerDelegate>
+@interface ResgisterDetail : UIViewController<MKMapViewDelegate,CLLocationManagerDelegate, APPhotoPickerDelegate>
 {
     IBOutlet TPKeyboardAvoidingScrollView *tpScroll;
+    
+    IBOutlet UIButton *btnProfile;
+    
+    IBOutlet BEMCheckBox *chkBoxDoTask;
+    IBOutlet BEMCheckBox *chkBoxPostTask;
     
     IBOutlet UIView *viewFistName;
     IBOutlet UIView *viewLastName;
@@ -39,4 +44,8 @@
     CLLocationManager *lmanager;
 
 }
+
+@property (nonatomic, strong) NSString *Email;
+@property (nonatomic, strong) NSString *Password;
+
 @end

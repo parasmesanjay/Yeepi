@@ -28,35 +28,35 @@
     [SVProgressHUD  setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
     [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
     
-//    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AppFlag"] == NULL)
-//    {
-//        return YES;
-//    }
-//    
-//    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userID"] != NULL)
-//    {
-//        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//        
-//        TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarController"];
-//        [obj setSelectedIndex:2];
-//        [AppDelegate AppDelegate].navigationController=[[UINavigationController alloc] initWithRootViewController:obj];
-//        self.window.rootViewController = [AppDelegate AppDelegate].navigationController;
-//        [self.window makeKeyAndVisible];
-//        return YES;
-//    }
-//    else
-//    {
-//        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//        
-//        Login *obj = [storybord instantiateViewControllerWithIdentifier:@"Login"];
-//        
-//        [AppDelegate AppDelegate].navigationController=[[UINavigationController alloc] initWithRootViewController:obj];
-//        self.window.rootViewController = [AppDelegate AppDelegate].navigationController;
-//        [self.window makeKeyAndVisible];
-//        return YES;
-//    }
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AppFlag"] == NULL)
+    {
+        return YES;
+    }
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userID"] != NULL)
+    {
+        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarController"];
+        [obj setSelectedIndex:2];
+        [AppDelegate AppDelegate].navigationController=[[UINavigationController alloc] initWithRootViewController:obj];
+        self.window.rootViewController = [AppDelegate AppDelegate].navigationController;
+        [self.window makeKeyAndVisible];
+        return YES;
+    }
+    else
+    {
+        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+        
+        Login *obj = [storybord instantiateViewControllerWithIdentifier:@"Login"];
+        
+        [AppDelegate AppDelegate].navigationController=[[UINavigationController alloc] initWithRootViewController:obj];
+        self.window.rootViewController = [AppDelegate AppDelegate].navigationController;
+        [self.window makeKeyAndVisible];
+        return YES;
+    }
     
     return YES;
 }

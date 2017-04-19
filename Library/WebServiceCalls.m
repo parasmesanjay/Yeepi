@@ -68,9 +68,11 @@ static NSString *getuserphone;
         manager.securityPolicy.allowInvalidCertificates = YES;//This is for https
         manager.responseSerializer = [AFHTTPResponseSerializer serializer];
         
-        [manager POST:url parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+        NSString *urlString = [NSString stringWithFormat:@"%@%@",BASE_URL,url];
+
+        [manager POST:urlString parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
          {
-             [formData appendPartWithFileData:imageData name:@"food_image" fileName:@"food_image.jpg" mimeType:@"image/jpeg"];
+             [formData appendPartWithFileData:imageData name:@"image" fileName:@"ProfilePic.jpg" mimeType:@"image/jpeg"];
          }
               success:^(AFHTTPRequestOperation *operation, id responseObject)
          {

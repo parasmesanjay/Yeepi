@@ -13,14 +13,34 @@
 @end
 
 @implementation ResgisterDetail
+{
+    NSData *image_data;
+    
+    NSInteger proPicFlag;
+    
+    NSString *lat, *lon;
+    
+    NSArray *txtArray;
+}
+
+@synthesize Email, Password;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    proPicFlag = 0;
+
     GET_HEADER_VIEW
     header.lblTitle.text = @"Signup to Yeepi";
     STATUS_BAR
     self.view.backgroundColor = APP_COLOR_BLUE;
+    
+    chkBoxDoTask.boxType = chkBoxPostTask.boxType = BEMBoxTypeSquare;
+    
+    textEmail.text = Email;
+    
+    btnProfile.layer.cornerRadius = 35;
+    btnProfile.layer.masksToBounds = YES;
     
     [tpScroll setContentSize:CGSizeMake(WIDTH, btnCreate.frame.origin.y+80)];
     
@@ -50,6 +70,34 @@
     [mapLoc showsUserLocation];
     
     //lmanager.delegate = self;
+    
+    txtArray = @[textEmail, textMobile];
+    
+    int i =0;
+    for (UITextField *txt in txtArray)
+    {
+        UIView *vw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
+        
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 7, 30, 30)];
+        
+        imgView.image = [UIImage imageNamed:@"tick.png"];
+        
+        //UIImage *image = [[UIImage imageNamed:@"green_tick.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        //imgView.tintColor = WHITE_COLOR;
+
+        [vw addSubview:imgView];
+        
+        txt.rightView = vw;
+        
+        txt.rightViewMode = UITextFieldViewModeAlways;
+        
+        i++;
+    }
+}
+
+- (IBAction)btnVarifyClk:(UIButton *)sender
+{
+    
 }
 
 //-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
@@ -66,15 +114,159 @@
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (mapLoc.userLocation.coordinate, 50000, 50000);
     [mapLoc setRegion:region animated:NO];
     // [lmanager stopUpdatingLocation]; ff
-
+    
+    lat = [NSString stringWithFormat:@"%f",mapLoc.userLocation.coordinate.latitude];
+    lon = [NSString stringWithFormat:@"%f",mapLoc.userLocation.coordinate.longitude];
 }
 
-
-
-- (IBAction)tapCreate:(id)sender {
+- (IBAction)btnProfileClk:(id)sender
+{
+    [APPhotoLibrary sharedInstance].delegate = self;
+    [[APPhotoLibrary sharedInstance]openPhotoFromCameraAndLibrary:self];
 }
 
+-(void)apActionSheetGetImage:(UIImage *)selectedPhoto
+{
+    CGSize newSize = CGSizeMake(500,500);
+    UIGraphicsBeginImageContext(newSize);
+    [selectedPhoto drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    image_data = UIImageJPEGRepresentation(newImage,0.1);
+    
+    [btnProfile setImage:newImage forState:UIControlStateNormal];
+    
+    proPicFlag = 1;
+    
+}
 
+-(void)apActionSheetGetVideo:(NSURL *)selectedVideo
+{
+    
+}
+
+-(void)apActionSheetGetVideoThumbImage:(UIImage *)selectedVideoThumbImage
+{
+    
+}
+
+- (IBAction)tapCreate:(id)sender
+{
+    if (proPicFlag != 1)
+    {
+        [WebServiceCalls alert:@"Alert!\n\nUpload Profie pic First."];
+    }
+    else if (textFirstName.text.length < 1)
+    {
+        [WebServiceCalls alert:@"Enter your First name."];
+        
+        [textFirstName becomeFirstResponder];
+    }
+    else if (textLastName.text.length < 1)
+    {
+        [WebServiceCalls alert:@"Enter your Last name."];
+        
+        [textLastName becomeFirstResponder];
+    }
+    /*else if (textEmail.text.length < 1)
+    {
+        [WebServiceCalls alert:@"Enter Email Address."];
+        
+        [textEmail becomeFirstResponder];
+    }
+    else if ([WebServiceCalls isValidEmail:textEmail.text] == NO)
+    {
+        [WebServiceCalls alert:@"Enter valid Email."];
+        
+        [textEmail becomeFirstResponder];
+    }*/
+    else if (textMobile.text.length < 10)
+    {
+        [WebServiceCalls alert:@"Mobile number should be minimum 10 characters."];
+        
+        [textMobile becomeFirstResponder];
+    }
+    else if (textAddress.text.length < 1)
+    {
+        [WebServiceCalls alert:@"Enter your Address."];
+    }
+    else
+    {
+        SVHUD_START
+        [self performSelector:@selector(SignUpDetails) withObject:nil afterDelay:0];
+    }
+}
+
+-(void) SignUpDetails
+{
+    @try
+    {
+        // URL : http://appone.biz/yeepi/api/users/update-profile.json
+        NSDictionary *dic = @{@"first_name":textFirstName.text,
+                              @"last_name":textLastName.text,
+                              @"email":textEmail.text,
+                              @"phone":textMobile.text,
+                              @"address":textAddress.text,
+                              @"user_location":textAddress.text,
+                              @"password":Password,
+                              @"user_latitude":lat,
+                              @"user_longitude":lon,
+                              @"device_token":@"12345",
+                              @"device_type":@"ios"};
+        
+        [WebServiceCalls POST:@"users/update-profile.json" parameter:dic imageData:image_data completionBlock:^(id JSON, WebServiceResult result)
+        {
+            SVHUD_STOP
+             @try
+             {
+                 NSLog(@"%@", JSON);
+                 NSDictionary *dict = JSON[@"response"];
+                 if ([dict[@"status"] integerValue] == 1)
+                 {
+                     NSString *userID = [NSString stringWithFormat:@"%@", dict[@"data"][@"id"]];
+                     
+                     [[NSUserDefaults standardUserDefaults]setObject:userID forKey:@"userID"];
+                     
+                     NSString *fname = [NSString stringWithFormat:@"%@", dict[@"data"][@"first_name"]];
+                     [[NSUserDefaults standardUserDefaults]setObject:fname forKey:@"fname"];
+                     
+                     NSString *lname = [NSString stringWithFormat:@"%@", dict[@"data"][@"last_name"]];
+                     [[NSUserDefaults standardUserDefaults]setObject:lname forKey:@"lname"];
+                     
+                     NSDictionary *dic = [[NSDictionary alloc] initWithDictionary:dict[@"data"]];
+                     NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:dic];
+                     
+                     [[NSUserDefaults standardUserDefaults] setObject:myData forKey:@"userDetails"];
+                     
+                     /*UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                     TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarControllers"];
+                     [obj setSelectedIndex:2];
+                     [self.navigationController pushViewController:obj animated:YES];*/
+                     
+                     [self performSegueWithIdentifier:@"DetailsToTab" sender:nil];
+                 }
+                 else
+                 {
+                     [WebServiceCalls alert:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
+                 }
+             }
+             @catch (NSException *exception)
+             {
+                 [WebServiceCalls alert:@"Some problem in SignIn.\nPlease try again."];
+             }
+             @finally
+             {
+             }
+         }];
+    }
+    @catch (NSException *exception)
+    {
+        [WebServiceCalls alert:@"Some problem in SignIn.\nPlease try again."];
+    }
+    @finally {
+        
+    }
+}
 
 - (void)mapView:(MKMapView *)map regionDidChangeAnimated:(BOOL)animated
 {
@@ -143,6 +335,8 @@
 - (IBAction)tapSelectLocation:(id)sender {
     
     locTag = YES;
+    
+    [self.view addSubview:viewMap];
 
     [UIView animateWithDuration:0.2 animations:^{
         viewMap.frame = CGRectMake(0,0, WIDTH, self.view.frame.size.height);
@@ -152,6 +346,9 @@
 - (IBAction)tapDoneLoc:(id)sender {
     locTag = NO;
 
+    lat = [NSString stringWithFormat:@"%f",mapLoc.region.center.latitude];
+    lon = [NSString stringWithFormat:@"%f",mapLoc.region.center.longitude];
+    
     [UIView animateWithDuration:0.2 animations:^{
         viewMap.frame = CGRectMake(0,HEIGHT, WIDTH, HEIGHT);
     }];

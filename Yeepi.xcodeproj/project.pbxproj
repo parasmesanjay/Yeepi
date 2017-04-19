@@ -22,6 +22,8 @@
 		01322E471EA0D99A00C97045 /* BEMPathManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 01322E421EA0D99A00C97045 /* BEMPathManager.m */; };
 		01322E481EA0D99A00C97045 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 01322E431EA0D99A00C97045 /* LICENSE */; };
 		01322E491EA0D99A00C97045 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 01322E441EA0D99A00C97045 /* README.md */; };
+		0144DD271EA7A0E900764786 /* VarifyPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0144DD261EA7A0E900764786 /* VarifyPopUp.xib */; };
+		0144DD2A1EA7A12900764786 /* VarifyPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0144DD291EA7A12900764786 /* VarifyPopUp.m */; };
 		018E97B91E9618AC00F9E852 /* accept.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E97591E9618AC00F9E852 /* accept.png */; };
 		018E97BA1E9618AC00F9E852 /* add_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E975A1E9618AC00F9E852 /* add_image.png */; };
 		018E97BB1E9618AC00F9E852 /* app_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E975B1E9618AC00F9E852 /* app_logo_white.png */; };
@@ -198,7 +200,6 @@
 		18FCD6701E6D3CF10029E167 /* SplashScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD66D1E6D3CF10029E167 /* SplashScreenVC.m */; };
 		DB52778F1EA0C35A0097E2DD /* BrowseTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */; };
 		DB5277921EA0C3650097E2DD /* ActiveTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5277911EA0C3650097E2DD /* ActiveTaskTVCell.m */; };
-		DB5277A31EA0D1A60097E2DD /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB5277A21EA0D1A60097E2DD /* Empty.xib */; };
 		DB6F39BF1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */; };
 		DB9282101E94B5AE00D8FF00 /* PostBidVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB92820F1E94B5AE00D8FF00 /* PostBidVC.m */; };
 		DB92821A1E94E26700D8FF00 /* MySegment.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9282191E94E26700D8FF00 /* MySegment.m */; };
@@ -232,6 +233,9 @@
 		01322E421EA0D99A00C97045 /* BEMPathManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BEMPathManager.m; sourceTree = "<group>"; };
 		01322E431EA0D99A00C97045 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		01322E441EA0D99A00C97045 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0144DD261EA7A0E900764786 /* VarifyPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VarifyPopUp.xib; sourceTree = "<group>"; };
+		0144DD281EA7A12900764786 /* VarifyPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VarifyPopUp.h; sourceTree = "<group>"; };
+		0144DD291EA7A12900764786 /* VarifyPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VarifyPopUp.m; sourceTree = "<group>"; };
 		018E97591E9618AC00F9E852 /* accept.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = accept.png; sourceTree = "<group>"; };
 		018E975A1E9618AC00F9E852 /* add_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_image.png; sourceTree = "<group>"; };
 		018E975B1E9618AC00F9E852 /* app_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_logo_white.png; sourceTree = "<group>"; };
@@ -467,7 +471,6 @@
 		DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowseTVCell.m; path = CellClasses/BrowseTVCell.m; sourceTree = "<group>"; };
 		DB5277901EA0C3650097E2DD /* ActiveTaskTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveTaskTVCell.h; path = CellClasses/ActiveTaskTVCell.h; sourceTree = "<group>"; };
 		DB5277911EA0C3650097E2DD /* ActiveTaskTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActiveTaskTVCell.m; path = CellClasses/ActiveTaskTVCell.m; sourceTree = "<group>"; };
-		DB5277A21EA0D1A60097E2DD /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
 		DB6F39BD1E9FAF9D0091F0D5 /* PreviousTaskTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PreviousTaskTVCell.h; path = CellClasses/PreviousTaskTVCell.h; sourceTree = "<group>"; };
 		DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PreviousTaskTVCell.m; path = CellClasses/PreviousTaskTVCell.m; sourceTree = "<group>"; };
 		DB92820E1E94B5AE00D8FF00 /* PostBidVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostBidVC.h; sourceTree = "<group>"; };
@@ -725,7 +728,6 @@
 		18F65A161E6FD1140047F593 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				DB5277A21EA0D1A60097E2DD /* Empty.xib */,
 				18F65A1C1E6FD1E30047F593 /* Header.xib */,
 				18F65A191E6FD1C50047F593 /* HeaderLogin.h */,
 				18F65A1A1E6FD1C50047F593 /* HeaderLogin.m */,
@@ -734,6 +736,9 @@
 				0119A26C1E97C40000DEC457 /* PreviousTaskView.h */,
 				0119A26D1E97C40000DEC457 /* PreviousTaskView.m */,
 				0119A26F1E97C43B00DEC457 /* Active_PreviousTaskView.xib */,
+				0144DD281EA7A12900764786 /* VarifyPopUp.h */,
+				0144DD291EA7A12900764786 /* VarifyPopUp.m */,
+				0144DD261EA7A0E900764786 /* VarifyPopUp.xib */,
 				DB6F39BC1E9FAF3F0091F0D5 /* Cell */,
 			);
 			name = CustomViews;
@@ -1170,7 +1175,6 @@
 				18FCD5F31E6D33040029E167 /* Montserrat-ExtraBold.otf in Resources */,
 				018E97D91E9618AC00F9E852 /* green_remove.png in Resources */,
 				018E97D61E9618AC00F9E852 /* green_house.png in Resources */,
-				DB5277A31EA0D1A60097E2DD /* Empty.xib in Resources */,
 				018E97EA1E9618AC00F9E852 /* image_doller.png in Resources */,
 				018E98071E9618AC00F9E852 /* post_task.png in Resources */,
 				018E97FC1E9618AC00F9E852 /* more.png in Resources */,
@@ -1264,6 +1268,7 @@
 				18FCD5CF1E6D28710029E167 /* Main.storyboard in Resources */,
 				0119A25F1E9793AE00DEC457 /* Share.png in Resources */,
 				018E97DB1E9618AC00F9E852 /* green_tick.png in Resources */,
+				0144DD271EA7A0E900764786 /* VarifyPopUp.xib in Resources */,
 				18FCD64B1E6D3A2C0029E167 /* LICENSE in Resources */,
 				018E97C71E9618AC00F9E852 /* cross.png in Resources */,
 				18FCD6021E6D33040029E167 /* MontserratAlternates-SemiBold.otf in Resources */,
@@ -1345,6 +1350,7 @@
 				18FCD6541E6D3A2C0029E167 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				DB92821A1E94E26700D8FF00 /* MySegment.m in Sources */,
 				011E97371EA4D85300F3F55E /* ForgotPassVC.m in Sources */,
+				0144DD2A1EA7A12900764786 /* VarifyPopUp.m in Sources */,
 				18FCD64E1E6D3A2C0029E167 /* Reachability.m in Sources */,
 				18FCD6471E6D3A2C0029E167 /* AFURLRequestSerialization.m in Sources */,
 				18FCD6591E6D3A2C0029E167 /* WebServiceCalls.m in Sources */,

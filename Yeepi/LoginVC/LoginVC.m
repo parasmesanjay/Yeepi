@@ -40,6 +40,41 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
 
+    UIView *vw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 50)];
+    
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 50)];
+    
+    [btn setTitle:@"Show" forState:UIControlStateNormal];
+    [btn setTitle:@"Hide" forState:UIControlStateSelected];
+    
+    [btn setTitleColor:/*[UIColor colorWithRed:135/255.0 green:145/255.0 blue:155/255.0 alpha:1.0]*/ WHITE_COLOR forState:UIControlStateNormal];
+    
+    btn.titleLabel.font = [UIFont systemFontOfSize:14];
+    
+    //btn.tag = 1;
+    
+    [btn addTarget:self action:@selector(btnShoe_Hide:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [vw addSubview:btn];
+    
+    textPassword.rightView = vw;
+    
+    textPassword.rightViewMode = UITextFieldViewModeAlways;
+    
+}
+
+- (IBAction)btnShoe_Hide:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    
+    if (sender.selected)
+    {
+        textPassword.secureTextEntry = NO;
+    }
+    else
+    {
+        textPassword.secureTextEntry = YES;
+    }
 }
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
