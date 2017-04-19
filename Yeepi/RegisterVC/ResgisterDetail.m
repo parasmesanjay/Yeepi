@@ -65,7 +65,7 @@
     locTag =YES;
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (mapLoc.userLocation.coordinate, 50000, 50000);
     [mapLoc setRegion:region animated:NO];
-    // [lmanager stopUpdatingLocation];
+    // [lmanager stopUpdatingLocation]; ff
 
 }
 
