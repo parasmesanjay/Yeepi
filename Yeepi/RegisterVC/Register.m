@@ -67,7 +67,8 @@
          {
              NSLog(@"fetched user:%@", result);
          }
-         
+         [self fireJson:result];
+
          FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
          [loginManager logOut];
          
