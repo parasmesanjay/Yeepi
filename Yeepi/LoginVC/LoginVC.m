@@ -143,7 +143,7 @@
                     [[NSUserDefaults standardUserDefaults] setObject:myData forKey:@"userDetails"];
                     
                     UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                    TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarControllers"];
+                    TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarController"];
                     [obj setSelectedIndex:2];
                     [self.navigationController pushViewController:obj animated:YES];
                 }

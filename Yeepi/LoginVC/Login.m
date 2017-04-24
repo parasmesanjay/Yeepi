@@ -119,8 +119,8 @@
          {
              if ([dict[@"status"] integerValue] == 1)
              {
+
                  NSString *userID = [NSString stringWithFormat:@"%@", dict[@"data"][@"id"]];
-                 
                  [[NSUserDefaults standardUserDefaults]setObject:userID forKey:@"userID"];
                  
                  NSString *fname = [NSString stringWithFormat:@"%@", dict[@"data"][@"first_name"]];
@@ -134,8 +134,7 @@
                  
                  [[NSUserDefaults standardUserDefaults] setObject:myData forKey:@"userDetails"];
                  
-                 UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                 TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarControllers"];
+                 TabBarController *obj = [self.storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
                  [self.navigationController pushViewController:obj animated:YES];
              }
              else
