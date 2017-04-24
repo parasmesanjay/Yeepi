@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+#import <CoreTelephony/CTSubscriberInfo.h>
+#import<CoreTelephony/CTCarrier.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
+
 @interface AppDelegate ()
 
 
@@ -28,6 +32,36 @@
     [SVProgressHUD  setDefaultAnimationType:SVProgressHUDAnimationTypeNative];
     [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
     
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"PhoneCode"] == NULL)
+    {
+        /*CTTelephonyNetworkInfo *network_Info = [CTTelephonyNetworkInfo new];
+        CTCarrier *carrier = network_Info.subscriberCellularProvider;
+        
+        NSLog(@"country code is: %@", carrier.mobileCountryCode);
+        NSLog(@"ISO country code is: %@", carrier.isoCountryCode);*/
+        
+        NSString *URLSTRING = @"https://restcountries.eu/rest/v1/all";
+        
+        NSData *data  = [NSData dataWithContentsOfURL:[NSURL URLWithString:URLSTRING relativeToURL:nil]];
+        NSArray *arrCountry = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        
+        NSLocale *currentLocale = [NSLocale currentLocale];  // get the current locale.
+        NSString *countryCode = [currentLocale objectForKey:NSLocaleCountryCode];
+        NSString *CurrentCountry = [currentLocale displayNameForKey:NSLocaleCountryCode value:countryCode];
+        
+        for (int i=0; i<arrCountry.count; i++)
+        {
+            if ([CurrentCountry isEqualToString:arrCountry[i][@"name"]])
+            {
+                NSString *phoneCode = arrCountry[i][@"callingCodes"][0];
+                
+                [[NSUserDefaults standardUserDefaults]setObject:phoneCode forKey:@"PhoneCode"];
+            }
+        }
+        
+    }
+    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AppFlag"] == NULL)
     {
         return YES;
@@ -39,7 +73,6 @@
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
         TabBarController *obj = [storybord instantiateViewControllerWithIdentifier:@"TabBarController"];
-        [obj setSelectedIndex:2];
         [AppDelegate AppDelegate].navigationController=[[UINavigationController alloc] initWithRootViewController:obj];
         self.window.rootViewController = [AppDelegate AppDelegate].navigationController;
         [self.window makeKeyAndVisible];

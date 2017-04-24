@@ -26,7 +26,9 @@
 {
     [super viewDidLoad];
     
-    HIDE_NAV_BAR
+    
+    [AppDelegate AppDelegate].navigationController.navigationBarHidden = YES;
+    
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : WHITE_COLOR }
                                              forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName :APP_COLOR_GREEN} forState:UIControlStateSelected];
@@ -57,6 +59,9 @@
     UITabBarItem *item4 = [bar.items objectAtIndex:4];
     item4.image = [[self imageWithImage:[UIImage imageNamed:@"more"] scaledToSize:CGSizeMake(30, 30)] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     item4.selectedImage = [self imageWithImage:[UIImage imageNamed:@"more"] scaledToSize:CGSizeMake(30, 30)];
+    
+    [self setSelectedIndex:2];
+
     
 }
 

@@ -18,9 +18,13 @@
     
     NSInteger proPicFlag;
     
-    NSString *lat, *lon;
+    NSString *lat, *lon, *OTP;
     
     NSArray *txtArray;
+    
+    VarifyPopUp *VPUView;
+    
+    BOOL emailChk, mobileChk;
 }
 
 @synthesize Email, Password;
@@ -29,11 +33,15 @@
     [super viewDidLoad];
     
     proPicFlag = 0;
+    
+    emailChk = mobileChk = false;
 
     GET_HEADER_VIEW
     header.lblTitle.text = @"Signup to Yeepi";
     STATUS_BAR
     self.view.backgroundColor = APP_COLOR_BLUE;
+    
+    viewMap.frame = CGRectMake(0, HEIGHT, WIDTH, HEIGHT);
     
     chkBoxDoTask.boxType = chkBoxPostTask.boxType = BEMBoxTypeSquare;
     
@@ -76,11 +84,13 @@
     int i =0;
     for (UITextField *txt in txtArray)
     {
-        UIView *vw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
+        UIView *vw = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 44)];
         
-        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 7, 30, 30)];
+        UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 12, 20, 20)];
         
         imgView.image = [UIImage imageNamed:@"tick.png"];
+        
+        imgView.tag = 1000 + i;
         
         //UIImage *image = [[UIImage imageNamed:@"green_tick.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         //imgView.tintColor = WHITE_COLOR;
@@ -98,6 +108,127 @@
 - (IBAction)btnVarifyClk:(UIButton *)sender
 {
     
+    // URL : http://appone.biz/yeepi/api/users/send-email-otp.json
+    // http://appone.biz/yeepi/api/users/send-phone-otp.json
+    
+    NSDictionary *dic;
+    NSString *url;
+    
+    if (sender.tag == 0)
+    {
+        /*if (textEmail.text.length < 1)
+        {
+            [WebServiceCalls alert:@"Enter Email First."];
+            
+            [textEmail becomeFirstResponder];
+        }
+        else if ([WebServiceCalls isValidEmail:textEmail.text] == NO)
+        {
+            [WebServiceCalls alert:@"Enter valid Email."];
+            
+            [textEmail becomeFirstResponder];
+        }
+        else
+        {*/
+            dic = @{@"email":textEmail.text};
+            url = @"users/send-email-otp.json";
+            
+            [self VarifyData:dic Url:url Flag:sender.tag];
+        //}
+    }
+    else
+    {
+        if (textMobile.text.length < 10)
+        {
+            [WebServiceCalls alert:@"Mobile number should be minimum 10 characters."];
+            
+            [textMobile becomeFirstResponder];
+        }
+        else
+        {
+            dic = @{@"phone":[NSString stringWithFormat:@"%@%@", PhoneCode, textMobile.text]};
+            url = @"users/send-phone-otp.json";
+            
+            [self VarifyData:dic Url:url Flag:sender.tag];
+        }
+    }
+}
+
+-(void) VarifyData:(NSDictionary *)dic  Url:(NSString *)url  Flag:(NSInteger)flag
+{
+    @try
+    {
+        SVHUD_START
+        [WebServiceCalls POST:url parameter:dic completionBlock:^(id JSON, WebServiceResult result)
+         {
+             SVHUD_STOP
+             @try
+             {
+                 NSLog(@"%@", JSON);
+                 NSDictionary *dict = JSON[@"response"];
+                 if ([dict[@"status"] integerValue] == 1)
+                 {
+                     [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
+                     
+                     VPUView = [[[NSBundle mainBundle] loadNibNamed:@"VarifyPopUp" owner:self options:nil] objectAtIndex:0];
+                     VPUView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+                     VPUView.selfBack = self;
+                     VPUView.flag = flag;
+                     [self.view addSubview:VPUView];
+                     
+                     [VPUView.btnSubmit addTarget:self action:@selector(btnSubmitInViewClk:) forControlEvents:UIControlEventTouchUpInside];
+                     
+                     OTP = [NSString stringWithFormat:@"%@", dict[@"otp"]];
+                 }
+                 else
+                 {
+                     [WebServiceCalls alert:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
+                 }
+             }
+             @catch (NSException *exception)
+             {
+                 [WebServiceCalls alert:@"Some problem.\nPlease try again."];
+             }
+             @finally
+             {
+             }
+         }];
+    }
+    @catch (NSException *exception)
+    {
+        [WebServiceCalls alert:@"Some problem.\nPlease try again."];
+    }
+    @finally {
+        
+    }
+}
+
+- (IBAction)btnSubmitInViewClk:(UIButton *)sender
+{
+    if ([VPUView.txtOTP.text isEqualToString:OTP])
+    {
+        if (VPUView.flag == 0)
+        {
+            emailChk = true;
+        }
+        else
+        {
+            mobileChk = true;
+        }
+        UIImageView *imgView;
+        
+        imgView = [self.view viewWithTag:1000+VPUView.flag];
+
+        imgView.image = [UIImage imageNamed:@"green_tick.png"];
+        
+        [VPUView removeFromSuperview];
+        
+        [SVProgressHUD showInfoWithStatus:@"Success !\nOTP matched."];
+    }
+    else
+    {
+        [WebServiceCalls alert:@"Code not match.\nEnter a valid code."];
+    }
 }
 
 //-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
@@ -168,23 +299,20 @@
         
         [textLastName becomeFirstResponder];
     }
-    /*else if (textEmail.text.length < 1)
+    else if (!emailChk)
     {
-        [WebServiceCalls alert:@"Enter Email Address."];
+        [WebServiceCalls alert:@"Varify your Email Address."];
         
-        [textEmail becomeFirstResponder];
     }
-    else if ([WebServiceCalls isValidEmail:textEmail.text] == NO)
+    /*else if ([WebServiceCalls isValidEmail:textEmail.text] == NO)
     {
         [WebServiceCalls alert:@"Enter valid Email."];
         
         [textEmail becomeFirstResponder];
     }*/
-    else if (textMobile.text.length < 10)
+    else if (!mobileChk)
     {
-        [WebServiceCalls alert:@"Mobile number should be minimum 10 characters."];
-        
-        [textMobile becomeFirstResponder];
+        [WebServiceCalls alert:@"Varify your Mobile no."];
     }
     else if (textAddress.text.length < 1)
     {
@@ -205,7 +333,7 @@
         NSDictionary *dic = @{@"first_name":textFirstName.text,
                               @"last_name":textLastName.text,
                               @"email":textEmail.text,
-                              @"phone":textMobile.text,
+                              @"phone":[NSString stringWithFormat:@"%@%@", PhoneCode, textMobile.text],
                               @"address":textAddress.text,
                               @"user_location":textAddress.text,
                               @"password":Password,
@@ -252,7 +380,7 @@
              }
              @catch (NSException *exception)
              {
-                 [WebServiceCalls alert:@"Some problem in SignIn.\nPlease try again."];
+                 [WebServiceCalls alert:@"Some problem in SignUp.\nPlease try again."];
              }
              @finally
              {
@@ -261,7 +389,7 @@
     }
     @catch (NSException *exception)
     {
-        [WebServiceCalls alert:@"Some problem in SignIn.\nPlease try again."];
+        [WebServiceCalls alert:@"Some problem in SignUp.\nPlease try again."];
     }
     @finally {
         
@@ -339,7 +467,7 @@
     [self.view addSubview:viewMap];
 
     [UIView animateWithDuration:0.2 animations:^{
-        viewMap.frame = CGRectMake(0,0, WIDTH, self.view.frame.size.height);
+        viewMap.frame = CGRectMake(0,20, WIDTH, self.view.frame.size.height);
     }];
     
 }

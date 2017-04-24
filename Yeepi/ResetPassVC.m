@@ -91,9 +91,65 @@
 
 - (IBAction)btnDoneClk:(id)sender
 {
-    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginVC *obj = [storybord instantiateViewControllerWithIdentifier:@"LoginVC"];
-    [self.navigationController pushViewController:obj animated:YES];
+    if (txtPass1.text.length < 6)
+    {
+        [WebServiceCalls alert:@"Password should be minimum 6 characters."];
+    }
+    else if(![txtPass1.text isEqualToString: txtPass2.text])
+    {
+        [WebServiceCalls alert:@"Password should be same in both fields."];
+    }
+    else
+    {
+        [self updatePassword];
+    }
+}
+
+-(void) updatePassword
+{
+    @try
+    {
+        // url_live : http://appone.biz/yeepi/api/users/change-password.json
+        
+        NSDictionary *dic = @{@"new_password":txtPass1.text, @"confirm_password":txtPass2.text, @"device_token":@"!"};
+        
+        SVHUD_START
+        [WebServiceCalls POST:@"users/change-password.json" parameter:dic completionBlock:^(id JSON, WebServiceResult result)
+         {
+             SVHUD_STOP
+             @try
+             {
+                 NSLog(@"%@", JSON);
+                 NSDictionary *dict = JSON[@"response"];
+                 if ([dict[@"status"] integerValue] == 1)
+                 {
+                     [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
+                     
+                     UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                     Login *obj = [storybord instantiateViewControllerWithIdentifier:@"Login"];
+                     [self.navigationController pushViewController:obj animated:YES];
+                 }
+                 else
+                 {
+                     [WebServiceCalls alert:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
+                 }
+             }
+             @catch (NSException *exception)
+             {
+                 [WebServiceCalls alert:@"Some problem.\nPlease try again."];
+             }
+             @finally
+             {
+             }
+         }];
+    }
+    @catch (NSException *exception)
+    {
+        [WebServiceCalls alert:@"Some problem.\nPlease try again."];
+    }
+    @finally {
+        
+    }
 }
 
 @end

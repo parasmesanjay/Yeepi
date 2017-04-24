@@ -20,6 +20,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        
+    [AppDelegate AppDelegate].navigationController.navigationBarHidden = YES;
     
     GET_HEADER_VIEW_NO_BACK
     header.lblTitle.text = @"My tasks";

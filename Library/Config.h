@@ -18,6 +18,8 @@
 
 #define User_Id [[NSUserDefaults standardUserDefaults]objectForKey:@"userID"]
 
+#define PhoneCode [[NSUserDefaults standardUserDefaults] objectForKey:@"PhoneCode"]
+
 #define User_Fname [[NSUserDefaults standardUserDefaults]objectForKey:@"fname"]
 
 #define User_Lname [[NSUserDefaults standardUserDefaults]objectForKey:@"lname"]

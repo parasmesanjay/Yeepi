@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VarifyPopUp : UIView
+@interface VarifyPopUp : TPKeyboardAvoidingScrollView
+{
+    
+    IBOutlet UIImageView *imgIcon;
+    
+    IBOutlet UILabel *lblTitle;
+    IBOutlet UILabel *lblMsz;
+    
+}
 
+@property (nonatomic , strong) UIViewController *selfBack;
+@property (nonatomic , readwrite) NSInteger flag;
+
+@property (nonatomic , strong) IBOutlet UIButton *btnSubmit;
+
+@property (nonatomic , strong) IBOutlet UITextField *txtOTP;
 @end

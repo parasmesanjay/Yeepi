@@ -14,4 +14,7 @@
     
     IBOutlet UIButton *btnSubmit;
 }
+
+@property (nonatomic, strong) NSString *userId;
+
 @end

@@ -64,6 +64,8 @@
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){  }];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
                                    {
+                                       [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userID"];
+                                       
                                        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                        UIViewController *obj = [storybord instantiateViewControllerWithIdentifier:arrIdentifiers[indexPath.row]];
                                        [self.navigationController pushViewController:obj animated:YES];

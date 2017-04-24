@@ -121,7 +121,7 @@
              }
              @catch (NSException *exception)
              {
-                 [WebServiceCalls alert:@"Some problem in SignIn.\nPlease try again."];
+                 [WebServiceCalls alert:@"Some problem in SignUp.\nPlease try again."];
              }
              @finally
              {
@@ -130,7 +130,7 @@
     }
     @catch (NSException *exception)
     {
-        [WebServiceCalls alert:@"Some problem in SignIn.\nPlease try again."];
+        [WebServiceCalls alert:@"Some problem in SignUp.\nPlease try again."];
     }
     @finally
     {        

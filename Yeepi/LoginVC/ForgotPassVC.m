@@ -67,6 +67,10 @@
         btnRadioMobileNo.selected = NO;
         
         txtEmail_Mobile.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter email" attributes:@{NSForegroundColorAttributeName: APP_COLOR_GREEN}];
+        
+        HIDE_KEY
+        txtEmail_Mobile.keyboardType = UIKeyboardTypeEmailAddress;
+        [txtEmail_Mobile becomeFirstResponder];
     }
     else
     {
@@ -74,11 +78,96 @@
         btnRadioEmail.selected = NO;
         
         txtEmail_Mobile.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Enter Mobile Number" attributes:@{NSForegroundColorAttributeName: APP_COLOR_GREEN}];
+        
+        HIDE_KEY
+        txtEmail_Mobile.keyboardType = UIKeyboardTypeNumberPad;
+        [txtEmail_Mobile becomeFirstResponder];
     }
 }
 
-- (IBAction)btnGetCodeClk:(id)sender
+- (IBAction)btnGetCodeClk:(UIButton *)sender
 {
-    
+    NSDictionary *dic;
+    if (btnRadioEmail.selected)
+    {
+        if (txtEmail_Mobile.text.length < 1)
+        {
+            [WebServiceCalls alert:@"Enter Email First."];
+            
+            [txtEmail_Mobile becomeFirstResponder];
+        }
+        else if ([WebServiceCalls isValidEmail:txtEmail_Mobile.text] == NO)
+        {
+            [WebServiceCalls alert:@"Enter valid Email."];
+            
+            [txtEmail_Mobile becomeFirstResponder];
+        }
+        else
+        {
+            dic = @{@"email":txtEmail_Mobile.text};
+            [self VarifyData:dic];
+        }
+    }
+    else
+    {
+        if (txtEmail_Mobile.text.length < 10)
+        {
+            [WebServiceCalls alert:@"Mobile number should be minimum 10 characters."];
+            
+            [txtEmail_Mobile becomeFirstResponder];
+        }
+        else
+        {
+            dic = @{@"email":[NSString stringWithFormat:@"%@%@", PhoneCode, txtEmail_Mobile.text]};
+            [self VarifyData:dic];
+        }
+    }
 }
+
+-(void) VarifyData:(NSDictionary *)dic
+{
+    @try
+    {
+        // url_live : http://appone.biz/yeepi/api/users/forgot-password.json
+        
+        SVHUD_START
+        [WebServiceCalls POST:@"users/forgot-password.json" parameter:dic completionBlock:^(id JSON, WebServiceResult result)
+         {
+             SVHUD_STOP
+             @try
+             {
+                 NSLog(@"%@", JSON);
+                 NSDictionary *dict = JSON[@"response"];
+                 if ([dict[@"status"] integerValue] == 1)
+                 {
+                     [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
+                     
+                     UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                     OTPVC *obj = [storybord instantiateViewControllerWithIdentifier:@"OTPVC"];
+                     obj.userId = dict[@"user_id"];
+                     [self.navigationController pushViewController:obj animated:YES];
+                 }
+                 else
+                 {
+                     [WebServiceCalls alert:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
+                 }
+             }
+             @catch (NSException *exception)
+             {
+                 [WebServiceCalls alert:@"Some problem.\nPlease try again."];
+             }
+             @finally
+             {
+             }
+         }];
+    }
+    @catch (NSException *exception)
+    {
+        [WebServiceCalls alert:@"Some problem.\nPlease try again."];
+    }
+    @finally {
+        
+    }
+}
+
 @end
