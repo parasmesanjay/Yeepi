@@ -88,5 +88,32 @@
 	<string>Allow camera to use</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow Photo Library to use</string>
+    
+    
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb258831544587803</string>
+            </array>
+        </dict>
+    </array>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>FacebookAppID</key>
+    <string>258831544587803</string>
+    <key>FacebookDisplayName</key>
+    <string>Town House</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-api</string>
+        <string>fbauth2</string>
+        <string>fbshareextension</string>
+    </array>
+
+    
 </dict>
 </plist>

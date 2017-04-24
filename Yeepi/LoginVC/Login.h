@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface Login : UIViewController
+@interface Login : UIViewController<FBSDKLoginButtonDelegate>
 {
     IBOutlet UIButton *btnLoginWithEmail;
-
     IBOutlet UIButton *btnTerms;
+    
+    FBSDKLoginButton *fbButton;
+
 }
 @end
