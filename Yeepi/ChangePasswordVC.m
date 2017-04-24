@@ -93,7 +93,71 @@
 
 - (IBAction)btnDoneClk:(id)sender
 {
-    
+    if ([txtOldPass.text isEqualToString:User_Password])
+    {
+        [WebServiceCalls alert:@"Old Password is wrong."];
+    }
+    else if (txtNewPass1.text.length < 6)
+    {
+        [WebServiceCalls alert:@"New Password should be minimum 6 characters."];
+    }
+    else if(![txtNewPass1.text isEqualToString: txtNewPass2.text])
+    {
+        [WebServiceCalls alert:@"New Password and Confirm Password should be same."];
+    }
+    else
+    {
+        [self updatePassword];
+    }
+}
+
+-(void) updatePassword
+{
+    @try
+    {
+        // URL : http://appone.biz/yeepi/api/users/reset-password.json
+        
+        NSDictionary *dic = @{@"user_id":User_Id, @"new_password":txtNewPass1.text, @"confirm_password":txtNewPass2.text, @"device_token":@"!"};
+        
+        SVHUD_START
+        [WebServiceCalls POST:@"users/reset-password.json" parameter:dic completionBlock:^(id JSON, WebServiceResult result)
+         {
+             SVHUD_STOP
+             @try
+             {
+                 NSLog(@"%@", JSON);
+                 NSDictionary *dict = JSON[@"response"];
+                 if ([dict[@"status"] integerValue] == 1)
+                 {
+                     [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
+                     
+                     NSString *Pass = txtNewPass1.text;
+                     
+                     [[NSUserDefaults standardUserDefaults]setObject:Pass forKey:@"Password"];
+                     
+                     POP_BACK
+                 }
+                 else
+                 {
+                     [WebServiceCalls alert:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
+                 }
+             }
+             @catch (NSException *exception)
+             {
+                 [WebServiceCalls alert:@"Some problem.\nPlease try again."];
+             }
+             @finally
+             {
+             }
+         }];
+    }
+    @catch (NSException *exception)
+    {
+        [WebServiceCalls alert:@"Some problem.\nPlease try again."];
+    }
+    @finally {
+        
+    }
 }
 
 @end

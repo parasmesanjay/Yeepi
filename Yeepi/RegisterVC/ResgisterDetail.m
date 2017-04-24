@@ -355,6 +355,10 @@
                      
                      [[NSUserDefaults standardUserDefaults]setObject:userID forKey:@"userID"];
                      
+                     NSString *Pass = Password;
+                     
+                     [[NSUserDefaults standardUserDefaults]setObject:Pass forKey:@"Password"];
+                     
                      NSString *fname = [NSString stringWithFormat:@"%@", dict[@"data"][@"first_name"]];
                      [[NSUserDefaults standardUserDefaults]setObject:fname forKey:@"fname"];
                      

@@ -66,6 +66,8 @@
                                    {
                                        [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"userID"];
                                        
+                                       [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"Password"];
+                                       
                                        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                        UIViewController *obj = [storybord instantiateViewControllerWithIdentifier:arrIdentifiers[indexPath.row]];
                                        [self.navigationController pushViewController:obj animated:YES];
