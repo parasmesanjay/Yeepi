@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BrowseVC : UIViewController
+{
+    IBOutlet UITableView *table;
 
+}
 @end
