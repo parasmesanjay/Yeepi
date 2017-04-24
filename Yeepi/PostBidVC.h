@@ -20,4 +20,6 @@
     
     IBOutlet UIView *viewThankYou;
 }
+
+@property(nonatomic,strong) id info;
 @end

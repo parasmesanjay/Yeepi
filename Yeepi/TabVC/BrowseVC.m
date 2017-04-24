@@ -26,14 +26,35 @@
     STATUS_BAR
     self.view.backgroundColor = APP_COLOR_BLUE;
     
-    NSString *url = [NSString stringWithFormat:@"http://appone.biz/yeepi/api/tasks/index/{\"user_id\":156,\"status\":{\"0\":\"AL\"},\"task_type\":{\"0\":\"AL\"},\"sort_by\":\"M\",\"task_location\":\"1\"}.json"];
   
+    
     [SVProgressHUD showWithStatus:@"Loading..."];
-    [WebServiceCalls POST:url parameter:nil completionBlock:^(id JSON, WebServiceResult result) {
-        
-        arrayTasks = [NSMutableArray arrayWithArray:JSON[@"data"]];
-        [table reloadData];
-    }];
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:0];
+}
+
+-(void)loadData
+{
+    NSString *url = [NSString stringWithFormat:@"http://appone.biz/yeepi/api/tasks/index/{\"user_id\":156,\"status\":{\"0\":\"AL\"},\"task_type\":{\"0\":\"AL\"},\"sort_by\":\"M\",\"task_location\":\"1\"}.json"];
+
+    [WebServiceCalls GET:url parameter:nil completionBlock:^(id JSON, WebServiceResult result)
+     {
+         [SVProgressHUD dismiss];
+         
+         @try
+         {
+             arrayTasks = [NSMutableArray arrayWithArray:JSON[@"response"][@"data"]];
+             table.delegate = self;
+             table.dataSource = self;
+             
+             [table reloadData];
+             
+         } @catch (NSException *exception) {
+             
+         } @finally {
+             
+         }
+         
+     }];
 
 }
 
@@ -41,7 +62,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return arrayTasks.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -61,17 +82,20 @@
     
     itemCell.lblTiltle.text = arrayTasks[indexPath.row][@"title"];
     itemCell.lblAddress.text = arrayTasks[indexPath.row][@"location_name"];
-    itemCell.lblAmount.text = arrayTasks[indexPath.row][@"estimate_budget"];
+    itemCell.lblAmount.text = [NSString stringWithFormat:@"%@",arrayTasks[indexPath.row][@"estimate_budget"]];
     itemCell.lblTiltle.text = arrayTasks[indexPath.row][@"title"];
 
     if ([arrayTasks[indexPath.row][@"task_offer_count"] integerValue] > 0)
     {
         itemCell.viewNoOffer.hidden = YES;
         itemCell.lblOfferCount.text = [NSString stringWithFormat:@"%@",arrayTasks[indexPath.row][@"task_offer_count"]];
+        
+        itemCell.lblOfferCount.layer.cornerRadius = 25;
+        itemCell.lblOfferCount.clipsToBounds = YES;
     }
     else
     {
-        itemCell.viewNoOffer.hidden = YES;
+        itemCell.viewNoOffer.hidden = NO;
     }
     
     itemCell.backgroundColor = CLEAR_COLOR;

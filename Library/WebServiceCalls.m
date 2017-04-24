@@ -27,7 +27,7 @@ static NSString *getuserphone;
     manager.securityPolicy.allowInvalidCertificates = YES;//This is for https
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
 //  manager = [[AFHTTPSessionManager alloc]init];
-//  manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves];
+    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves];
 }
 
 + (void)POST:(NSString *)url parameter:(NSDictionary *)parameter completionBlock:(WebCallBlock)block
@@ -95,30 +95,18 @@ static NSString *getuserphone;
 {
     @try
     {
-        // [manager GET:[NSString stringWithFormat:@"http://beta.sirghost.com/Api/%@",url] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress)
-        //        {
-        //
-        //        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
-        //        {
-        //
-        //             block(responseObject,WebServiceResultSuccess);
-        //         }
-        //             failure:^(NSURLSessionDataTask *dataTask, NSError *error)
-        //         {
-        //             block(@"1",WebServiceResultSuccess);
-        //             UIAlertView *aler = [[UIAlertView alloc]initWithTitle:@"Network Error" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        //             [aler show];
-        //         }];
         
-        NSURL *urlStr=  [NSURL URLWithString:[[NSString stringWithFormat:@"%@%@",BASE_URL,url] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURL *urlStr=  [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:urlStr];
         NSError *error = NULL;
         NSURLResponse *response = NULL;
         NSData *data  = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error ];
-        NSDictionary *vehicel_dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        block(vehicel_dic,WebServiceResultSuccess);
+        id responce = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        block(responce,WebServiceResultSuccess);
+        
     }
     @catch (NSException *exception)
+    
     {
         block(@"1",WebServiceResultSuccess);
         UIAlertView *aler = [[UIAlertView alloc]initWithTitle:@"Network Error" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];

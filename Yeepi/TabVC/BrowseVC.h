@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BrowseVC : UIViewController
+@interface BrowseVC : UIViewController<UITableViewDelegate,UITableViewDataSource>
 {
     IBOutlet UITableView *table;
 
