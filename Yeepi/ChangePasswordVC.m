@@ -93,7 +93,7 @@
 
 - (IBAction)btnDoneClk:(id)sender
 {
-    if ([txtOldPass.text isEqualToString:User_Password])
+    if (![txtOldPass.text isEqualToString:User_Password])
     {
         [WebServiceCalls alert:@"Old Password is wrong."];
     }

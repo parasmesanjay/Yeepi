@@ -20,6 +20,7 @@
     
     NSString *lat, *lon, *OTP;
     
+    NSString *role_id;
     NSArray *txtArray;
     
     VarifyPopUp *VPUView;
@@ -31,6 +32,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    role_id = @"";
     
     proPicFlag = 0;
     
@@ -283,6 +286,25 @@
 
 - (IBAction)tapCreate:(id)sender
 {
+    if (chkBoxDoTask.on == YES && chkBoxPostTask.on == YES)
+    {
+        role_id = @"2,3";
+    }
+    else if (chkBoxDoTask.on == YES )
+    {
+        role_id = @"3";
+    }
+    else if (chkBoxPostTask.on == YES )
+    {
+        role_id = @"2";
+    }
+    else
+    {
+        [WebServiceCalls alert:@"Alert!\n\n You must select at least one role."];
+        return;
+    }
+    
+    
     if (proPicFlag != 1)
     {
         [WebServiceCalls alert:@"Alert!\n\nUpload Profie pic First."];
@@ -340,7 +362,10 @@
                               @"user_latitude":lat,
                               @"user_longitude":lon,
                               @"device_token":@"12345",
-                              @"device_type":@"ios"};
+                              @"device_type":@"ios",
+                              @"role_id":role_id,
+                              @"is_verified_email":@"1",
+                              @"is_verified_phone":@"1"};
         
         [WebServiceCalls POST:@"users/update-profile.json" parameter:dic imageData:image_data completionBlock:^(id JSON, WebServiceResult result)
         {
