@@ -34,7 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="forward_arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ws6-Gb-jIc">
-                        <rect key="frame" x="348" y="25" width="12" height="13"/>
+                        <rect key="frame" x="348" y="24" width="12" height="13"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
@@ -50,7 +50,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MhG-OD-yJb">
-                        <rect key="frame" x="5" y="5" width="365" height="219"/>
+                        <rect key="frame" x="5" y="5" width="365" height="218"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="green_house.png" translatesAutoresizingMaskIntoConstraints="NO" id="m7z-tV-lO3">
@@ -98,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="dummy_user.png" translatesAutoresizingMaskIntoConstraints="NO" id="6eQ-Iy-i22">
-                                <rect key="frame" x="17" y="146" width="67" height="64"/>
+                                <rect key="frame" x="17" y="145" width="67" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Poster Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPn-Lc-j3h">
@@ -222,7 +222,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RaK-Au-khT" id="LYB-j4-oru">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="210.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3QI-7e-9Wr">
@@ -247,7 +247,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5C-KD-3Xg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5C-KD-3Xg">
                                 <rect key="frame" x="68" y="7" width="195" height="59"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -350,6 +350,12 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="btnMakeOffer" destination="bHl-T0-goN" id="GXv-8f-yIi"/>
+                <outlet property="imgCat_icon" destination="kbP-Z0-oNn" id="Qyv-k7-BLM"/>
+                <outlet property="lblAddress" destination="CeW-ir-Msg" id="a34-Td-TYZ"/>
+                <outlet property="lblAmount" destination="qWT-nn-WXr" id="t6y-qB-o3j"/>
+                <outlet property="lblOfferCount" destination="V75-8u-JJ3" id="wnI-Dw-YLP"/>
+                <outlet property="lblTiltle" destination="b5C-KD-3Xg" id="EYF-PE-QWF"/>
+                <outlet property="viewNoOffer" destination="GeT-qq-mJo" id="Di4-ik-egS"/>
             </connections>
             <point key="canvasLocation" x="-149.5" y="592.5"/>
         </tableViewCell>
@@ -361,7 +367,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="dummy_user.png" translatesAutoresizingMaskIntoConstraints="NO" id="n0V-5p-vvM">
-                        <rect key="frame" x="8" y="2" width="50" height="56"/>
+                        <rect key="frame" x="8" y="1" width="50" height="56"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bishup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vra-Q5-J0x">
@@ -392,7 +398,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruW-wY-Dps">
-                        <rect key="frame" x="0.0" y="68" width="375" height="1"/>
+                        <rect key="frame" x="0.0" y="67" width="375" height="1"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.33935546875" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -412,7 +418,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-zM-MQe">
-                        <rect key="frame" x="5" y="10" width="365" height="307"/>
+                        <rect key="frame" x="5" y="10" width="365" height="306"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="green_house.png" translatesAutoresizingMaskIntoConstraints="NO" id="p7m-Te-4se">
@@ -724,7 +730,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Successfully Complited !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHl-fo-gMs">
-                                <rect key="frame" x="55" y="260" width="300" height="20"/>
+                                <rect key="frame" x="55" y="260" width="300" height="21"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                 <color key="textColor" red="0.31372549020000001" green="0.75294117650000003" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>

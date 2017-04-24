@@ -10,7 +10,9 @@
 #import "BrowseTVCell.h"
 
 @interface BrowseVC ()
-
+{
+    NSMutableArray *arrayTasks;
+}
 @end
 
 @implementation BrowseVC
@@ -23,11 +25,17 @@
     header.lblTitle.text = @"Browse";
     STATUS_BAR
     self.view.backgroundColor = APP_COLOR_BLUE;
+    
+    NSString *url = [NSString stringWithFormat:@"http://appone.biz/yeepi/api/tasks/index/{\"user_id\":156,\"status\":{\"0\":\"AL\"},\"task_type\":{\"0\":\"AL\"},\"sort_by\":\"M\",\"task_location\":\"1\"}.json"];
+  
+    [SVProgressHUD showWithStatus:@"Loading..."];
+    [WebServiceCalls POST:url parameter:nil completionBlock:^(id JSON, WebServiceResult result) {
+        
+        arrayTasks = [NSMutableArray arrayWithArray:JSON[@"data"]];
+        [table reloadData];
+    }];
 
 }
-
-
-
 
 #pragma mark Table Delegates
 
@@ -49,8 +57,22 @@
     
     [itemCell.btnMakeOffer addTarget:self action:@selector(tapMakeOffer:) forControlEvents:UIControlEventTouchUpInside];
     itemCell.tag = indexPath.row;
-    
     itemCell.btnMakeOffer.layer.cornerRadius = itemCell.btnMakeOffer.frame.size.height/2;
+    
+    itemCell.lblTiltle.text = arrayTasks[indexPath.row][@"title"];
+    itemCell.lblAddress.text = arrayTasks[indexPath.row][@"location_name"];
+    itemCell.lblAmount.text = arrayTasks[indexPath.row][@"estimate_budget"];
+    itemCell.lblTiltle.text = arrayTasks[indexPath.row][@"title"];
+
+    if ([arrayTasks[indexPath.row][@"task_offer_count"] integerValue] > 0)
+    {
+        itemCell.viewNoOffer.hidden = YES;
+        itemCell.lblOfferCount.text = [NSString stringWithFormat:@"%@",arrayTasks[indexPath.row][@"task_offer_count"]];
+    }
+    else
+    {
+        itemCell.viewNoOffer.hidden = YES;
+    }
     
     itemCell.backgroundColor = CLEAR_COLOR;
     return itemCell;
