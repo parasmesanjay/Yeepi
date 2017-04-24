@@ -68,9 +68,25 @@
                                        
                                        [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"Password"];
                                        
-                                       UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                       UIViewController *obj = [storybord instantiateViewControllerWithIdentifier:arrIdentifiers[indexPath.row]];
-                                       [self.navigationController pushViewController:obj animated:YES];
+                                       NSArray *nav_array = [self.navigationController viewControllers];
+                                       int count = 0;
+                                       for (UIViewController *controller in nav_array)
+                                       {
+                                           if ([controller isKindOfClass:[arrIdentifiers[indexPath.row] class]])
+                                           {
+                                               //Do not forget to import AnOldViewController.h
+                                               count++;
+                                               [self.navigationController popToViewController:controller animated:YES];
+                                               return;
+                                           }
+                                       }
+                                       if (count==0)
+                                       {
+                                           UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                           UIViewController *obj = [storybord instantiateViewControllerWithIdentifier:arrIdentifiers[indexPath.row]];
+                                           [self.navigationController pushViewController:obj animated:YES];
+                                           
+                                       }
                                        
                                    }];
         [alertController addAction:cancelAction];

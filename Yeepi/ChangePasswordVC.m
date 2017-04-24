@@ -93,9 +93,17 @@
 
 - (IBAction)btnDoneClk:(id)sender
 {
-    if (![txtOldPass.text isEqualToString:User_Password])
+    if (txtOldPass.text.length < 1)
+    {
+        [WebServiceCalls alert:@"Enter Old Password."];
+        
+        [txtOldPass becomeFirstResponder];
+    }
+    else if (![txtOldPass.text isEqualToString:User_Password])
     {
         [WebServiceCalls alert:@"Old Password is wrong."];
+        
+        [txtOldPass becomeFirstResponder];
     }
     else if (txtNewPass1.text.length < 6)
     {
