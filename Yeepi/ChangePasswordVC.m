@@ -115,7 +115,7 @@
 {
     @try
     {
-        // URL :- http://appone.biz/yeepi/api/users/reset-password.json
+        // URL : http://appone.biz/yeepi/api/users/reset-password.json
         
         NSDictionary *dic = @{@"user_id":User_Id, @"new_password":txtNewPass1.text, @"confirm_password":txtNewPass2.text, @"device_token":@"!"};
         
