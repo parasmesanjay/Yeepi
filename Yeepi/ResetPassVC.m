@@ -109,9 +109,9 @@
 {
     @try
     {
-        // url_live : http://appone.biz/yeepi/api/users/change-password.json
+        // URL : http://appone.biz/yeepi/api/users/change-password.json
         
-        NSDictionary *dic = @{@"new_password":txtPass1.text, @"confirm_password":txtPass2.text, @"device_token":@"!"};
+        NSDictionary *dic = @{@"user_id":_userId, @"new_password":txtPass1.text, @"confirm_password":txtPass2.text, @"device_token":@"!"};
         
         SVHUD_START
         [WebServiceCalls POST:@"users/change-password.json" parameter:dic completionBlock:^(id JSON, WebServiceResult result)
@@ -125,9 +125,15 @@
                  {
                      [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
                      
-                     UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                     Login *obj = [storybord instantiateViewControllerWithIdentifier:@"Login"];
-                     [self.navigationController pushViewController:obj animated:YES];
+                     NSArray *nav_array = [self.navigationController viewControllers];
+                     for (UIViewController *controller in nav_array)
+                     {
+                         if ([controller isKindOfClass:[Login class]])
+                         {
+                             [self.navigationController popToViewController:controller animated:YES];
+                             return;
+                         }
+                     }
                  }
                  else
                  {

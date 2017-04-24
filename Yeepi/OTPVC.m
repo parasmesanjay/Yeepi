@@ -75,6 +75,7 @@
                      
                      UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                      ResetPassVC *obj = [storybord instantiateViewControllerWithIdentifier:@"ResetPassVC"];
+                     obj.userId = userId;
                      [self.navigationController pushViewController:obj animated:YES];
                  }
                  else

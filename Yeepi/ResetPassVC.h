@@ -18,4 +18,7 @@
     
     IBOutlet UIButton *btnDone;
 }
+
+@property (nonatomic, strong) NSString *userId;
+
 @end
