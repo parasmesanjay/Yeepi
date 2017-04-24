@@ -20,6 +20,8 @@
 
 #define PhoneCode [[NSUserDefaults standardUserDefaults] objectForKey:@"PhoneCode"]
 
+#define User_Password [[NSUserDefaults standardUserDefaults] objectForKey:@"Password"]
+
 #define User_Fname [[NSUserDefaults standardUserDefaults]objectForKey:@"fname"]
 
 #define User_Lname [[NSUserDefaults standardUserDefaults]objectForKey:@"lname"]
