@@ -9,11 +9,21 @@
 #import "ActiveTaskView.h"
 
 @implementation ActiveTaskView
+{
+    NSMutableArray *arrActiveTask;
+}
 
+@synthesize arrTask;
 
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    for (int i = 0; i<arrTask.count; i++)
+    {
+        if ([arrTask[i][@"your_offer_done"] integerValue] == 0)
+        {
+            [arrActiveTask addObject:arrTask[i]];
+        }
+    }
 }
 
 #pragma mark - TableView View datasource and delegate

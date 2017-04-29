@@ -14,4 +14,6 @@
 
 @property(nonatomic,strong)UIViewController *selfBack;
 
+@property (strong, nonatomic) NSArray *arrTask;
+
 @end

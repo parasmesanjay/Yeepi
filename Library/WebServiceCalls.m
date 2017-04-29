@@ -26,8 +26,7 @@ static NSString *getuserphone;
     manager = [[AFHTTPRequestOperationManager alloc] init];
     manager.securityPolicy.allowInvalidCertificates = YES;//This is for https
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-//  manager = [[AFHTTPSessionManager alloc]init];
-    manager.responseSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves];
+
 }
 
 + (void)POST:(NSString *)url parameter:(NSDictionary *)parameter completionBlock:(WebCallBlock)block
@@ -95,8 +94,9 @@ static NSString *getuserphone;
 {
     @try
     {
+        NSString *strUrl = [NSString stringWithFormat:@"%@%@",BASE_URL,url];
         
-        NSURL *urlStr=  [NSURL URLWithString:[url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSURL *urlStr=  [NSURL URLWithString:[strUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:urlStr];
         NSError *error = NULL;
         NSURLResponse *response = NULL;

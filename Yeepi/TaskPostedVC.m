@@ -15,6 +15,8 @@
 @implementation TaskPostedVC
 {
     NSInteger index;
+    
+    NSArray *arrTaskAll;
 }
 
 - (void)viewDidLoad {
@@ -27,12 +29,59 @@
     STATUS_BAR
     self.view.backgroundColor = APP_COLOR_BLUE;
     
-    [self loadHomeScroll];
+    [SVProgressHUD showWithStatus:@"Loading..."];
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:0];
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+-(void)loadData
+{
+    @try
+    {
+        // http://appone.biz/yeepi/api/tasks/posted-task/{userId}.json
+
+        NSString *url = [NSString stringWithFormat:@"tasks/posted-task/%@.json",User_Id];
+        
+        [WebServiceCalls GET:url parameter:nil completionBlock:^(id JSON, WebServiceResult result)
+         {
+             [SVProgressHUD dismiss];
+             
+             NSLog(@"%@",JSON);
+             
+             @try
+             {
+                 if ([JSON[@"response"][@"status"] integerValue] == 1)
+                 {
+                     arrTaskAll = JSON[@"response"][@"data"];
+                     
+                     [self loadHomeScroll];
+                 }
+                 else
+                 {
+                     [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@", JSON[@"response"][@"msg"]]];
+                 }
+                 
+             } @catch (NSException *exception)
+             {
+                 
+             } @finally {
+                 
+             }
+             
+         }];
+        
+    }
+    @catch (NSException *exception)
+    {
+        
+    } @finally {
+        
+    }
 }
 
 -(void)loadHomeScroll
@@ -49,16 +98,15 @@
                 ActiveTaskView *ATView = [[[NSBundle mainBundle] loadNibNamed:@"Active_PreviousTaskView" owner:self options:nil] objectAtIndex:0];
                 ATView.frame = CGRectMake(0, 0, TaskView.frame.size.width, TaskView.frame.size.height);
                 ATView.selfBack = self;
-                //SView.backgroundColor = CLEAR_COLOR;
+                ATView.arrTask = arrTaskAll;
                 [TaskView addSubview:ATView];
             }
             else
             {
-                PreviousTaskView *PTView;
-                PTView = [[[NSBundle mainBundle] loadNibNamed:@"Active_PreviousTaskView" owner:self options:nil] objectAtIndex:1];
+                PreviousTaskView *PTView = [[[NSBundle mainBundle] loadNibNamed:@"Active_PreviousTaskView" owner:self options:nil] objectAtIndex:1];
                 PTView.frame = CGRectMake(0, 0, TaskView.frame.size.width, TaskView.frame.size.height);
                 PTView.selfBack = self;
-                //HView.backgroundColor = CLEAR_COLOR;
+                PTView.arrTask = arrTaskAll;
                 [TaskView addSubview:PTView];
             }
             

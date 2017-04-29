@@ -11,6 +11,8 @@
 @interface SelfTasksVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 {
     IBOutlet UIScrollView *mainScroll;
+    
+    IBOutlet UITableView *tblviewAssigned_Offer;
 }
 
 @property (nonatomic, readwrite) NSInteger index;

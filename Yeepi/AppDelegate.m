@@ -61,7 +61,6 @@
                 [[NSUserDefaults standardUserDefaults]setObject:phoneCode forKey:@"PhoneCode"];
             }
         }
-        
     }
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"AppFlag"] == NULL)

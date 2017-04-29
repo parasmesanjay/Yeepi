@@ -13,6 +13,11 @@
 @end
 
 @implementation DashboardVC
+{
+    NSDictionary *dict;
+    
+    NSArray *arrNotification;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,6 +35,70 @@
     mySegment.segmentSecondName = @"Task Holder";
     
     mySegment.delegate = self;
+    
+    [SVProgressHUD showWithStatus:@"Loading..."];
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:0];
+}
+
+-(void)loadData
+{
+    @try
+    {
+        //http://appone.biz/yeepi/api/users/user-dashboard/2.json
+        
+        NSString *url = [NSString stringWithFormat:@"users/user-dashboard/%@.json",User_Id];
+        
+        [WebServiceCalls GET:url parameter:nil completionBlock:^(id JSON, WebServiceResult result)
+         {
+             [SVProgressHUD dismiss];
+             
+             NSLog(@"%@",JSON);
+             
+             @try
+             {
+                 if ([JSON[@"response"][@"status"] integerValue] == 1)
+                 {
+                     dict = JSON[@"response"][@"data"];
+                     
+                     lblTaskerBids.text = [NSString stringWithFormat:@"%@", dict[@"countTaskerOffers"]];
+                     
+                     lblTaskAssignedToYou.text = [NSString stringWithFormat:@"%@", dict[@"countTaskAssignedToYou"]];
+                     
+                     lblTaskerPendingPayments.text = @"00"; //[NSString stringWithFormat:@"%@", dict[@""]];
+                     
+                     lblPosterBids.text = [NSString stringWithFormat:@"%@", dict[@"countPosterOffers"]];
+                     
+                     lblTaskAssignedByYou.text = [NSString stringWithFormat:@"%@", dict[@"countTaskAssignedByYou"]];
+                     
+                     lblPosterPendingPayments.text = @"00"; //[NSString stringWithFormat:@"%@", dict[@""]];
+                     
+                     arrNotification = dict[@"countTaskerNotifications"];
+                     
+                     tblViewDashboard.delegate = self;
+                     tblViewDashboard.dataSource = self;
+                     [tblViewDashboard reloadData];
+                 }
+                 else
+                 {
+                     [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@", JSON[@"response"][@"msg"]]];
+                 }
+                 
+             } @catch (NSException *exception)
+             {
+                 
+             } @finally {
+                 
+             }
+             
+         }];
+        
+    }
+    @catch (NSException *exception)
+    {
+        
+    } @finally {
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +115,9 @@
         
         viewTasker.frame = CGRectMake(0, 108, WIDTH, 235);
         tblViewDashboard.frame = CGRectMake(0, 108+235, WIDTH, HEIGHT-64);
+        
+        arrNotification = dict[@"countTaskerNotifications"];
+        [tblViewDashboard reloadData];
     }
     else
     {
@@ -54,6 +126,9 @@
         
         viewTasker.frame = CGRectMake(0, 108, WIDTH, 150);
         tblViewDashboard.frame = CGRectMake(0, 108+150, WIDTH, HEIGHT-64);
+        
+        arrNotification = dict[@"countPosterNotifications"];
+        [tblViewDashboard reloadData];
     }
     
     [viewScroll setContentSize:CGSizeMake(WIDTH, tblViewDashboard.frame.origin.y+HEIGHT-64)];
@@ -88,7 +163,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return 10; //arrNotification.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;

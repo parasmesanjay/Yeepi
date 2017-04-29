@@ -55,4 +55,7 @@
 #import "OTPVC.h"
 #import "ResetPassVC.h"
 
+#import "PostBidVC.h"
+#import "UIImageView+WebCache.h"
+
 #endif

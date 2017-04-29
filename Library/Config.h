@@ -14,7 +14,6 @@
 
 #define BASE_URL @"http://appone.biz/yeepi/api/"
 #define kClientID @"431281662590-2sm5ihqbmrvkv9ohg9rf80d880ucv6r8.apps.googleusercontent.com";
-#define BASE_URL_SOURCE @"http://appone.biz/eBuddha/"
 
 #define User_Id [[NSUserDefaults standardUserDefaults]objectForKey:@"userID"]
 
