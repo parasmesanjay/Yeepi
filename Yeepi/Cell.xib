@@ -23,7 +23,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kb1-xe-GhM" id="q5P-9k-hoP">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TASK POSTED" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7J-v2-IwX">
@@ -46,11 +46,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yCo-An-ez8" id="utB-OV-xAh">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="229"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="229.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MhG-OD-yJb">
-                        <rect key="frame" x="5" y="5" width="365" height="217"/>
+                        <rect key="frame" x="5" y="5" width="365" height="218"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="green_house.png" translatesAutoresizingMaskIntoConstraints="NO" id="m7z-tV-lO3">
@@ -98,7 +98,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="Empty_user.png" translatesAutoresizingMaskIntoConstraints="NO" id="6eQ-Iy-i22">
-                                <rect key="frame" x="10" y="150" width="60" height="60"/>
+                                <rect key="frame" x="10" y="151" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task Poster Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPn-Lc-j3h">
@@ -144,7 +144,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MeR-dR-RDZ" id="iUB-ks-SdP">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z3v-Ji-dg7">
@@ -250,11 +250,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RaK-Au-khT" id="LYB-j4-oru">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="210"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="210.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3QI-7e-9Wr">
-                        <rect key="frame" x="2" y="5" width="371" height="201"/>
+                        <rect key="frame" x="2" y="5" width="371" height="202"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="green_house.png" translatesAutoresizingMaskIntoConstraints="NO" id="kbP-Z0-oNn">
@@ -392,7 +392,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VKx-uI-p3p" id="fer-Lq-i5h">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="Empty_user.png" translatesAutoresizingMaskIntoConstraints="NO" id="n0V-5p-vvM">
@@ -427,7 +427,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruW-wY-Dps">
-                        <rect key="frame" x="0.0" y="68" width="375" height="2"/>
+                        <rect key="frame" x="0.0" y="69" width="375" height="2"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.33935546875" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -452,11 +452,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Stg-uC-ZAf" id="lGe-7n-hJZ">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="314"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="314.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H7D-zM-MQe">
-                        <rect key="frame" x="5" y="10" width="365" height="305"/>
+                        <rect key="frame" x="5" y="10" width="365" height="306"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="green_house.png" translatesAutoresizingMaskIntoConstraints="NO" id="p7m-Te-4se">
@@ -621,6 +621,7 @@
             <connections>
                 <outlet property="icon_watch" destination="tOz-C0-yuX" id="o4i-g3-EZL"/>
                 <outlet property="icon_watch_1" destination="iGK-ZG-5Sd" id="EAe-ay-cwC"/>
+                <outlet property="lblTaskTitle" destination="rXu-OQ-Gtn" id="tbc-R7-AIn"/>
             </connections>
             <point key="canvasLocation" x="-149.5" y="1147.5"/>
         </tableViewCell>
@@ -628,11 +629,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="305"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Ow-9W-UW6" id="Uq4-9f-nxP">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="304.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nc2-FA-Pds">
-                        <rect key="frame" x="5" y="10" width="365" height="294"/>
+                        <rect key="frame" x="5" y="10" width="365" height="295"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" fixedFrame="YES" image="green_house.png" translatesAutoresizingMaskIntoConstraints="NO" id="wQ0-vz-ofV">
