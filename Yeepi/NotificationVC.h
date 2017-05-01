@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NotificationVC : UIViewController
-
+@interface NotificationVC : UIViewController<UITableViewDataSource, UITableViewDelegate>
+{
+    
+    IBOutlet UITableView *tblViewNotification;
+    
+}
 @end

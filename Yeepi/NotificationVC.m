@@ -7,12 +7,16 @@
 //
 
 #import "NotificationVC.h"
+#import "NotificationTVCell.h"
 
 @interface NotificationVC ()
 
 @end
 
 @implementation NotificationVC
+{
+    NSArray *arrNotification;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,7 +25,54 @@
     header.lblTitle.text = @"Notifications";
     STATUS_BAR
     self.view.backgroundColor = APP_COLOR_BLUE;
+    
+    [SVProgressHUD showWithStatus:@"Loading..."];
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:0];
+}
 
+-(void)loadData
+{
+    @try
+    {
+        //http://appone.biz/yeepi/api/users/all-notification/2.json
+        
+        NSString *url = [NSString stringWithFormat:@"users/all-notification/%@.json",User_Id];
+        
+        [WebServiceCalls GET:url parameter:nil completionBlock:^(id JSON, WebServiceResult result)
+         {
+             [SVProgressHUD dismiss];
+             
+             NSLog(@"%@",JSON);
+             
+             @try
+             {
+                 if ([JSON[@"response"][@"status"] integerValue] == 1)
+                 {
+                     arrNotification = JSON[@"response"][@"data"];
+                     
+                     [tblViewNotification reloadData];
+                 }
+                 else
+                 {
+                     [SVProgressHUD showInfoWithStatus:[NSString stringWithFormat:@"%@", JSON[@"response"][@"msg"]]];
+                 }
+                 
+             } @catch (NSException *exception)
+             {
+                 
+             } @finally {
+                 
+             }
+             
+         }];
+        
+    }
+    @catch (NSException *exception)
+    {
+        
+    } @finally {
+        
+    }
 }
 
 #pragma mark Table Delegates
@@ -38,7 +89,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *itemCell = [[[NSBundle mainBundle]loadNibNamed:@"Cell" owner:self options:nil ]objectAtIndex:4];
+    NotificationTVCell *itemCell = [[[NSBundle mainBundle]loadNibNamed:@"Cell" owner:self options:nil ]objectAtIndex:4];
+    
+    itemCell.imgUser.layer.cornerRadius = 25;
+    itemCell.imgUser.layer.masksToBounds = YES;
     
     itemCell.backgroundColor = CLEAR_COLOR;
     return itemCell;

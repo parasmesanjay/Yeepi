@@ -20,4 +20,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblAmount;
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgCat_icon;
+
+@property (strong, nonatomic) IBOutlet UILabel *lblTaskStatus;
 @end

@@ -14,6 +14,8 @@
 
 @implementation TaxNumberVC
 
+HIDE_KEY_ON_TOUCH
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -51,14 +53,74 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)btnDoneClk:(UIButton *)sender
+{
+    if (txtGSTTax.text.length < 1)
+    {
+        [WebServiceCalls alert:@"Enter GST Number."];
+        [txtGSTTax becomeFirstResponder];
+    }
+    else if (txtPSTTax.text.length < 1)
+    {
+        [WebServiceCalls alert:@"Enter PST Number."];
+        [txtPSTTax becomeFirstResponder];
+    }
+    else
+    {
+        SVHUD_START
+        [self performSelector:@selector(TaxNumberUpdateHud) withObject:nil afterDelay:0];
+    }
 }
-*/
+
+-(void) TaxNumberUpdateHud
+{
+    @try
+    {
+        // URL : http://appone.biz/yeepi/api/users/update-gst-pst-number.json
+        
+        NSDictionary *dic = @{@"user_id":User_Id,
+                              @"gst_number":txtGSTTax.text,
+                              @"pst_number":txtPSTTax.text};
+        
+        [WebServiceCalls POST:@"users/update-gst-pst-number.json" parameter:dic completionBlock:^(id JSON, WebServiceResult result)
+         {
+             SVHUD_STOP
+             @try
+             {
+                 NSLog(@"%@", JSON);
+                 NSDictionary *dict = JSON[@"response"];
+                 
+                 if ([dict[@"status"] integerValue] == 1)
+                 {
+                     [WebServiceCalls alert:@"GST and PST Numbers updated successfully."];
+                     
+                     NSDictionary *dic = [[NSDictionary alloc] initWithDictionary:dict[@"data"]];
+                     NSData *myData = [NSKeyedArchiver archivedDataWithRootObject:dic];
+                     
+                     [[NSUserDefaults standardUserDefaults] setObject:myData forKey:@"userDetails"];
+                 }
+                 else
+                 {
+                     [WebServiceCalls alert:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
+                 }
+             }
+             @catch (NSException *exception)
+             {
+                 [WebServiceCalls alert:@"Some problem in Updating.\nPlease try again."];
+             }
+             @finally
+             {
+             }
+         }];
+    }
+    @catch (NSException *exception)
+    {
+        [WebServiceCalls alert:@"Some problem in SignUp.\nPlease try again."];
+    }
+    @finally
+    {
+    }
+}
+
 
 @end

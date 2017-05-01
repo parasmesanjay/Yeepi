@@ -18,5 +18,7 @@
 
 @property(nonatomic, readwrite) BOOL isFull;
 
+@property(nonatomic, readwrite) BOOL isMadeBid;
+
 @end
 

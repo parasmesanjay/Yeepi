@@ -288,7 +288,7 @@
 {
     if (chkBoxDoTask.on == YES && chkBoxPostTask.on == YES)
     {
-        role_id = @"2,3";
+        role_id = @"3,2";
     }
     else if (chkBoxDoTask.on == YES )
     {

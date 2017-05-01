@@ -11,6 +11,8 @@
 
 @interface BrowseVC ()
 {
+    UIRefreshControl *refreshControl;
+
     NSMutableArray *arrayTasks;
 }
 @end
@@ -26,36 +28,70 @@
     STATUS_BAR
     self.view.backgroundColor = APP_COLOR_BLUE;
     
-  
-    
     [SVProgressHUD showWithStatus:@"Loading..."];
     [self performSelector:@selector(loadData) withObject:nil afterDelay:0];
+    
+    refreshControl = [[UIRefreshControl alloc]init];
+    [table addSubview:refreshControl];
+    [refreshControl addTarget:self action:@selector(callRefresher) forControlEvents:UIControlEventValueChanged];
+}
+
+-(void)callRefresher
+{
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:0];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    
+    if ([AppDelegate AppDelegate].isMadeBid)
+    {
+        [AppDelegate AppDelegate].isMadeBid = false;
+        
+        [SVProgressHUD showWithStatus:@"Loading..."];
+        [self performSelector:@selector(loadData) withObject:nil afterDelay:0];
+    }
 }
 
 -(void)loadData
 {
-    NSString *url = [NSString stringWithFormat:@"http://appone.biz/yeepi/api/tasks/index/{\"user_id\":156,\"status\":{\"0\":\"AL\"},\"task_type\":{\"0\":\"AL\"},\"sort_by\":\"M\",\"task_location\":\"1\"}.json"];
-
-    [WebServiceCalls GET:url parameter:nil completionBlock:^(id JSON, WebServiceResult result)
-     {
-         [SVProgressHUD dismiss];
-         
-         @try
+    @try
+    {
+        NSString *url = [NSString stringWithFormat:@"tasks/index/{\"user_id\":%@,\"status\":{\"0\":\"AL\"},\"task_type\":{\"0\":\"AL\"},\"sort_by\":\"M\",\"task_location\":\"1\"}.json",User_Id];
+        
+        [WebServiceCalls GET:url parameter:nil completionBlock:^(id JSON, WebServiceResult result)
          {
-             arrayTasks = [NSMutableArray arrayWithArray:JSON[@"response"][@"data"]];
-             table.delegate = self;
-             table.dataSource = self;
+             [SVProgressHUD dismiss];
              
-             [table reloadData];
+             [refreshControl endRefreshing];
              
-         } @catch (NSException *exception) {
+             NSLog(@"%@",JSON);
              
-         } @finally {
+             @try
+             {
+                 arrayTasks = [NSMutableArray arrayWithArray:JSON[@"response"][@"data"]];
+                 table.delegate = self;
+                 table.dataSource = self;
+                 
+                 [table reloadData];
+                 
+             } @catch (NSException *exception)
+             {
+                 
+             } @finally {
+                 
+             }
              
-         }
-         
-     }];
-
+         }];
+        
+    }
+    @catch (NSException *exception)
+    {
+        
+    } @finally {
+        
+    }
 }
 
 #pragma mark Table Delegates
@@ -77,13 +113,20 @@
     view.layer.cornerRadius = 10;
     
     [itemCell.btnMakeOffer addTarget:self action:@selector(tapMakeOffer:) forControlEvents:UIControlEventTouchUpInside];
-    itemCell.tag = indexPath.row;
+    itemCell.btnMakeOffer.tag = indexPath.row;
     itemCell.btnMakeOffer.layer.cornerRadius = itemCell.btnMakeOffer.frame.size.height/2;
+    
+    id check = arrayTasks[indexPath.row][@"self_offer"];
+    
+    if([check isKindOfClass:[NSDictionary class]])
+    {
+        [itemCell.btnMakeOffer setTitle:@"Modify Offer" forState:UIControlStateNormal];
+    }
     
     itemCell.lblTiltle.text = arrayTasks[indexPath.row][@"title"];
     itemCell.lblAddress.text = arrayTasks[indexPath.row][@"location_name"];
-    itemCell.lblAmount.text = [NSString stringWithFormat:@"%@",arrayTasks[indexPath.row][@"estimate_budget"]];
-    itemCell.lblTiltle.text = arrayTasks[indexPath.row][@"title"];
+    itemCell.lblAmount.text = [NSString stringWithFormat:@"$%@",arrayTasks[indexPath.row][@"estimate_budget"]];
+    itemCell.lblTaskStatus.text = arrayTasks[indexPath.row][@"status"];
 
     if ([arrayTasks[indexPath.row][@"task_offer_count"] integerValue] > 0)
     {
@@ -109,9 +152,12 @@
 
 -(void)tapMakeOffer:(UIButton *)sender
 {
-    [self performSegueWithIdentifier:@"goMakeOffer" sender:nil];
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PostBidVC *obj = [storybord instantiateViewControllerWithIdentifier:@"PostBidVC"];
+    obj.info = arrayTasks[sender.tag];
+    obj.isFromMyOffer = false;
+    [self.navigationController pushViewController:obj animated:YES];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
