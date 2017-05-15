@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreditCardVC : UIViewController
+@interface CreditCardVC : UIViewController<UITextFieldDelegate>
 {
     IBOutlet TPKeyboardAvoidingScrollView *tpScrlView;
     
@@ -18,7 +18,7 @@
     IBOutlet UITextField *txtExpireYear;
     IBOutlet UITextField *txtCCV;
     
-    IBOutlet UIImageView *imgRadio;
+    IBOutlet BEMCheckBox *chkBox;
 
     IBOutlet UIButton *btnDone;
 }

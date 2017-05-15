@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PaymentMethodVC : UIViewController<segementDelegate>
+@interface PaymentMethodVC : UIViewController<segementDelegate, STPAddCardViewControllerDelegate>
 {
     
     IBOutlet MySegment *mySegment;

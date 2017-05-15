@@ -23,6 +23,9 @@
     header.lblTitle.text = @"PAYMENT METHOD";
     STATUS_BAR
     
+    chkBox.boxType = BEMBoxTypeSquare;
+    chkBox.on = YES;
+
     txtAcHolder.layer.cornerRadius = txtInstitution.layer.cornerRadius = txtTransit.layer.cornerRadius = txtAcNo.layer.cornerRadius = 10;
     btnDone.layer.cornerRadius = 22;
     
@@ -57,8 +60,6 @@
     
     [tpScrlView setContentSize:CGSizeMake(WIDTH, btnDone.frame.origin.y+44+30)];
     
-    [imgRadio setTintColor:WHITE_COLOR];
-    imgRadio.image =  [imgRadio.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 - (void)didReceiveMemoryWarning {

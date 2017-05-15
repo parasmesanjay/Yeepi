@@ -218,6 +218,9 @@
 		18FCD66E1E6D3CF10029E167 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD6671E6D3CF10029E167 /* LoginVC.m */; };
 		18FCD66F1E6D3CF10029E167 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD66A1E6D3CF10029E167 /* RegisterVC.m */; };
 		18FCD6701E6D3CF10029E167 /* SplashScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD66D1E6D3CF10029E167 /* SplashScreenVC.m */; };
+		DB4079581EC06CA900AEE139 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB4079571EC06CA900AEE139 /* Stripe.framework */; };
+		DB40795A1EC073A200AEE139 /* Stripe.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB4079591EC073A200AEE139 /* Stripe.bundle */; };
+		DB4F963A1EC1D57200DE1EB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB4F96391EC1D57200DE1EB1 /* GoogleService-Info.plist */; };
 		DB52778F1EA0C35A0097E2DD /* BrowseTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */; };
 		DB5277921EA0C3650097E2DD /* ActiveTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5277911EA0C3650097E2DD /* ActiveTaskTVCell.m */; };
 		DB6F39BF1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */; };
@@ -538,6 +541,9 @@
 		18FCD66C1E6D3CF10029E167 /* SplashScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenVC.h; sourceTree = "<group>"; };
 		18FCD66D1E6D3CF10029E167 /* SplashScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenVC.m; sourceTree = "<group>"; };
 		18FCD68B1E6D3F0B0029E167 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Yeepi/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		DB4079571EC06CA900AEE139 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
+		DB4079591EC073A200AEE139 /* Stripe.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Stripe.bundle; path = Stripe.framework/Stripe.bundle; sourceTree = "<group>"; };
+		DB4F96391EC1D57200DE1EB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB52778D1EA0C35A0097E2DD /* BrowseTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowseTVCell.h; path = CellClasses/BrowseTVCell.h; sourceTree = "<group>"; };
 		DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowseTVCell.m; path = CellClasses/BrowseTVCell.m; sourceTree = "<group>"; };
 		DB5277901EA0C3650097E2DD /* ActiveTaskTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveTaskTVCell.h; path = CellClasses/ActiveTaskTVCell.h; sourceTree = "<group>"; };
@@ -581,6 +587,7 @@
 				DBE43C241EADEB6800F2BB2C /* FBAudienceNetwork.framework in Frameworks */,
 				DBE43C271EADEB6800F2BB2C /* FBSDKLoginKit.framework in Frameworks */,
 				DBE43C221EADEB6800F2BB2C /* Bolts.framework in Frameworks */,
+				DB4079581EC06CA900AEE139 /* Stripe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,6 +923,7 @@
 				18FCD5D01E6D28710029E167 /* Assets.xcassets */,
 				18FCD5D21E6D28710029E167 /* LaunchScreen.storyboard */,
 				18FCD5D51E6D28710029E167 /* Info.plist */,
+				DB4F96391EC1D57200DE1EB1 /* GoogleService-Info.plist */,
 				18FCD5C41E6D28710029E167 /* Supporting Files */,
 			);
 			path = Yeepi;
@@ -966,6 +974,8 @@
 		18FCD6051E6D3A2C0029E167 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				DB4079591EC073A200AEE139 /* Stripe.bundle */,
+				DB4079571EC06CA900AEE139 /* Stripe.framework */,
 				18FCD61D1E6D3A2C0029E167 /* Config.h */,
 				18FCD68B1E6D3F0B0029E167 /* PrefixHeader.pch */,
 				18FCD6061E6D3A2C0029E167 /* AFNetworking */,
@@ -1401,6 +1411,7 @@
 				018E97B91E9618AC00F9E852 /* accept.png in Resources */,
 				18FCD5FF1E6D33040029E167 /* MontserratAlternates-Light.otf in Resources */,
 				018E97ED1E9618AC00F9E852 /* input.png in Resources */,
+				DB40795A1EC073A200AEE139 /* Stripe.bundle in Resources */,
 				018E980F1E9618AC00F9E852 /* splasg_bg.png in Resources */,
 				018E97DD1E9618AC00F9E852 /* greenpost.png in Resources */,
 				018E97FE1E9618AC00F9E852 /* my_tasks.png in Resources */,
@@ -1449,6 +1460,7 @@
 				018E98151E9618AC00F9E852 /* user.png in Resources */,
 				018E97E71E9618AC00F9E852 /* Icon_cross.png in Resources */,
 				018E97CC1E9618AC00F9E852 /* down_arrow.png in Resources */,
+				DB4F963A1EC1D57200DE1EB1 /* GoogleService-Info.plist in Resources */,
 				018E97E21E9618AC00F9E852 /* ic_location.png in Resources */,
 				0119A2701E97C43B00DEC457 /* Active_PreviousTaskView.xib in Resources */,
 				018E98161E9618AC00F9E852 /* user_.png in Resources */,
@@ -1677,12 +1689,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/FrameWorks",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/FCM_Messaging",
 				);
 				GCC_PREFIX_HEADER = Yeepi/PrefixHeader.pch;
 				INFOPLIST_FILE = Yeepi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.west.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.westview.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1696,12 +1710,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/FrameWorks",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/FCM_Messaging",
 				);
 				GCC_PREFIX_HEADER = Yeepi/PrefixHeader.pch;
 				INFOPLIST_FILE = Yeepi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.west.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.westview.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

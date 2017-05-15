@@ -23,6 +23,9 @@
     header.lblTitle.text = @"PAYMENT METHOD";
     STATUS_BAR
     
+    chkBox.boxType = BEMBoxTypeSquare;
+    chkBox.on = YES;
+
     txtHolderName.layer.cornerRadius = txtCardNo.layer.cornerRadius = txtExpireMonth.layer.cornerRadius = txtExpireYear.layer.cornerRadius = txtCCV.layer.cornerRadius = 10;
     btnDone.layer.cornerRadius = 22;
     
@@ -75,8 +78,8 @@
     
     [tpScrlView setContentSize:CGSizeMake(WIDTH, btnDone.frame.origin.y+44+30)];
     
-    [imgRadio setTintColor:WHITE_COLOR];
-    imgRadio.image =  [imgRadio.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    txtCardNo.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,6 +87,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+/*
+ STPCardParams *cardParams = [[STPCardParams alloc] init];
+ cardParams.number = @"4242424242424242";
+ cardParams.expMonth = 10;
+ cardParams.expYear = 2018;
+ cardParams.cvc = @"123";
+ [[STPAPIClient sharedClient] createTokenWithCard:cardParams completion:^(STPToken *token, NSError *error) {
+ if (error) {
+ // show the error, maybe by presenting an alert to the user
+ } else {
+ [self submitTokenToBackend:token completion:^(NSError *error) {
+ if (error) {
+ // show the error
+ } else {
+ [self showReceiptPage];
+ }
+ }];
+ }
+ }];
+ */
 
 @end

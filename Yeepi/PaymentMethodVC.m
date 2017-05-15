@@ -54,9 +54,15 @@
 {
     if (sender.tag == 0)
     {
-        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        /*UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         CreditCardVC *obj = [storybord instantiateViewControllerWithIdentifier:@"CreditCardVC"];
-        [self.navigationController pushViewController:obj animated:YES];
+        [self.navigationController pushViewController:obj animated:YES];*/
+        
+        STPAddCardViewController *addCardViewController = [[STPAddCardViewController alloc] init];
+        addCardViewController.delegate = self;
+        // STPAddCardViewController must be shown inside a UINavigationController.
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:addCardViewController];
+        [self presentViewController:navigationController animated:YES completion:nil];
     }
     else
     {
@@ -68,9 +74,45 @@
 
 - (IBAction)btnPaypalClk:(id)sender
 {
-    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    /*UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     PaypalAccountVC *obj = [storybord instantiateViewControllerWithIdentifier:@"PaypalAccountVC"];
-    [self.navigationController pushViewController:obj animated:YES];
+    [self.navigationController pushViewController:obj animated:YES];*/
+    
+    
 }
+
+#pragma mark STPAddCardViewControllerDelegate
+
+- (void)addCardViewControllerDidCancel:(STPAddCardViewController *)addCardViewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addCardViewController:(STPAddCardViewController *)addCardViewController
+               didCreateToken:(STPToken *)token
+                   completion:(STPErrorBlock)completion
+{
+    NSLog(@"%@", token);
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+    /*[self submitTokenToBackend:token completion:^(NSError *error) {
+        if (error) {
+            completion(error);
+        } else {
+            [self dismissViewControllerAnimated:YES completion:^{
+                [self showReceiptPage];
+            }];
+        }
+    }];*/
+}
+
+#pragma mark STPPaymentCardTextFieldDelegate
+
+/*- (void)paymentCardTextFieldDidChange:(STPPaymentCardTextField *)textField
+{
+    NSLog(@"Card number: %@ Exp Month: %@ Exp Year: %@ CVC: %@", textField.cardParams.number, @(textField.cardParams.expMonth), @(textField.cardParams.expYear), textField.cardParams.cvc);
+    
+    //self.buyButton.enabled = textField.isValid;
+}*/
 
 @end

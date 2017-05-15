@@ -34,6 +34,7 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
 
+    [[STPPaymentConfiguration sharedConfiguration] setPublishableKey:@"pk_test_uwQO6TBdKxUmmVNQihEldkiC"];
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"PhoneCode"] == NULL)
     {

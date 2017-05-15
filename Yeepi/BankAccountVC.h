@@ -17,7 +17,7 @@
     IBOutlet UITextField *txtTransit;
     IBOutlet UITextField *txtAcNo;
     
-    IBOutlet UIImageView *imgRadio;
+    IBOutlet BEMCheckBox *chkBox;
 
     IBOutlet UIButton *btnDone;
 }
