@@ -58,6 +58,10 @@
 #import "PostBidVC.h"
 #import "UIImageView+WebCache.h"
 
-#import "CircleView.h"
+#import "CreateTaskVC.h"
+#import "CreateTaskVC2.h"
+#import "CreatTaskVC3.h"
+#import "CleanTaskVC1.h"
+#import "CleanTaskVC2.h"
 
 #endif

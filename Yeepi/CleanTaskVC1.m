@@ -13,11 +13,16 @@
 @end
 
 @implementation CleanTaskVC1
+{
+    NSString *PropertyType;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    PropertyType = @"0";
     
     for (int i=1; i<=3; i++)
     {
@@ -33,6 +38,9 @@
         }
     }
     
+    btnContinue.layer.cornerRadius = 22;
+    btnContinue.layer.masksToBounds = YES;
+    
     [self setTintColor:imgRadioHouse :WHITE_COLOR];
     [self setTintColor:imgRadioApartment :WHITE_COLOR];
 }
@@ -43,6 +51,22 @@
     ImageView.image =  [ImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
+- (IBAction)btnRadioClk:(UIButton *)sender
+{
+    if (sender.tag == 0)
+    {
+        imgRadioHouse.image = [UIImage imageNamed:@"radio.png"];
+        imgRadioApartment.image = [UIImage imageNamed:@"radio_unckeck.png"];
+        PropertyType = @"0";
+    }
+    else
+    {
+        imgRadioApartment.image = [UIImage imageNamed:@"radio.png"];
+        imgRadioHouse.image = [UIImage imageNamed:@"radio_unckeck.png"];
+        PropertyType = @"1";
+    }
+}
+
 - (IBAction)bedroomCount:(UIButton *)sender
 {
     if (sender.tag == 0)
@@ -51,7 +75,7 @@
         
         NSInteger count = [value integerValue];
         
-        if (count != 0)
+        if (count != 1)
         {
             count--;
             
@@ -81,7 +105,7 @@
         
         NSInteger count = [value integerValue];
         
-        if (count != 0)
+        if (count != 1)
         {
             count--;
             
@@ -103,10 +127,51 @@
     }
 }
 
+- (IBAction)btnContivueClk:(id)sender
+{
+    NSString *isLease;
+    
+    if (switchLeaseClean.on)
+    {
+        isLease = @"1";
+    }
+    else
+    {
+        isLease = @"0";
+    }
+    NSDictionary *dict = @{@"user_id" : User_Id,
+                           @"title" : @"",
+                           @"description" :@"",
+                           @"task_type" : @"1",
+                           @"property_type" : PropertyType,
+                           @"no_bedroom" : txtBedRoomCount.text,
+                           @"no_bathroom" : txtBathRoomCount.text,
+                           @"lease_clean" : isLease,
+                           @"additional_cleaning" : @"",
+                           @"additional_note" : @"",
+                           @"location_name" : @"",
+                           @"location_latitude" : @"",
+                           @"location_longtitude" : @"",
+                           @"task_timeline" : @"",
+                           @"budget_range" : @"",
+                           @"total_hours" : @"",
+                           @"no_tasker" : @"",
+                           @"budget_hours" : @"",
+                           @"hour_price" : @"",
+                           @"device_token" : @"",
+                           @"device_type" : @"I",
+                           @"service_type_id" : @"1",
+                           @"estimate_budget" : @""};
+    
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CleanTaskVC2 *obj = [storybord instantiateViewControllerWithIdentifier:@"CleanTaskVC2"];
+    obj.dict = [NSMutableDictionary dictionaryWithDictionary:dict];
+    [self.navigationController pushViewController:obj animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

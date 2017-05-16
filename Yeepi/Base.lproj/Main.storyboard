@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -3189,6 +3189,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9kk-yi-Qnp">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                                <connections>
+                                                    <action selector="btnRadioClk:" destination="OkA-Cv-XOj" eventType="touchUpInside" id="r5L-F9-2EU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -3208,9 +3211,12 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FMf-ZF-898">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="FMf-ZF-898">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="40"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
+                                                <connections>
+                                                    <action selector="btnRadioClk:" destination="OkA-Cv-XOj" eventType="touchUpInside" id="cgp-7N-MnU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -3260,7 +3266,7 @@
                                                     <action selector="bedroomCount:" destination="OkA-Cv-XOj" eventType="touchUpInside" id="gjC-TH-fer"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" id="l98-0V-eTf">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="center" minimumFontSize="17" id="l98-0V-eTf">
                                                 <rect key="frame" x="228" y="3" width="34" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3315,7 +3321,7 @@
                                                     <action selector="bathroomCount:" destination="OkA-Cv-XOj" eventType="touchUpInside" id="fJ5-wr-T11"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" id="Bkp-dX-elR">
+                                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="center" minimumFontSize="17" id="Bkp-dX-elR">
                                                 <rect key="frame" x="228" y="3" width="34" height="34"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3353,6 +3359,9 @@
                                         <state key="normal" title="CONTINUE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnContivueClk:" destination="OkA-Cv-XOj" eventType="touchUpInside" id="x9x-Lx-OWo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -3385,7 +3394,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VgW-xU-HMa">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VgW-xU-HMa">
                                         <rect key="frame" x="66" y="16" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.94509803920000002" green="0.43529411759999997" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -3393,14 +3402,14 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fHy-HP-fUf">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fHy-HP-fUf">
                                         <rect key="frame" x="162" y="16" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xEJ-yx-DTN">
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="103" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xEJ-yx-DTN">
                                         <rect key="frame" x="257" y="15" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -3451,33 +3460,34 @@
                                         <state key="normal" title="Next">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnNextClk:" destination="jhv-cp-1Pt" eventType="touchUpInside" id="yfi-fk-nBz"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" misplaced="YES" id="5ER-K8-eEj">
                                         <rect key="frame" x="20" y="155" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="laundry_white.png" id="HrB-cW-jXJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Laundry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2j9-Kv-X7b">
                                                 <rect key="frame" x="0.0" y="60" width="80" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fab-Zz-PM5">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="laundry_white.png"/>
+                                                <state key="selected" backgroundImage="laundry_pink.png"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" id="DMu-Gp-30K">
                                         <rect key="frame" x="147" y="155" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="oven_white.png" id="bZ7-pA-i46">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oven" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="01t-AS-WNc">
                                                 <rect key="frame" x="0.0" y="60" width="80" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3485,17 +3495,19 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Xnd-WY-bbk">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="oven_white.png"/>
+                                                <state key="selected" backgroundImage="oven_pink.png"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" id="Lph-rr-wO4">
                                         <rect key="frame" x="275" y="155" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cabinet_white.png" id="36c-di-mV7">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cabinet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VgW-UQ-qie">
                                                 <rect key="frame" x="0.0" y="60" width="80" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3503,17 +3515,19 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="czw-Ds-z3E">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="cabinet_white.png"/>
+                                                <state key="selected" backgroundImage="cabinet_pink.png"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" id="tGG-Jp-yVT">
                                         <rect key="frame" x="20" y="255" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="window_white.png" id="tkM-UD-AX9">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Windows" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6ct-8o-dF5">
                                                 <rect key="frame" x="0.0" y="60" width="80" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3521,17 +3535,19 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z4x-dc-xbm">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="window_white.png"/>
+                                                <state key="selected" backgroundImage="window_pink.png"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                     <view contentMode="scaleToFill" misplaced="YES" id="cpS-gs-QA4">
                                         <rect key="frame" x="147" y="255" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carpet_white.png" id="1Bl-fV-774">
-                                                <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carpet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="I3B-nS-ElU">
                                                 <rect key="frame" x="0.0" y="60" width="80" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3539,6 +3555,12 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qZq-WP-4iW">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="55"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="carpet_white.png"/>
+                                                <state key="selected" backgroundImage="carpet_pink.png"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -3563,6 +3585,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.074509803920000006" green="0.1215686275" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="btnCabinet" destination="czw-Ds-z3E" id="eMB-ah-sMu"/>
+                        <outlet property="btnCarpet" destination="qZq-WP-4iW" id="lKd-CW-ABt"/>
+                        <outlet property="btnNext" destination="OPx-Hh-YwT" id="uAA-Fh-Hcp"/>
+                        <outlet property="btnOven" destination="Xnd-WY-bbk" id="SLg-ZR-JRw"/>
+                        <outlet property="btnWindow" destination="Z4x-dc-xbm" id="HT4-Af-sym"/>
+                        <outlet property="btnlaundry" destination="fab-Zz-PM5" id="dF5-Ng-q9l"/>
+                        <outlet property="txtNotes" destination="8qF-jh-TdG" id="j98-Ga-Qkc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qe6-um-8kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4519,7 +4550,9 @@
         <image name="app_logo_white.png" width="769" height="634"/>
         <image name="bathroom.png" width="96" height="96"/>
         <image name="bed.png" width="96" height="96"/>
+        <image name="cabinet_pink.png" width="252" height="172"/>
         <image name="cabinet_white.png" width="252" height="172"/>
+        <image name="carpet_pink.png" width="252" height="172"/>
         <image name="carpet_white.png" width="252" height="172"/>
         <image name="cup.png" width="239" height="224"/>
         <image name="delete_white.png" width="41" height="50"/>
@@ -4540,6 +4573,7 @@
         <image name="image_bank_account.png" width="165" height="165"/>
         <image name="image_credit_card.png" width="165" height="165"/>
         <image name="image_paypal.png" width="165" height="165"/>
+        <image name="laundry_pink.png" width="252" height="172"/>
         <image name="laundry_white.png" width="252" height="172"/>
         <image name="lock.png" width="43" height="53"/>
         <image name="loction.png" width="48" height="48"/>
@@ -4547,6 +4581,7 @@
         <image name="message_user1.png" width="124" height="124"/>
         <image name="minus_white.png" width="220" height="39"/>
         <image name="my_task_image.png" width="150" height="150"/>
+        <image name="oven_pink.png" width="252" height="172"/>
         <image name="oven_white.png" width="252" height="172"/>
         <image name="plus.png" width="254" height="254"/>
         <image name="plus_white.png" width="234" height="236"/>
@@ -4556,6 +4591,7 @@
         <image name="tick.png" width="69" height="68"/>
         <image name="time.png" width="48" height="48"/>
         <image name="user_.png" width="47" height="50"/>
+        <image name="window_pink.png" width="252" height="172"/>
         <image name="window_white.png" width="252" height="172"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
