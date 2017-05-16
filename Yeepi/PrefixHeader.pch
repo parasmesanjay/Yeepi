@@ -58,4 +58,6 @@
 #import "PostBidVC.h"
 #import "UIImageView+WebCache.h"
 
+#import "CircleView.h"
+
 #endif

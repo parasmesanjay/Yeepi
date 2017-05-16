@@ -227,6 +227,10 @@
 		DB9282101E94B5AE00D8FF00 /* PostBidVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB92820F1E94B5AE00D8FF00 /* PostBidVC.m */; };
 		DB92821A1E94E26700D8FF00 /* MySegment.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9282191E94E26700D8FF00 /* MySegment.m */; };
 		DB92821E1E94FC9E00D8FF00 /* DashboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DB92821D1E94FC9E00D8FF00 /* DashboardVC.m */; };
+		DBD5A8FE1EC9C1A800B95878 /* CreateTaskVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD5A8FD1EC9C1A800B95878 /* CreateTaskVC2.m */; };
+		DBD5A9011EC9C1D900B95878 /* CreatTaskVC3.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD5A9001EC9C1D900B95878 /* CreatTaskVC3.m */; };
+		DBD5A9041EC9C37300B95878 /* CleanTaskVC1.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD5A9031EC9C37300B95878 /* CleanTaskVC1.m */; };
+		DBD5A9071EC9C3AE00B95878 /* CleanTaskVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = DBD5A9061EC9C3AE00B95878 /* CleanTaskVC2.m */; };
 		DBE43C201EADEB6800F2BB2C /* AccountKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE43C151EADEB6800F2BB2C /* AccountKit.framework */; };
 		DBE43C211EADEB6800F2BB2C /* AccountKitStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DBE43C161EADEB6800F2BB2C /* AccountKitStrings.bundle */; };
 		DBE43C221EADEB6800F2BB2C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE43C171EADEB6800F2BB2C /* Bolts.framework */; };
@@ -556,6 +560,14 @@
 		DB9282191E94E26700D8FF00 /* MySegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MySegment.m; path = MySegment/MySegment.m; sourceTree = "<group>"; };
 		DB92821C1E94FC9E00D8FF00 /* DashboardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardVC.h; sourceTree = "<group>"; };
 		DB92821D1E94FC9E00D8FF00 /* DashboardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardVC.m; sourceTree = "<group>"; };
+		DBD5A8FC1EC9C1A800B95878 /* CreateTaskVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTaskVC2.h; sourceTree = "<group>"; };
+		DBD5A8FD1EC9C1A800B95878 /* CreateTaskVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTaskVC2.m; sourceTree = "<group>"; };
+		DBD5A8FF1EC9C1D900B95878 /* CreatTaskVC3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatTaskVC3.h; sourceTree = "<group>"; };
+		DBD5A9001EC9C1D900B95878 /* CreatTaskVC3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatTaskVC3.m; sourceTree = "<group>"; };
+		DBD5A9021EC9C37300B95878 /* CleanTaskVC1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CleanTaskVC1.h; sourceTree = "<group>"; };
+		DBD5A9031EC9C37300B95878 /* CleanTaskVC1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanTaskVC1.m; sourceTree = "<group>"; };
+		DBD5A9051EC9C3AE00B95878 /* CleanTaskVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CleanTaskVC2.h; sourceTree = "<group>"; };
+		DBD5A9061EC9C3AE00B95878 /* CleanTaskVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CleanTaskVC2.m; sourceTree = "<group>"; };
 		DBE43C151EADEB6800F2BB2C /* AccountKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AccountKit.framework; path = Library/FrameWorks/AccountKit.framework; sourceTree = "<group>"; };
 		DBE43C161EADEB6800F2BB2C /* AccountKitStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AccountKitStrings.bundle; path = Library/FrameWorks/AccountKitStrings.bundle; sourceTree = "<group>"; };
 		DBE43C171EADEB6800F2BB2C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Library/FrameWorks/Bolts.framework; sourceTree = "<group>"; };
@@ -1210,6 +1222,14 @@
 			children = (
 				18C885EE1E7BD97B00A87CD6 /* CreateTaskVC.h */,
 				18C885EF1E7BD97B00A87CD6 /* CreateTaskVC.m */,
+				DBD5A8FC1EC9C1A800B95878 /* CreateTaskVC2.h */,
+				DBD5A8FD1EC9C1A800B95878 /* CreateTaskVC2.m */,
+				DBD5A8FF1EC9C1D900B95878 /* CreatTaskVC3.h */,
+				DBD5A9001EC9C1D900B95878 /* CreatTaskVC3.m */,
+				DBD5A9021EC9C37300B95878 /* CleanTaskVC1.h */,
+				DBD5A9031EC9C37300B95878 /* CleanTaskVC1.m */,
+				DBD5A9051EC9C3AE00B95878 /* CleanTaskVC2.h */,
+				DBD5A9061EC9C3AE00B95878 /* CleanTaskVC2.m */,
 			);
 			name = "PostTask Related VC";
 			sourceTree = "<group>";
@@ -1505,6 +1525,7 @@
 				01322E491EA0D99A00C97045 /* README.md in Sources */,
 				012556FA1EB1EEB600A66956 /* UIImageView+WebCache.m in Sources */,
 				18C885EA1E7BAEB000A87CD6 /* SelfTasksVC.m in Sources */,
+				DBD5A9011EC9C1D900B95878 /* CreatTaskVC3.m in Sources */,
 				184678DF1E794BCF006DE871 /* PostsTaskVC.m in Sources */,
 				012556F31EB1EEB600A66956 /* SDWebImageManager.m in Sources */,
 				18FCD6521E6D3A2C0029E167 /* SVProgressHUD.m in Sources */,
@@ -1519,6 +1540,7 @@
 				18FCD64D1E6D3A2C0029E167 /* README.mdown in Sources */,
 				18FCD6571E6D3A2C0029E167 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				01CBB47B1E99184000C20F41 /* PaymentMethodVC.m in Sources */,
+				DBD5A9071EC9C3AE00B95878 /* CleanTaskVC2.m in Sources */,
 				18FCD6501E6D3A2C0029E167 /* SVIndefiniteAnimatedView.m in Sources */,
 				DB92821E1E94FC9E00D8FF00 /* DashboardVC.m in Sources */,
 				18FCD66E1E6D3CF10029E167 /* LoginVC.m in Sources */,
@@ -1538,6 +1560,7 @@
 				DB92821A1E94E26700D8FF00 /* MySegment.m in Sources */,
 				011E97371EA4D85300F3F55E /* ForgotPassVC.m in Sources */,
 				0144DD2A1EA7A12900764786 /* VarifyPopUp.m in Sources */,
+				DBD5A9041EC9C37300B95878 /* CleanTaskVC1.m in Sources */,
 				18FCD64E1E6D3A2C0029E167 /* Reachability.m in Sources */,
 				012556F21EB1EEB600A66956 /* SDWebImageDownloaderOperation.m in Sources */,
 				18FCD6471E6D3A2C0029E167 /* AFURLRequestSerialization.m in Sources */,
@@ -1549,6 +1572,7 @@
 				0119A26B1E97C3BF00DEC457 /* ActiveTaskView.m in Sources */,
 				012556F81EB1EEB600A66956 /* UIImage+WebP.m in Sources */,
 				012556F91EB1EEB600A66956 /* UIImageView+HighlightedWebCache.m in Sources */,
+				DBD5A8FE1EC9C1A800B95878 /* CreateTaskVC2.m in Sources */,
 				18F65A241E7017B10047F593 /* ResgisterDetail.m in Sources */,
 				18FCD6491E6D3A2C0029E167 /* AFURLSessionManager.m in Sources */,
 				18FCD6581E6D3A2C0029E167 /* UserSession.m in Sources */,
