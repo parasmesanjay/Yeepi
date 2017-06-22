@@ -39,7 +39,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.015686274510000001" green="0.59215686270000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.015686274509803921" green="0.59215686274509804" blue="0.54509803921568623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

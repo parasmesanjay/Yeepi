@@ -46,6 +46,7 @@
 #import "TaxNumberVC.h"
 #import "ChangePasswordVC.h"
 #import "MyProfileVC.h"
+#import "EditProfileVC.h"
 #import "TaskAlertVC.h"
 
 #import "LoginVC.h"

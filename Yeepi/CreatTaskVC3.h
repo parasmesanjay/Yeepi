@@ -9,5 +9,26 @@
 #import <UIKit/UIKit.h>
 
 @interface CreatTaskVC3 : UIViewController
+{
+    
+    IBOutlet UITextField *txtTaskerCount;
+    
+    IBOutlet UIImageView *imgTotalBudget;
+    IBOutlet UIImageView *imgHourlyBudget;
+    
+    IBOutlet UITextField *txtPrice;
+    
+    IBOutlet UIView *viewHourly;
+    IBOutlet UITextField *txtHours;
+    IBOutlet UITextField *txtPricePreHour;
+    
+    IBOutlet UIView *viewPostTask;
+    
+    IBOutlet UILabel *lblEstimateBudget;
+    
+    IBOutlet UIView *viewSuccess;
+}
+
+@property (nonatomic, strong) NSMutableDictionary *dict;
 
 @end

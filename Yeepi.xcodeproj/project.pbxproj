@@ -138,6 +138,8 @@
 		018E98161E9618AC00F9E852 /* user_.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E97B61E9618AC00F9E852 /* user_.png */; };
 		018E98171E9618AC00F9E852 /* window_pink.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E97B71E9618AC00F9E852 /* window_pink.png */; };
 		018E98181E9618AC00F9E852 /* window_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 018E97B81E9618AC00F9E852 /* window_white.png */; };
+		01937E421EEFEDC200D02BC0 /* EditProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01937E411EEFEDC200D02BC0 /* EditProfileVC.m */; };
+		01937E461EF001FA00D02BC0 /* ic_edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 01937E451EF001FA00D02BC0 /* ic_edit.png */; };
 		01A631B31E9BA2EA00D83A05 /* CreditCardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A631B21E9BA2EA00D83A05 /* CreditCardVC.m */; };
 		01A631B61E9BA31000D83A05 /* BankAccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A631B51E9BA31000D83A05 /* BankAccountVC.m */; };
 		01A631B91E9BA32B00D83A05 /* PaypalAccountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A631B81E9BA32B00D83A05 /* PaypalAccountVC.m */; };
@@ -407,6 +409,9 @@
 		018E97B61E9618AC00F9E852 /* user_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_.png; sourceTree = "<group>"; };
 		018E97B71E9618AC00F9E852 /* window_pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = window_pink.png; sourceTree = "<group>"; };
 		018E97B81E9618AC00F9E852 /* window_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = window_white.png; sourceTree = "<group>"; };
+		01937E401EEFEDC200D02BC0 /* EditProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileVC.h; sourceTree = "<group>"; };
+		01937E411EEFEDC200D02BC0 /* EditProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileVC.m; sourceTree = "<group>"; };
+		01937E451EF001FA00D02BC0 /* ic_edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_edit.png; sourceTree = "<group>"; };
 		01A631B11E9BA2EA00D83A05 /* CreditCardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditCardVC.h; sourceTree = "<group>"; };
 		01A631B21E9BA2EA00D83A05 /* CreditCardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditCardVC.m; sourceTree = "<group>"; };
 		01A631B41E9BA31000D83A05 /* BankAccountVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankAccountVC.h; sourceTree = "<group>"; };
@@ -727,6 +732,7 @@
 				018E977F1E9618AC00F9E852 /* home.png */,
 				018E97801E9618AC00F9E852 /* house.png */,
 				018E97811E9618AC00F9E852 /* house_white.png */,
+				01937E451EF001FA00D02BC0 /* ic_edit.png */,
 				018E97821E9618AC00F9E852 /* ic_location.png */,
 				018E97831E9618AC00F9E852 /* ic_mobile.png */,
 				018E97841E9618AC00F9E852 /* ic_rounded_email.png */,
@@ -803,6 +809,8 @@
 			children = (
 				01A631C21E9BC04B00D83A05 /* MyProfileVC.h */,
 				01A631C31E9BC04B00D83A05 /* MyProfileVC.m */,
+				01937E401EEFEDC200D02BC0 /* EditProfileVC.h */,
+				01937E411EEFEDC200D02BC0 /* EditProfileVC.m */,
 			);
 			name = "My Profile";
 			sourceTree = "<group>";
@@ -1414,6 +1422,7 @@
 				018E98021E9618AC00F9E852 /* oven_white.png in Resources */,
 				018E98031E9618AC00F9E852 /* photo.png in Resources */,
 				018E97D81E9618AC00F9E852 /* green_mobile.png in Resources */,
+				01937E461EF001FA00D02BC0 /* ic_edit.png in Resources */,
 				018E97BA1E9618AC00F9E852 /* add_image.png in Resources */,
 				018E98121E9618AC00F9E852 /* tick.png in Resources */,
 				018E97C11E9618AC00F9E852 /* cabinet_white.png in Resources */,
@@ -1525,6 +1534,7 @@
 				01322E491EA0D99A00C97045 /* README.md in Sources */,
 				012556FA1EB1EEB600A66956 /* UIImageView+WebCache.m in Sources */,
 				18C885EA1E7BAEB000A87CD6 /* SelfTasksVC.m in Sources */,
+				01937E421EEFEDC200D02BC0 /* EditProfileVC.m in Sources */,
 				DBD5A9011EC9C1D900B95878 /* CreatTaskVC3.m in Sources */,
 				184678DF1E794BCF006DE871 /* PostsTaskVC.m in Sources */,
 				012556F31EB1EEB600A66956 /* SDWebImageManager.m in Sources */,

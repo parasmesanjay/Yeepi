@@ -22,5 +22,7 @@
 
 @property(nonatomic, readwrite) BOOL isMadeBid;
 
+@property (strong, nonatomic) NSString *TaskTitle;
+
 @end
 

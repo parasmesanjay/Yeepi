@@ -162,9 +162,10 @@
          {
              SVHUD_STOP
              NSLog(@"%@", JSON);
-             NSDictionary *dict = JSON[@"response"];
              @try
              {
+                 NSDictionary *dict = JSON[@"response"];
+
                  if ([dict[@"status"] integerValue] == 1)
                  {
                      //[WebServiceCalls alert:[NSString stringWithFormat:@"%@", dict[@"msg"]]];
@@ -186,7 +187,7 @@
              }
              @catch (NSException *exception)
              {
-                 [WebServiceCalls alert:@"Some problem in SignIn.\nPlease try again."];
+                 [WebServiceCalls alert:@"Some problem.\nPlease try again."];
              }
              @finally
              {

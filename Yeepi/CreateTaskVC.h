@@ -10,6 +10,8 @@
 
 @interface CreateTaskVC : UIViewController<UITextViewDelegate>
 {
+    IBOutlet TPKeyboardAvoidingScrollView *viewTPScroll;
+    
     IBOutlet UILabel *one;
     IBOutlet UILabel *two;
     IBOutlet UILabel *three;
@@ -19,6 +21,12 @@
     IBOutlet UITextView *textDescriptoin;
     
     IBOutlet UIButton *btnNext;
-    
 }
+
+@property (nonatomic, strong) NSMutableDictionary *dict;
+
+@property (nonatomic, readwrite) bool isFromClean;
+
+@property (nonatomic, strong) NSString *serviceID;
+
 @end

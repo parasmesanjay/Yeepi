@@ -17,6 +17,8 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    arrActiveTask = [NSMutableArray array];
+    
     for (int i = 0; i<arrTask.count; i++)
     {
         if ([arrTask[i][@"your_offer_done"] integerValue] == 0)
@@ -24,6 +26,8 @@
             [arrActiveTask addObject:arrTask[i]];
         }
     }
+    
+    [_tblViewActiveTask reloadData];
 }
 
 #pragma mark - TableView View datasource and delegate
@@ -35,7 +39,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return arrActiveTask.count;
 }
 
 /*-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;

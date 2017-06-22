@@ -37,7 +37,7 @@
 
 #define STATUS_COLOR [UIColor colorWithRed:2.0/255.0 green:112.0/255.0 blue:103.0/255.0 alpha:1]
 
-#define APP_COLOR_HEADER [UIColor colorWithRed:4/255.0 green:51/255.0 blue:139/255.0 alpha:1]
+#define APP_COLOR_HEADER [UIColor colorWithRed:4/255.0 green:151/255.0 blue:139/255.0 alpha:1]
 
 #define APP_COLOR_BLUE [UIColor colorWithRed:24.0/255.0 green:44.0/255.0 blue:88.0/255.0 alpha:1]
 

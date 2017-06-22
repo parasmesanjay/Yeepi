@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CleanTaskVC2 : UIViewController
+@interface CleanTaskVC2 : UIViewController<UITextViewDelegate>
 {
+    IBOutlet TPKeyboardAvoidingScrollView *viewMain;
     
     IBOutlet UIButton *btnlaundry;
     IBOutlet UIButton *btnOven;
@@ -23,4 +24,5 @@
 }
 
 @property (nonatomic, strong) NSMutableDictionary *dict;
+
 @end

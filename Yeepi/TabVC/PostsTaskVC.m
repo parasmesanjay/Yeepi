@@ -46,14 +46,32 @@
         lbl.font = [UIFont systemFontOfSize:13];
         
         UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(i%3*(WIDTH/3), 60+i/3*(44+WIDTH/4-20), WIDTH/3, WIDTH/4-20+44)];
-        [btn addTarget:self action:@selector(tapButton) forControlEvents:UIControlEventTouchUpInside];
+        btn.tag = i+1;
+        [btn addTarget:self action:@selector(tapButton:) forControlEvents:UIControlEventTouchUpInside];
         [mainScroll addSubview:btn];
     }
 }
 
--(void)tapButton
+- (IBAction)tapButton:(UIButton *)sender
 {
-    [self performSegueWithIdentifier:@"goAddTask" sender:nil];
+    if (sender.tag == 1)
+    {
+        [AppDelegate AppDelegate].TaskTitle = @"House Cleaning";
+
+        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        CleanTaskVC1 *obj = [storybord instantiateViewControllerWithIdentifier:@"CleanTaskVC1"];
+        [self.navigationController pushViewController:obj animated:YES];
+    }
+    else
+    {
+        [AppDelegate AppDelegate].TaskTitle = arrTitles[sender.tag - 1];
+
+        UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        CreateTaskVC *obj = [storybord instantiateViewControllerWithIdentifier:@"CreateTaskVC"];
+        obj.isFromClean = false;
+        obj.serviceID = [NSString stringWithFormat:@"%ld",sender.tag];
+        [self.navigationController pushViewController:obj animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning

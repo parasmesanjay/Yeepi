@@ -22,6 +22,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    GET_HEADER_VIEW
+    header.lblTitle.text = @"House Cleaning";
+    STATUS_BAR
+    
     PropertyType = @"0";
     
     for (int i=1; i<=3; i++)
@@ -57,13 +62,21 @@
     {
         imgRadioHouse.image = [UIImage imageNamed:@"radio.png"];
         imgRadioApartment.image = [UIImage imageNamed:@"radio_unckeck.png"];
+        
         PropertyType = @"0";
+        
+        [self setTintColor:imgRadioHouse :WHITE_COLOR];
+        [self setTintColor:imgRadioApartment :WHITE_COLOR];
     }
     else
     {
         imgRadioApartment.image = [UIImage imageNamed:@"radio.png"];
         imgRadioHouse.image = [UIImage imageNamed:@"radio_unckeck.png"];
+        
         PropertyType = @"1";
+        
+        [self setTintColor:imgRadioHouse :WHITE_COLOR];
+        [self setTintColor:imgRadioApartment :WHITE_COLOR];
     }
 }
 
@@ -158,7 +171,7 @@
                            @"no_tasker" : @"",
                            @"budget_hours" : @"",
                            @"hour_price" : @"",
-                           @"device_token" : @"",
+                           @"device_token" : @"token",
                            @"device_type" : @"I",
                            @"service_type_id" : @"1",
                            @"estimate_budget" : @""};
