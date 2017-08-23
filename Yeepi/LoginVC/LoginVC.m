@@ -113,6 +113,8 @@
     @try
     {
         // URL : http://appone.biz/yeepi/api/users/login.json
+        // http://52.33.135.246/api/users/login.json
+        
         NSDictionary *dic = @{@"email":textEmail.text,
                                @"password":textPassword.text,
                                @"device_token":@"12345",

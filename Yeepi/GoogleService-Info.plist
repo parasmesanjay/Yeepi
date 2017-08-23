@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>991955238980-mrhmd7987ihhbjq8m9j69odn5mtt6bir.apps.googleusercontent.com</string>
+	<string>843081781542-5g8erk8diqra93relo6qibe21sb8u6l1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.991955238980-mrhmd7987ihhbjq8m9j69odn5mtt6bir</string>
+	<string>com.googleusercontent.apps.843081781542-5g8erk8diqra93relo6qibe21sb8u6l1</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCAahVmIp-SfymbaJrzkYkYmNcXeuLgt4U</string>
+	<string>AIzaSyCQc1E3pNoh5W_NCFkSVBB9EYn1dbHCtgE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>991955238980</string>
+	<string>843081781542</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.west.test</string>
+	<string>com.westview.test</string>
 	<key>PROJECT_ID</key>
-	<string>yeepi-93e9b</string>
+	<string>yeepi-83bfe</string>
 	<key>STORAGE_BUCKET</key>
-	<string>yeepi-93e9b.appspot.com</string>
+	<string>yeepi-83bfe.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:991955238980:ios:764bc7cc3f06356d</string>
+	<string>1:843081781542:ios:db11f1260b7b3831</string>
 	<key>DATABASE_URL</key>
-	<string>https://yeepi-93e9b.firebaseio.com</string>
+	<string>https://yeepi-83bfe.firebaseio.com</string>
 </dict>
 </plist>

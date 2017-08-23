@@ -103,8 +103,8 @@
     NSDictionary *param = @{@"facebook_id":[NSString stringWithFormat:@"%@",result[@"id"]],
                             @"username":result[@"name"],
                             @"email":result[@"email"],
-                            @"first_name":@"",
-                            @"last_name":@"",
+                            @"first_name":result[@"name"],
+                            @"last_name":@" ",
                             @"device_token":@"!",
                             @"device_type":@"IOS",
                             };
@@ -114,9 +114,10 @@
      {
          SVHUD_STOP
          NSLog(@"%@", JSON);
-         NSDictionary *dict = JSON[@"response"];
          @try
          {
+             NSDictionary *dict = JSON[@"response"];
+             
              if ([dict[@"status"] integerValue] == 1)
              {
 

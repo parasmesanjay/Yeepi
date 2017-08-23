@@ -36,9 +36,9 @@
   
     btnGoMyTask.layer.cornerRadius = btnGoMyTask.frame.size.height/2;
     btnMakeOffer.layer.cornerRadius = btnMakeOffer.frame.size.height/2;
-    btnDeletOffer.layer.cornerRadius = btnDeletOffer.frame.size.height/2;
-    btnDeletOffer.layer.borderColor = WHITE_COLOR.CGColor;
-    btnDeletOffer.layer.borderWidth = 1;
+    viewDeleteOffer.layer.cornerRadius = viewDeleteOffer.frame.size.height/2;
+    viewDeleteOffer.layer.borderColor = WHITE_COLOR.CGColor;
+    viewDeleteOffer.layer.borderWidth = 1;
 
     textAmt.layer.cornerRadius = Corner_Radius;
     textAmt.layer.borderColor = Border_color_brown.CGColor;
@@ -107,6 +107,8 @@
     
     [thnksview addSubview:viewThankYou];
     [self.view addSubview:thnksview];
+    
+    [viewScroll setContentSize:CGSizeMake(WIDTH, viewDeleteOffer.frame.origin.y+50)];
 }
 
 - (void)didReceiveMemoryWarning {

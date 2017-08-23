@@ -222,7 +222,6 @@
 		18FCD6701E6D3CF10029E167 /* SplashScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18FCD66D1E6D3CF10029E167 /* SplashScreenVC.m */; };
 		DB4079581EC06CA900AEE139 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB4079571EC06CA900AEE139 /* Stripe.framework */; };
 		DB40795A1EC073A200AEE139 /* Stripe.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB4079591EC073A200AEE139 /* Stripe.bundle */; };
-		DB4F963A1EC1D57200DE1EB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB4F96391EC1D57200DE1EB1 /* GoogleService-Info.plist */; };
 		DB52778F1EA0C35A0097E2DD /* BrowseTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */; };
 		DB5277921EA0C3650097E2DD /* ActiveTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5277911EA0C3650097E2DD /* ActiveTaskTVCell.m */; };
 		DB6F39BF1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DB6F39BE1E9FAF9D0091F0D5 /* PreviousTaskTVCell.m */; };
@@ -244,6 +243,7 @@
 		DBE43C281EADEB6800F2BB2C /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE43C1D1EADEB6800F2BB2C /* FBSDKMessengerShareKit.framework */; };
 		DBE43C291EADEB6800F2BB2C /* FBSDKPlacesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE43C1E1EADEB6800F2BB2C /* FBSDKPlacesKit.framework */; };
 		DBE43C2A1EADEB6800F2BB2C /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBE43C1F1EADEB6800F2BB2C /* FBSDKShareKit.framework */; };
+		DBF1BB631F4DB777003225DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBF1BB621F4DB777003225DE /* GoogleService-Info.plist */; };
 		DBFE5A4D1EA75C54001AFCCC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFE5A4C1EA75C54001AFCCC /* CoreLocation.framework */; };
 		DBFE5A4F1EA76135001AFCCC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFE5A4E1EA76135001AFCCC /* MapKit.framework */; };
 /* End PBXBuildFile section */
@@ -552,7 +552,6 @@
 		18FCD68B1E6D3F0B0029E167 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Yeepi/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
 		DB4079571EC06CA900AEE139 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
 		DB4079591EC073A200AEE139 /* Stripe.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Stripe.bundle; path = Stripe.framework/Stripe.bundle; sourceTree = "<group>"; };
-		DB4F96391EC1D57200DE1EB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB52778D1EA0C35A0097E2DD /* BrowseTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowseTVCell.h; path = CellClasses/BrowseTVCell.h; sourceTree = "<group>"; };
 		DB52778E1EA0C35A0097E2DD /* BrowseTVCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowseTVCell.m; path = CellClasses/BrowseTVCell.m; sourceTree = "<group>"; };
 		DB5277901EA0C3650097E2DD /* ActiveTaskTVCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ActiveTaskTVCell.h; path = CellClasses/ActiveTaskTVCell.h; sourceTree = "<group>"; };
@@ -584,6 +583,7 @@
 		DBE43C1D1EADEB6800F2BB2C /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKMessengerShareKit.framework; path = Library/FrameWorks/FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
 		DBE43C1E1EADEB6800F2BB2C /* FBSDKPlacesKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKPlacesKit.framework; path = Library/FrameWorks/FBSDKPlacesKit.framework; sourceTree = "<group>"; };
 		DBE43C1F1EADEB6800F2BB2C /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = Library/FrameWorks/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		DBF1BB621F4DB777003225DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DBFE5A4C1EA75C54001AFCCC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DBFE5A4E1EA76135001AFCCC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -943,7 +943,7 @@
 				18FCD5D01E6D28710029E167 /* Assets.xcassets */,
 				18FCD5D21E6D28710029E167 /* LaunchScreen.storyboard */,
 				18FCD5D51E6D28710029E167 /* Info.plist */,
-				DB4F96391EC1D57200DE1EB1 /* GoogleService-Info.plist */,
+				DBF1BB621F4DB777003225DE /* GoogleService-Info.plist */,
 				18FCD5C41E6D28710029E167 /* Supporting Files */,
 			);
 			path = Yeepi;
@@ -1458,6 +1458,7 @@
 				18FCD5D11E6D28710029E167 /* Assets.xcassets in Resources */,
 				018E98011E9618AC00F9E852 /* oven_pink.png in Resources */,
 				018E980B1E9618AC00F9E852 /* screen_one.png in Resources */,
+				DBF1BB631F4DB777003225DE /* GoogleService-Info.plist in Resources */,
 				018E97CE1E9618AC00F9E852 /* email.png in Resources */,
 				018E97E91E9618AC00F9E852 /* image_credit_card.png in Resources */,
 				018E98131E9618AC00F9E852 /* time.png in Resources */,
@@ -1489,7 +1490,6 @@
 				018E98151E9618AC00F9E852 /* user.png in Resources */,
 				018E97E71E9618AC00F9E852 /* Icon_cross.png in Resources */,
 				018E97CC1E9618AC00F9E852 /* down_arrow.png in Resources */,
-				DB4F963A1EC1D57200DE1EB1 /* GoogleService-Info.plist in Resources */,
 				018E97E21E9618AC00F9E852 /* ic_location.png in Resources */,
 				0119A2701E97C43B00DEC457 /* Active_PreviousTaskView.xib in Resources */,
 				018E98161E9618AC00F9E852 /* user_.png in Resources */,

@@ -10,6 +10,8 @@
 
 @interface PostBidVC : UIViewController
 {
+    IBOutlet TPKeyboardAvoidingScrollView *viewScroll;
+    
     IBOutlet UILabel *lblTaskName;
     IBOutlet UITextView *txtviewAddress;
     IBOutlet UILabel *lblTaskPrice;
@@ -18,6 +20,8 @@
     IBOutlet UIButton *btnGoMyTask;
     IBOutlet UIButton *btnMakeOffer;
     IBOutlet UIButton *btnDeletOffer;
+    
+    IBOutlet UIView *viewDeleteOffer;
     
     IBOutlet UITextField *textAmt;
     IBOutlet UITextView *textComment;
